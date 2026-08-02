@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowzy | منصة الحلول الرقمية الذكية</title>
+<meta name="description" content="Flowzy منصة تقنية عصرية تساعدك على تنظيم أعمالك وتسريع نموك بحلول رقمية ذكية وسهلة الاستخدام.">
+<meta name="keywords" content="Flowzy, حلول رقمية, منصة تقنية, نمو الأعمال, تقنية عصرية">
+<meta property="og:title" content="Flowzy | منصة الحلول الرقمية الذكية">
+<meta property="og:description" content="اكتشف Flowzy، منصتك الرقمية لتنظيم الأعمال وتسريع النمو.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%230a1a3f'/%3E%3Cpath d='M25 70 L55 40 L55 55 L78 25 L78 45 L60 45 L60 60 L45 60 Z' fill='white'/%3E%3C/svg%3E">
+<style>
+:root{
+  --dark: #0a1230;
+  --dark2: #0d1b3f;
+  --blue: #2563eb;
+  --teal: #0d9488;
+  --purple: #7c3aed;
+  --white: #ffffff;
+  --gray: #a9b4d0;
+  --card-bg: rgba(255,255,255,0.04);
+  --border: rgba(255,255,255,0.08);
+  --radius: 16px;
+  --transition: 0.35s ease;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  font-family: 'Tahoma', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(160deg, var(--dark) 0%, var(--dark2) 50%, #10123f 100%);
+  color: var(--white);
+  overflow-x: hidden;
+  line-height: 1.8;
+}
+
+a{text-decoration:none; color:inherit;}
+ul{list-style:none;}
+img{max-width:100%; display:block;}
+
+.container{
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-tag{
+  display:inline-block;
+  padding: 6px 18px;
+  border-radius: 30px;
+  background: linear-gradient(90deg, rgba(37,99,235,0.15), rgba(124,58,237,0.15));
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 13px;
+  color: var(--gray);
+  margin-bottom: 16px;
+}
+
+.section-title{
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  background: linear-gradient(90deg, #ffffff, #9fd8ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-desc{
+  color: var(--gray);
+  font-size: 16px;
+  max-width: 640px;
+}
+
+.center{text-align:center; margin:0 auto;}
+
+/* ===== Header ===== */
+header{
+  position: fixed;
+  top:0; right:0; left:0;
+  z-index: 999;
+  padding: 14px 0;
+  background: rgba(10,18,48,0.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  transition: var(--transition);
+}
+
+.nav-wrap{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:800;
+  font-size: 22px;
+}
+
+.logo-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  box-shadow: 0 0 20px rgba(37,99,235,0.5);
+}
+
+.logo-icon svg{width:22px; height:22px;}
+
+.logo span{
+  background: linear-gradient(90deg, #ffffff, #7ee8e0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: 0.5px;
+}
+
+nav ul{
+  display:flex;
+  gap: 28px;
+}
+
+nav ul li a{
+  font-size: 15px;
+  color: var(--gray);
+  transition: var(--transition);
+  position:relative;
+}
+
+nav ul li a:hover{color: var(--white);}
+
+.nav-cta{
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-weight:700;
+  font-size:15px;
+  cursor:pointer;
+  border:none;
+  transition: var(--transition);
+}
+
+.btn-primary{
+  background: linear-gradient(90deg, var(--blue), var(--purple));
+  color:#fff;
+  box-shadow: 0 4px 20px rgba(124,58,237,0.35);
+}
+
+.btn-primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(124,58,237,0.5);
+}
+
+.btn-outline{
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--white);
+}
+
+.btn-outline:hover{
+  background: rgba(255,255,255,0.08);
+}
+
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  z-index:1001;
+}
+.menu-toggle span{
+  width:26px; height:3px; background:#fff; border-radius:2px;
+}
+
+/* ===== Hero ===== */
+.hero{
+  min-height: 100vh;
+  display:flex;
+  align-items:center;
+  padding-top: 100px;
+  position: relative;
+  overflow:hidden;
+}
+
+.hero::before{
+  content:'';
+  position:absolute;
+  top:-200px; left:-200px;
+  width:500px; height:500px;
+  background: radial-gradient(circle, rgba(37,99,235,0.35), transparent 70%);
+  filter: blur(40px);
+  z-index:0;
+}
+.hero::after{
+  content:'';
+  position:absolute;
+  bottom:-200px; right:-150px;
+  width:500px; height:500px;
+  background: radial-gradient(circle, rgba(124,58,237,0.3), transparent 70%);
+  filter: blur(40px);
+  z-index:0;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 50px;
+  align-items:center;
+  position:relative;
+  z-index:1;
+}
+
+.hero-content h1{
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 800;
+  line-height:1.3;
+  margin-bottom: 22px;
+}
+
+.hero-content h1 .highlight{
+  background: linear-gradient(90deg, #4fd1c5, #7c3aed, #2563eb);
+  -webkit-background-clip: text;
+  background-clip:text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-content p{
+  color: var(--gray);
+  font-size: 17px;
+  max-width: 520px;
+  margin-bottom: 34px;
+}
+
+.hero-btns{
+  display:flex;
+  gap: 16px;
+  flex-wrap:wrap;
+  margin-bottom: 40px;
+}
+
+.hero-stats{
+  display:flex;
+  gap: 30px;
+  flex-wrap:wrap;
+}
+
+.hero-stats div{
+  color: var(--gray);
+  font-size: 14px;
+}
+
+.hero-stats strong{
+  display:block;
+  font-size: 22px;
+  color:#fff;
+  margin-bottom:4px;
+}
+
+.hero-visual{
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.arrow-card{
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1/1;
+  border-radius: 28px;
+  background: linear-gradient(145deg, #0d1b3f, #10123f 60%, #0a1230);
+  border: 1px solid rgba(255,255,255,0.1);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.5), inset 0 0 60px rgba(37,99,235,0.08);
+  animation: floatY 5s ease-in-out infinite;
+}
+
+.arrow-card svg{
+  width: 55%;
+  filter: drop-shadow(0 10px 30px rgba(124,58,237,0.5));
+}
+
+@keyframes floatY{
+  0%,100%{transform: translateY(0);}
+  50%{transform: translateY(-14px);}
+}
+
+.glow-dot{
+  position:absolute;
+  width:14px; height:14px;
+  border-radius:50%;
+  background: var(--teal);
+  box-shadow: 0 0 20px var(--teal);
+  animation: pulse 2s infinite;
+}
+.glow-dot.d1{top:10%; right:10%;}
+.glow-dot.d2{bottom:15%; left:8%; background:var(--purple); box-shadow:0 0 20px var(--purple); animation-delay:1s;}
+
+@keyframes pulse{
+  0%,100%{opacity:0.5; transform:scale(1);}
+  50%{opacity:1; transform:scale(1.3);}
+}
+
+/* ===== Sections general ===== */
+section{
+  padding: 100px 0;
+  position: relative;
+}
+
+.fade-in{
+  opacity:0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+.fade-in.visible{
+  opacity:1;
+  transform: translateY(0);
+}
+
+/* ===== About ===== */
+.about-grid{
+  display:grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 60px;
+  align-items:center;
+}
+
+.about-visual{
+  position:relative;
+  border-radius: 24px;
+  background: linear-gradient(150deg, rgba(37,99,235,0.15), rgba(124,58,237,0.15));
+  border: 1px solid var(--border);
+  padding: 40px;
+  min-height: 320px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.about-visual .mini-arrow{
+  width: 120px;
+  opacity: 0.9;
+}
+
+.about-list{
+  margin-top: 24px;
+  display:flex;
+  flex-direction:column;
+  gap: 16px;
+}
+
+.about-list li{
+  display:flex;
+  align-items:flex-start;
+  gap: 12px;
+  color: var(--gray);
+}
+
+.about-list li i{
+  width: 26px;
+  height:26px;
+  border-radius:50%;
+  background: linear-gradient(135deg, var(--teal), var(--blue));
+  flex-shrink:0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  color:#fff;
+  margin-top:2px;
+}
+
+/* ===== Features ===== */
+.features-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 50px;
+}
+
+.feature-card{
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 26px;
+  transition: var(--transition);
+  position:relative;
+  overflow:hidden;
+}
+
+.feature-card::before{
+  content:'';
+  position:absolute;
+  top:0; right:0;
+  width:100%; height:3px;
+  background: linear-gradient(90deg, var(--blue), var(--purple), var(--teal));
+  opacity:0;
+  transition: var(--transition);
+}
+
+.feature-card:hover{
+  transform: translateY(-8px);
+  border-color: rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.06);
+}
+.feature-card:hover::before{opacity:1;}
+
+.feature-icon{
+  width: 54px;
+  height: 54px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.feature-card h3{
+  font-size: 19px;
+  margin-bottom: 10px;
+  font-weight:700;
+}
+
+.feature-card p{
+  color: var(--gray);
+  font-size: 14.5px;
+}
+
+/* ===== How it works ===== */
+.steps-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 50px;
+}
+
+.step-card{
+  text-align:center;
+  padding: 30px 20px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  position:relative;
+}
+
+.step-num{
+  width: 46px;
+  height: 46px;
+  border-radius:50%;
+  margin: 0 auto 18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:800;
+  font-size:18px;
+  background: linear-gradient(135deg, var(--teal), var(--purple));
+}
+
+.step-card h4{
+  font-size:16px;
+  margin-bottom:8px;
+}
+.step-card p{
+  font-size:13.5px;
+  color: var(--gray);
+}
+
+/* ===== Testimonials ===== */
+.test-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+  margin-top: 50px;
+}
+
+.test-card{
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.test-stars{
+  color: #fbbf24;
+  margin-bottom: 14px;
+  font-size:14px;
+}
+
+.test-card p{
+  color: var(--gray);
+  font-size:14.5px;
+  margin-bottom: 20px;
+}
+
+.test-person{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+}
+
+.test-avatar{
+  width: 44px;
+  height:44px;
+  border-radius:50%;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+}
+
+.test-person h5{
+  font-size:14.5px;
+  margin-bottom:2px;
+}
+.test-person span{
+  font-size:12.5px;
+  color: var(--gray);
+}
+
+/* ===== FAQ ===== */
+.faq-list{
+  max-width: 780px;
+  margin: 50px auto 0;
+}
+
+.faq-item{
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  margin-bottom: 14px;
+  overflow:hidden;
+  background: var(--card-bg);
+}
+
+.faq-question{
+  padding: 20px 24px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  font-weight:700;
+  font-size:15.5px;
+}
+
+.faq-question .icon{
+  transition: var(--transition);
+  font-size: 20px;
+  color: var(--teal);
+}
+
+.faq-item.active .faq-question .icon{
+  transform: rotate(45deg);
+}
+
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 24px;
+  color: var(--gray);
+  font-size: 14.5px;
+}
+
+.faq-item.active .faq-answer{
+  max-height: 300px;
+  padding-bottom: 20px;
+}
+
+/* ===== Contact ===== */
+.contact-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  margin-top: 50px;
+}
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap: 22px;
+}
+
+.contact-info-item{
+  display:flex;
+  align-items:center;
+  gap: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  padding: 18px 20px;
+  border-radius: 14px;
+}
+
+.contact-info-item .ic{
+  width: 44px;
+  height: 44px;
+  border-radius:12px;
+  background: linear-gradient(135deg, var(--blue), var(--teal));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-shrink:0;
+  font-size:18px;
+}
+
+.contact-info-item h5{font-size:14.5px; margin-bottom:4px;}
+.contact-info-item p{font-size:13.5px; color:var(--gray);}
+
+.social-row{
+  display:flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+.social-row a{
+  width: 42px;
+  height:42px;
+  border-radius:50%;
+  border: 1px solid var(--border);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition: var(--transition);
+}
+.social-row a:hover{
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  transform: translateY(-3px);
+}
+
+form.contact-form{
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  display:flex;
+  flex-direction:column;
+  gap: 18px;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+input, textarea{
+  width:100%;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.03);
+  color: #fff;
+  font-size: 14px;
+  font-family: inherit;
+  outline:none;
+  transition: var(--transition);
+}
+
+input:focus, textarea:focus{
+  border-color: var(--teal);
+  background: rgba(255,255,255,0.06);
+}
+
+textarea{resize: vertical; min-height: 120px;}
+
+.form-msg{
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  display:none;
+}
+.form-msg.success{
+  display:block;
+  background: rgba(20,184,166,0.15);
+  border: 1px solid rgba(20,184,166,0.4);
+  color: #5eead4;
+}
+
+/* ===== CTA ===== */
+.cta-section{
+  text-align:center;
+  padding: 80px 0;
+  position:relative;
+}
+.cta-box{
+  background: linear-gradient(135deg, rgba(37,99,235,0.2), rgba(124,58,237,0.2));
+  border: 1px solid var(--border);
+  border-radius: 28px;
+  padding: 60px 30px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.cta-box h2{
+  font-size: clamp(24px, 4vw, 34px);
+  margin-bottom: 16px;
+  font-weight:800;
+}
+.cta-box p{
+  color: var(--gray);
+  margin-bottom: 30px;
+  max-width: 550px;
+  margin-inline:auto;
+}
+
+/* ===== Footer ===== */
+footer{
+  border-top: 1px solid var(--border);
+  padding: 50px 0 24px;
+}
+
+.footer-grid{
+  display:grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footer-col h4{
+  font-size: 15.5px;
+  margin-bottom: 18px;
+}
+
+.footer-col p{
+  color: var(--gray);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.footer-col ul li{
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  color: var(--gray);
+  font-size: 14px;
+  transition: var(--transition);
+}
+.footer-col ul li a:hover{color:#fff;}
+
+.footer-bottom{
+  text-align:center;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
+  color: var(--gray);
+  font-size: 13px;
+}
+
+/* ===== WhatsApp float ===== */
+.whatsapp-float{
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  width: 58px;
+  height:58px;
+  border-radius:50%;
+  background: #25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow: 0 8px 24px rgba(37,211,102,0.5);
+  z-index: 998;
+  animation: bounceWA 2.5s infinite;
+  cursor:pointer;
+}
+.whatsapp-float svg{width:30px; height:30px;}
+
+@keyframes bounceWA{
+  0%,100%{transform: translateY(0);}
+  50%{transform: translateY(-8px);}
+}
+
+/* ===== Back to top ===== */
+.back-top{
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--purple));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  z-index: 998;
+  opacity:0;
+  pointer-events:none;
+  transition: var(--transition);
+}
+.back-top.show{opacity:1; pointer-events:auto;}
+
+/* ===== Responsive ===== */
+@media(max-width: 992px){
+  .hero-grid{grid-template-columns: 1fr;}
+  .hero-visual{order:-1; margin-bottom:20px;}
+  .about-grid{grid-template-columns: 1fr;}
+  .features-grid{grid-template-columns: repeat(2,1fr);}
+  .steps-grid{grid-template-columns: repeat(2,1fr);}
+  .test-grid{grid-template-columns: 1fr;}
+  .contact-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns: repeat(2,1fr);}
+}
+
+@media(max-width: 768px){
+  nav{
+    position: fixed;
+    top:0; right:-100%;
+    width: 75%;
+    height:100vh;
+    background: var(--dark2);
+    flex-direction:column;
+    padding: 100px 30px;
+    transition: 0.4s ease;
+    border-left: 1px solid var(--border);
+  }
+  nav.active{right:0;}
+  nav ul{flex-direction:column; gap:22px;}
+  .menu-toggle{display:flex;}
+  .nav-cta .btn-outline{display:none;}
+  .features-grid{grid-template-columns: 1fr;}
+  .steps-grid{grid-template-columns: 1fr;}
+  .form-row{grid-template-columns: 1fr;}
+  .footer-grid{grid-template-columns: 1fr;}
+  .hero-stats{gap:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+  <div class="container nav-wrap">
+    <a href="#home" class="logo">
+      <span class="logo-icon">
+        <svg viewBox="0 0 100 100" fill="none">
+          <path d="M20 75 L48 42 L48 55 L75 22 L75 40 L55 40 L55 58 L38 58 Z" fill="white"/>
+        </svg>
+      </span>
+      <span>Flowzy</span>
+    </a>
+
+    <nav id="nav">
+      <ul>
+        <li><a href="#home" class="nav-link">الرئيسية</a></li>
+        <li><a href="#about" class="nav-link">من نحن</a></li>
+        <li><a href="#features" class="nav-link">المميزات</a></li>
+        <li><a href="#how" class="nav-link">كيف نعمل</a></li>
+        <li><a href="#testimonials" class="nav-link">آراء العملاء</a></li>
+        <li><a href="#faq" class="nav-link">الأسئلة الشائعة</a></li>
+        <li><a href="#contact" class="nav-link">تواصل معنا</a></li>
+      </ul>
+    </nav>
+
+    <div class="nav-cta">
+      <a href="#contact" class="btn btn-outline">تواصل معنا</a>
+      <a href="#contact" class="btn btn-primary">ابدأ الآن</a>
+    </div>
+
+    <div class="menu-toggle" id="menuToggle">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="hero-content fade-in visible">
+      <div class="section-tag">منصة تقنية عصرية</div>
+      <h1>ارتقِ بأعمالك مع <span class="highlight">Flowzy</span> نحو المستقبل الرقمي</h1>
+      <p>Flowzy منصة ذكية تساعدك على تنظيم أعمالك، تسريع عملياتك، واتخاذ قرارات أفضل من خلال حلول رقمية بسيطة وفعّالة مصممة لتناسب احتياجاتك المتنامية.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn btn-primary">ابدأ رحلتك الآن</a>
+        <a href="#features" class="btn btn-outline">اكتشف المميزات</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>سهولة</strong> استخدام مصمم للجميع</div>
+        <div><strong>مرونة</strong> تناسب نمو أعمالك</div>
+        <div><strong>دعم</strong> مستمر خلال رحلتك</div>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-in visible">
+      <div class="arrow-card">
+        <div class="glow-dot d1"></div>
+        <div class="glow-dot d2"></div>
+        <svg viewBox="0 0 200 200" fill="none">
+          <path d="M35 150 L95 85 L95 110 L155 45 L155 85 L120 85 L120 120 L75 120 Z" fill="white"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-visual fade-in">
+      <svg class="mini-arrow" viewBox="0 0 100 100" fill="none">
+        <path d="M18 78 L48 44 L48 55 L75 24 L75 40 L58 40 L58 58 L40 58 Z" fill="white"/>
+      </svg>
+    </div>
+    <div class="fade-in">
+      <div class="section-tag">من نحن</div>
+      <h2 class="section-title">نصنع أدوات رقمية تدفعك للأمام</h2>
+      <p class="section-desc">وُلدت Flowzy من فكرة بسيطة: التقنية يجب أن تكون سهلة، واضحة، وتخدم هدفك دون تعقيد. نعمل على بناء منصة تجمع بين البساطة في الاستخدام والقوة في الأداء، لتمنحك القدرة على التركيز على ما يهم فعلاً — نمو أعمالك.</p>
+      <ul class="about-list">
+        <li><i>✓</i> تصميم بسيط يركّز على تجربة المستخدم</li>
+        <li><i>✓</i> حلول مرنة تتكيف مع احتياجاتك المختلفة</li>
+        <li><i>✓</i> فريق داعم يهتم بتفاصيل تجربتك</li>
+        <li><i>✓</i> رؤية مستمرة للتطور والتحسين</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features">
+  <div class="container">
+    <div class="center fade-in">
+      <div class="section-tag">مميزاتنا</div>
+      <h2 class="section-title">كل ما تحتاجه في مكان واحد</h2>
+      <p class="section-desc center">مجموعة من الأدوات والمزايا المصممة لتمنحك تجربة رقمية سلسة ومتكاملة.</p>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card fade-in">
+        <div class="feature-icon">⚡</div>
+        <h3>أداء سريع وسلس</h3>
+        <p>تجربة استخدام خالية من التعقيد، مصممة لتوفير وقتك وجهدك في كل خطوة.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🔒</div>
+        <h3>أمان وثقة</h3>
+        <p>نحرص على حماية بياناتك وخصوصيتك ضمن بيئة رقمية موثوقة ومستقرة.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">📈</div>
+        <h3>نمو قابل للتوسع</h3>
+        <p>منصة مصممة لتنمو معك، سواء كنت فرداً أو شركة تتطلع للتوسع.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🎯</div>
+        <h3>تصميم يركز عليك</h3>
+        <p>واجهة بسيطة وواضحة تضع تجربتك في مركز كل قرار تصميمي.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🤝</div>
+        <h3>دعم مستمر</h3>
+        <p>فريق مستعد لمساعدتك والإجابة على استفساراتك في أي وقت تحتاجه.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <div class="feature-icon">🌐</div>
+        <h3>تجربة متكاملة</h3>
+        <p>وصول سهل من أي جهاز، بتصميم متجاوب يلائم احتياجاتك المتغيرة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works -->
+<section id="how">
+  <div class="container">
+    <div class="center fade-in">
+      <div class="section-tag">كيف نعمل</div>
+      <h2 class="section-title">رحلتك مع Flowzy في أربع خطوات</h2>
+      <p class="section-desc center">عملية بسيطة وواضحة تأخذك من الفكرة إلى النتيجة بسلاسة.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card fade-in">
+        <div class="step-num">1</div>
+        <h4>تواصل معنا</h4>
+        <p>ابدأ بمشاركة احتياجك معنا لنفهم أهدافك بدقة.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">2</div>
+        <h4>نخطط لك</h4>
+        <p>نحدد الحل الأنسب الذي يتماشى مع طبيعة أعمالك.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">3</div>
+        <h4>ننفذ بدقة</h4>
+        <p>نبدأ التنفيذ خطوة بخطوة مع تحديثك بالتقدم المستمر.</p>
+      </div>
+      <div class="step-card fade-in">
+        <div class="step-num">4</div>
+        <h4>تنطلق للأمام</h4>
+        <p>تحصل على حل جاهز يدعم نموك ويواكب تطورك.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials">
+  <div class="container">
+    <div class="center fade-in">
+      <div class="section-tag">آراء عملائنا</div>
+      <h2 class="section-title">ماذا يقول من جرّبوا Flowzy</h2>
+      <p class="section-desc center">تجارب حقيقية تعكس مدى تأثير Flowzy في تسهيل الأعمال اليومية.</p>
+    </div>
+
+    <div class="test-grid">
+      <div class="test-card fade-in">
+        <div class="test-stars">★★★★★</div>
+        <p>"تجربة استخدام سلسة جداً، ساعدتني على تنظيم عملي بشكل أوضح وأسرع من قبل."</p>
+        <div class="test-person">
+          <div class="test-avatar">م</div>
+          <div><h5>محمد العتيبي</h5><span>رائد أعمال</span></div>
+        </div>
+      </div>
+      <div class="test-card fade-in">
+        <div class="test-stars">★★★★★</div>
+        <p>"واجهة بسيطة وفريق دعم متجاوب، شعرت أن اهتمامهم بتجربتي حقيقي."</p>
+        <div class="test-person">
+          <div class="test-avatar">س</div>
+          <div><h5>سارة الأحمد</h5><span>مديرة مشاريع</span></div>
+        </div>
+      </div>
+      <div class="test-card fade-in">
+        <div class="test-stars">★★★★★</div>
+        <p>"Flowzy غيّر طريقة تعاملي مع العمل اليومي، أصبح كل شيء أكثر وضوحاً."</p>
+        <div class="test-person">
+          <div class="test-avatar">ي</div>
+          <div><h5>يوسف الحربي</h5><span>مؤسس شركة ناشئة</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="center fade-in">
+      <div class="section-tag">الأسئلة الشائعة</div>
+      <h2 class="section-title">إجابات على أكثر الأسئلة تكراراً</h2>
+    </div>
+
+    <div class="faq-list">
+      <div class="faq-item fade-in">
+        <div class="faq-question">ما هي Flowzy بالتحديد؟ <span class="icon">+</span></div>
+        <div class="faq-answer">Flowzy منصة رقمية تهدف لمساعدتك في تنظيم أعمالك وتحسين كفاءتك من خلال أدوات وحلول بسيطة وفعّالة.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <div class="faq-question">هل تناسب Flowzy الأفراد أم الشركات فقط؟ <span class="icon">+</span></div>
+        <div class="faq-answer">تم تصميم Flowzy لتناسب الأفراد والشركات على اختلاف حجمها، مع إمكانية التكيف حسب احتياجاتك.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <div class="faq-question">كيف أبدأ استخدام المنصة؟ <span class="icon">+</span></div>
+        <div class="faq-answer">يمكنك التواصل معنا مباشرة عبر نموذج التواصل أو واتساب، وسنساعدك على البدء بأسهل طريقة ممكنة.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <div class="faq-question">هل يوجد دعم بعد البدء؟ <span class="icon">+</span></div>
+        <div class="faq-answer">نعم، نحرص على تقديم دعم مستمر للإجابة على استفساراتك ومساعدتك خلال رحلتك مع Flowzy.</div>
+      </div>
+      <div class="faq-item fade-in">
+        <div class="faq-question">هل بياناتي محفوظة وآمنة؟ <span class="icon">+</span></div>
+        <div class="faq-answer">نأخذ خصوصية بياناتك بجدية، ونعمل ضمن ممارسات تهدف للحفاظ عليها وحمايتها بشكل مستمر.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box fade-in">
+      <h2>مستعد تبدأ رحلتك مع Flowzy؟</h2>
+      <p>تواصل معنا اليوم واكتشف كيف يمكن لـ Flowzy أن يساعدك على تنظيم أعمالك والانطلاق نحو نمو أكثر وضوحاً وثقة.</p>
+      <a href="#contact" class="btn btn-primary">تواصل معنا الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container">
+    <div class="center fade-in">
+      <div class="section-tag">تواصل معنا</div>
+      <h2 class="section-title">لنبدأ الحديث عن مشروعك</h2>
+      <p class="section-desc center">يسعدنا الاستماع إليك، أرسل رسالتك وسنتواصل معك في أقرب وقت ممكن.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info fade-in">
+        <div class="contact-info-item">
+          <div class="ic">📧</div>
+          <div><h5>البريد الإلكتروني</h5><p>hello@flowzy.com</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic">📞</div>
+          <div><h5>رقم الهاتف</h5><p>+966 50 000 0000</p></div>
+        </div>
+        <div class="contact-info-item">
+          <div class="ic">📍</div>
+          <div><h5>الموقع</h5><p>المملكة العربية السعودية</p></div>
+        </div>
+
+        <div>
+          <h5 style="margin-bottom:10px;">تابعنا على</h5>
+          <div class="social-row">
+            <a href="#" aria-label="twitter">𝕏</a>
+            <a href="#" aria-label="instagram">📷</a>
+            <a href="#" aria-label="linkedin">in</a>
+          </div>
+        </div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-row">
+          <input type="text" placeholder="الاسم الكامل" required>
+          <input type="tel" placeholder="رقم الهاتف" required>
+        </div>
+        <input type="email" placeholder="البريد الإلكتروني" required>
+        <textarea placeholder="اكتب رسالتك هنا..." required></textarea>
+        <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+        <div class="form-msg success" id="formMsg">تم إرسال رسالتك بنجاح، سنتواصل معك قريباً ✅</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <a href="#home" class="logo" style="margin-bottom:14px; display:flex;">
+          <span class="logo-icon">
+            <svg viewBox="0 0 100 100" fill="none">
+              <path d="M20 75 L48 42 L48 55 L75 22 L75 40 L55 40 L55 58 L38 58 Z" fill="white"/>
+            </svg>
+          </span>
+          <span>Flowzy</span>
+        </a>
+        <p>منصة تقنية عصرية تساعدك على تنظيم أعمالك وتسريع نموك بحلول رقمية بسيطة وفعّالة.</p>
+      </div>
+      <div class="footer-col">
+        <h4>روابط سريعة</h4>
+        <ul>
+          <li><a href="#home">الرئيسية</a></li>
+          <li><a href="#about">من نحن</a></li>
+          <li><a href="#features">المميزات</a></li>
+          <li><a href="#how">كيف نعمل</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>الدعم</h4>
+        <ul>
+          <li><a href="#faq">الأسئلة الشائعة</a></li>
+          <li><a href="#testimonials">آراء العملاء</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>تواصل</h4>
+        <ul>
+          <li><a href="mailto:hello@flowzy.com">hello@flowzy.com</a></li>
+          <li><a href="tel:+966500000000">+966 50 000 0000</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2024 Flowzy. جميع الحقوق محفوظة.
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a class="whatsapp-float" href="https://wa.me/966500000000" target="_blank" aria-label="واتساب">
+  <svg viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-1.746-.873-2.89-1.556-4.04-3.527-.305-.526.305-.489.874-1.627.098-.198.05-.371-.05-.52-.098-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.052 3.133 5.031 4.27 2.98 1.135 2.98.755 3.522.706.543-.05 1.758-.72 2.006-1.413.248-.694.248-1.288.173-1.413-.074-.124-.271-.198-.57-.347z"/><path d="M12.004 2C6.486 2 2 6.486 2 12.004c0 1.905.51 3.7 1.404 5.238L2 22l4.888-1.375A9.955 9.955 0 0012.004 22C17.522 22 22 17.514 22 12.004 22 6.486 17.514 2 12.004 2zm0 18.005c-1.712 0-3.313-.499-4.654-1.354l-.334-.204-2.876.81.826-2.797-.222-.35a8.006 8.006 0 01-1.245-4.106c0-4.428 3.604-8.032 8.505-8.032 4.428 0 8.032 3.604 8.032 8.032 0 4.9-3.604 7.001-8.032 7.001z"/></svg>
+</a>
+
+<!-- Back to top -->
+<div class="back-top" id="backTop">↑</div>
+
+<script>
+// Mobile menu toggle
+const menuToggle = document.getElementById('menuToggle');
+const nav = document.getElementById('nav');
+menuToggle.addEventListener('click', ()=>{
+  nav.classList.toggle('active');
+});
+document.querySelectorAll('.nav-link').forEach(link=>{
+  link.addEventListener('click', ()=> nav.classList.remove('active'));
+});
+
+// Header background on scroll
+const header = document.getElementById('header');
+window.addEventListener('scroll', ()=>{
+  if(window.scrollY > 40){
+    header.style.background = 'rgba(10,18,48,0.95)';
+  } else {
+    header.style.background = 'rgba(10,18,48,0.75)';
+  }
+
+  const backTop = document.getElementById('backTop');
+  if(window.scrollY > 400){
+    backTop.classList.add('show');
+  } else {
+    backTop.classList.remove('show');
+  }
+});
+
+document.getElementById('backTop').addEventListener('click', ()=>{
+  window.scrollTo({top:0, behavior:'smooth'});
+});
+
+// Fade-in on scroll
+const faders = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+}, {threshold: 0.15});
+faders.forEach(el=> observer.observe(el));
+
+// FAQ accordion
+document.querySelectorAll('.faq-question').forEach(q=>{
+  q.addEventListener('click', ()=>{
+    const item = q.parentElement;
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i=> i.classList.remove('active'));
+    if(!isActive) item.classList.add('active');
+  });
+});
+
+// Contact form submit (demo)
+const form = document.getElementById('contactForm');
+const msg = document.getElementById('formMsg');
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  msg.style.display = 'block';
+  form.reset();
+  setTimeout(()=>{ msg.style.display='none'; }, 5000);
+});
+</script>
+
+</body>
+</html>
