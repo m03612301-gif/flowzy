@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowzy | بوتات ذكية للأتمتة تسرّع نمو أعمالك</title>
+<meta name="description" content="Flowzy توفر بوتات أتمتة جاهزة للسيلز، الميديا باير، وصناعة الفيديو. حلول ذكاء اصطناعي جاهزة للعمل فورًا لتسريع نمو مشروعك.">
+<meta name="keywords" content="Flowzy, أتمتة, بوتات ذكاء اصطناعي, بوت سيلز, بوت ميديا باير, بوت فيديو, Automation">
+<meta property="og:title" content="Flowzy | بوتات ذكية للأتمتة">
+<meta property="og:description" content="بوتات جاهزة تعمل بالذكاء الاصطناعي لتسريع المبيعات، الإعلانات، وصناعة المحتوى.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='16' fill='%23070b18'/%3E%3Cpath d='M28 72 L60 40 L60 58 L78 40 L78 22 L60 22 L60 40 L28 40 Z' fill='%23ffffff'/%3E%3C/svg%3E">
+<style>
+:root{
+  --navy-deep:#070b18;
+  --navy:#0d1428;
+  --navy-soft:#121b38;
+  --blue-electric:#2f6bff;
+  --blue-glow:#5b8bff;
+  --violet:#8b6bff;
+  --sky:#5be0ff;
+  --white:#f5f7ff;
+  --muted:#9aa4c4;
+  --border:rgba(255,255,255,0.08);
+  --glass:rgba(255,255,255,0.045);
+  --radius:18px;
+  --shadow-glow:0 0 40px rgba(47,107,255,0.25);
+  --trans:0.35s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Tahoma','Segoe UI',system-ui,sans-serif;
+  background:var(--navy-deep);
+  color:var(--white);
+  overflow-x:hidden;
+  line-height:1.7;
+  position:relative;
+}
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.035) 1px, transparent 1px);
+  background-size:48px 48px;
+  z-index:0;
+  pointer-events:none;
+  mask-image:radial-gradient(circle at 50% 20%, rgba(0,0,0,0.9), transparent 75%);
+}
+.glow-orb{
+  position:fixed;
+  border-radius:50%;
+  filter:blur(90px);
+  opacity:0.35;
+  z-index:0;
+  pointer-events:none;
+}
+.orb1{width:500px;height:500px;background:var(--blue-electric);top:-150px;right:-150px;}
+.orb2{width:450px;height:450px;background:var(--violet);bottom:10%;left:-180px;}
+.orb3{width:380px;height:380px;background:var(--sky);top:40%;right:20%;opacity:0.15;}
+
+.container{max-width:1200px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
+
+/* NAVBAR */
+header{
+  position:fixed;top:0;left:0;right:0;
+  z-index:100;
+  backdrop-filter:blur(16px);
+  background:rgba(7,11,24,0.75);
+  border-bottom:1px solid var(--border);
+  transition:var(--trans);
+}
+.navbar{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 24px;max-width:1200px;margin:0 auto;
+}
+.logo-wrap{display:flex;align-items:center;gap:10px;cursor:pointer;}
+.logo-icon{
+  width:42px;height:42px;
+  background:linear-gradient(135deg,var(--navy),var(--navy-soft));
+  border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow-glow);
+  border:1px solid rgba(255,255,255,0.1);
+}
+.logo-icon svg{width:22px;height:22px;}
+.logo-text{
+  font-size:22px;font-weight:800;letter-spacing:0.5px;
+  background:linear-gradient(90deg,var(--white),var(--sky));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  font-family:sans-serif;
+}
+nav ul{display:flex;gap:32px;list-style:none;}
+nav a{
+  color:var(--muted);text-decoration:none;font-size:15px;font-weight:600;
+  transition:var(--trans);position:relative;padding:6px 0;
+}
+nav a::after{
+  content:'';position:absolute;bottom:0;right:0;left:0;height:2px;
+  background:linear-gradient(90deg,var(--blue-electric),var(--sky));
+  transform:scaleX(0);transition:var(--trans);
+}
+nav a:hover, nav a:focus{color:var(--white);}
+nav a:hover::after, nav a:focus::after{transform:scaleX(1);}
+.nav-cta{
+  display:flex;align-items:center;gap:14px;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;justify-content:center;
+  padding:12px 24px;border-radius:12px;font-weight:700;font-size:15px;
+  text-decoration:none;border:none;cursor:pointer;transition:var(--trans);
+  white-space:nowrap;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--blue-electric),var(--violet));
+  color:#fff;box-shadow:0 6px 20px rgba(47,107,255,0.4);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(47,107,255,0.55);}
+.btn-primary:focus-visible{outline:2px solid var(--sky);outline-offset:2px;}
+.btn-outline{
+  background:transparent;color:var(--white);border:1.5px solid var(--border);
+}
+.btn-outline:hover{border-color:var(--sky);background:rgba(91,224,255,0.08);}
+.btn-whatsapp{
+  background:linear-gradient(135deg,#1ebe5d,#25d366);
+  color:#fff;box-shadow:0 6px 20px rgba(37,211,102,0.35);
+}
+.btn-whatsapp:hover{transform:translateY(-3px);box-shadow:0 10px 26px rgba(37,211,102,0.5);}
+.menu-toggle{display:none;background:none;border:none;color:var(--white);font-size:26px;cursor:pointer;}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:140px 0 80px;
+  position:relative;
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:50px;align-items:center;}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--glass);border:1px solid var(--border);
+  padding:8px 16px;border-radius:30px;font-size:13px;color:var(--sky);
+  margin-bottom:24px;font-weight:700;
+}
+.badge span.dot{width:7px;height:7px;border-radius:50%;background:var(--sky);box-shadow:0 0 10px var(--sky);animation:pulse 2s infinite;}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.3;}}
+.hero h1{
+  font-size:52px;font-weight:900;line-height:1.25;margin-bottom:22px;
+}
+.hero h1 .gradient-text{
+  background:linear-gradient(90deg,var(--sky),var(--blue-electric),var(--violet));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.hero p.sub{
+  font-size:18px;color:var(--muted);margin-bottom:34px;max-width:540px;
+}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:40px;}
+.hero-stats{display:flex;gap:36px;flex-wrap:wrap;}
+.stat h3{font-size:28px;font-weight:800;color:var(--white);}
+.stat p{font-size:13px;color:var(--muted);}
+
+.hero-visual{
+  position:relative;display:flex;align-items:center;justify-content:center;
+}
+.hero-card{
+  width:100%;max-width:420px;
+  background:linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:36px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 30px 80px rgba(0,0,0,0.5);
+  position:relative;
+  animation:float 5s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0px);}50%{transform:translateY(-14px);}}
+.hero-arrow-wrap{
+  width:100px;height:100px;margin:0 auto 24px;
+  background:linear-gradient(135deg,var(--navy),var(--navy-soft));
+  border-radius:20px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 50px rgba(47,107,255,0.5), inset 0 0 20px rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.1);
+}
+.hero-arrow-wrap svg{width:52px;height:52px;}
+.hero-card h4{text-align:center;font-size:20px;margin-bottom:8px;}
+.hero-card p{text-align:center;color:var(--muted);font-size:14px;margin-bottom:20px;}
+.mini-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.chip{
+  background:rgba(91,224,255,0.1);color:var(--sky);
+  padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;
+  border:1px solid rgba(91,224,255,0.2);
+}
+
+/* SECTION GENERIC */
+section{padding:100px 0;position:relative;}
+.section-head{text-align:center;max-width:680px;margin:0 auto 60px;}
+.section-tag{
+  color:var(--sky);font-weight:700;font-size:13px;letter-spacing:1px;
+  text-transform:uppercase;margin-bottom:14px;display:block;
+}
+.section-head h2{font-size:38px;font-weight:900;margin-bottom:16px;}
+.section-head p{color:var(--muted);font-size:16px;}
+
+/* FILTERS */
+.filters{
+  display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:50px;
+}
+.filter-btn{
+  background:var(--glass);border:1px solid var(--border);color:var(--muted);
+  padding:10px 22px;border-radius:30px;font-size:14px;font-weight:700;cursor:pointer;
+  transition:var(--trans);
+}
+.filter-btn:hover{color:var(--white);border-color:var(--sky);}
+.filter-btn.active{
+  background:linear-gradient(135deg,var(--blue-electric),var(--violet));
+  color:#fff;border-color:transparent;box-shadow:0 6px 18px rgba(47,107,255,0.4);
+}
+
+/* PRODUCT CARDS */
+.bots-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+.bot-card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:32px;
+  transition:var(--trans);
+  position:relative;
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.bot-card::before{
+  content:'';position:absolute;top:0;right:0;left:0;height:3px;
+  background:linear-gradient(90deg,var(--blue-electric),var(--sky),var(--violet));
+  opacity:0;transition:var(--trans);
+}
+.bot-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(91,224,255,0.35);
+  box-shadow:0 20px 50px rgba(47,107,255,0.15);
+}
+.bot-card:hover::before{opacity:1;}
+.bot-icon{
+  width:64px;height:64px;border-radius:16px;
+  background:linear-gradient(135deg,var(--navy),var(--navy-soft));
+  display:flex;align-items:center;justify-content:center;margin-bottom:22px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+.bot-icon svg{width:32px;height:32px;}
+.bot-card .tag-use{
+  display:inline-block;background:rgba(139,107,255,0.12);color:var(--violet);
+  font-size:12px;font-weight:700;padding:5px 12px;border-radius:20px;margin-bottom:14px;
+  align-self:flex-start;
+}
+.bot-card h3{font-size:22px;font-weight:800;margin-bottom:10px;}
+.bot-card .desc{color:var(--muted);font-size:14.5px;margin-bottom:18px;flex-grow:1;}
+.bot-features{list-style:none;margin-bottom:24px;display:flex;flex-direction:column;gap:10px;}
+.bot-features li{display:flex;align-items:flex-start;gap:8px;font-size:14px;color:#c9d0ea;}
+.bot-features li svg{width:16px;height:16px;flex-shrink:0;margin-top:3px;color:var(--sky);}
+.price-row{
+  display:flex;align-items:baseline;justify-content:space-between;
+  border-top:1px solid var(--border);padding-top:20px;margin-top:auto;
+}
+.price{font-size:30px;font-weight:900;color:var(--white);}
+.price sup{font-size:14px;color:var(--muted);font-weight:600;}
+.bot-actions{display:flex;gap:10px;margin-top:20px;}
+.bot-actions .btn{flex:1;padding:12px 14px;font-size:14px;}
+
+/* WHY / FEATURES STRIP */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.why-card{
+  background:var(--glass);border:1px solid var(--border);border-radius:16px;
+  padding:26px;text-align:center;transition:var(--trans);
+}
+.why-card:hover{transform:translateY(-6px);border-color:rgba(91,224,255,0.3);}
+.why-card .ic{
+  width:52px;height:52px;margin:0 auto 16px;border-radius:14px;
+  background:linear-gradient(135deg,var(--blue-electric),var(--violet));
+  display:flex;align-items:center;justify-content:center;
+}
+.why-card .ic svg{width:26px;height:26px;color:#fff;}
+.why-card h4{font-size:16px;margin-bottom:8px;}
+.why-card p{font-size:13.5px;color:var(--muted);}
+
+/* ABOUT */
+.about-wrap{display:grid;grid-template-columns:0.9fr 1.1fr;gap:50px;align-items:center;}
+.about-visual{
+  background:linear-gradient(160deg, rgba(47,107,255,0.12), rgba(139,107,255,0.08));
+  border:1px solid var(--border);border-radius:24px;padding:50px;
+  display:flex;align-items:center;justify-content:center;position:relative;
+}
+.about-visual .big-arrow{width:140px;height:140px;}
+.about-text h2{font-size:34px;font-weight:900;margin-bottom:20px;}
+.about-text p{color:var(--muted);margin-bottom:18px;font-size:15.5px;}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:26px;}
+.value-item{
+  background:var(--glass);border:1px solid var(--border);border-radius:12px;padding:16px;
+}
+.value-item h5{font-size:15px;margin-bottom:6px;color:var(--sky);}
+.value-item p{font-size:13px;color:var(--muted);margin:0;}
+
+/* FAQ */
+.faq-list{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px;}
+.faq-item{
+  background:var(--glass);border:1px solid var(--border);border-radius:14px;overflow:hidden;
+  transition:var(--trans);
+}
+.faq-item.active{border-color:rgba(91,224,255,0.3);}
+.faq-q{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:20px 24px;cursor:pointer;font-weight:700;font-size:15.5px;
+}
+.faq-q .icon-plus{
+  width:24px;height:24px;flex-shrink:0;display:flex;align-items:center;justify-content:center;
+  border-radius:50%;background:rgba(91,224,255,0.1);transition:var(--trans);
+  margin-left:16px;
+}
+.faq-item.active .icon-plus{transform:rotate(45deg);background:var(--sky);color:var(--navy-deep);}
+.faq-a{
+  max-height:0;overflow:hidden;transition:max-height 0.35s ease, padding 0.35s ease;
+  padding:0 24px;color:var(--muted);font-size:14.5px;
+}
+.faq-item.active .faq-a{max-height:300px;padding:0 24px 22px;}
+
+/* CONTACT */
+.contact-wrap{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto;
+}
+.contact-card{
+  background:linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border:1px solid var(--border);border-radius:20px;padding:38px;text-align:center;
+  transition:var(--trans);
+}
+.contact-card:hover{transform:translateY(-6px);border-color:rgba(91,224,255,0.3);}
+.contact-card .ic{
+  width:60px;height:60px;margin:0 auto 18px;border-radius:16px;
+  display:flex;align-items:center;justify-content:center;
+}
+.contact-card.wa .ic{background:linear-gradient(135deg,#1ebe5d,#25d366);}
+.contact-card.mail .ic{background:linear-gradient(135deg,var(--blue-electric),var(--violet));}
+.contact-card .ic svg{width:28px;height:28px;color:#fff;}
+.contact-card h4{font-size:19px;margin-bottom:8px;}
+.contact-card p{color:var(--muted);font-size:14px;margin-bottom:22px;}
+
+/* FINAL CTA */
+.final-cta{
+  background:linear-gradient(135deg, rgba(47,107,255,0.15), rgba(139,107,255,0.15));
+  border:1px solid var(--border);border-radius:28px;
+  padding:60px;text-align:center;position:relative;overflow:hidden;
+}
+.final-cta h2{font-size:34px;font-weight:900;margin-bottom:16px;}
+.final-cta p{color:var(--muted);margin-bottom:30px;max-width:520px;margin-inline:auto;}
+
+/* FOOTER */
+footer{
+  border-top:1px solid var(--border);padding:50px 0 24px;position:relative;z-index:1;
+}
+.footer-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:30px;margin-bottom:36px;}
+.footer-brand p{color:var(--muted);font-size:13.5px;margin-top:12px;max-width:280px;}
+.footer-links{display:flex;gap:50px;flex-wrap:wrap;}
+.footer-col h5{font-size:15px;margin-bottom:16px;}
+.footer-col a{
+  display:block;color:var(--muted);text-decoration:none;font-size:13.5px;margin-bottom:10px;
+  transition:var(--trans);
+}
+.footer-col a:hover{color:var(--sky);}
+.footer-bottom{
+  border-top:1px solid var(--border);padding-top:22px;text-align:center;color:var(--muted);font-size:13px;
+}
+
+/* WHATSAPP FLOAT */
+.wa-float{
+  position:fixed;bottom:26px;left:26px;z-index:200;
+  width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,#1ebe5d,#25d366);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 8px 30px rgba(37,211,102,0.5);
+  text-decoration:none;transition:var(--trans);
+  animation:floatWA 3s ease-in-out infinite;
+}
+.wa-float:hover{transform:scale(1.1);}
+.wa-float svg{width:30px;height:30px;color:#fff;}
+@keyframes floatWA{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+/* MOBILE MENU */
+.mobile-menu{
+  position:fixed;top:0;right:-100%;width:78%;max-width:320px;height:100vh;
+  background:var(--navy);border-left:1px solid var(--border);
+  z-index:150;transition:right 0.4s ease;padding:100px 30px 30px;
+  display:flex;flex-direction:column;gap:26px;
+}
+.mobile-menu.open{right:0;}
+.mobile-menu a{color:var(--white);text-decoration:none;font-size:18px;font-weight:700;}
+.overlay{
+  position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:140;opacity:0;pointer-events:none;transition:var(--trans);
+}
+.overlay.show{opacity:1;pointer-events:auto;}
+
+/* ANIMATIONS ON SCROLL */
+.reveal{opacity:0;transform:translateY(30px);transition:all 0.7s ease;}
+.reveal.show{opacity:1;transform:translateY(0);}
+
+/* RESPONSIVE */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-visual{order:-1;margin-bottom:20px;}
+  .bots-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .about-wrap{grid-template-columns:1fr;}
+}
+@media(max-width:768px){
+  nav ul, .nav-cta .btn-outline{display:none;}
+  .menu-toggle{display:block;}
+  .hero h1{font-size:36px;}
+  .hero p.sub{font-size:16px;}
+  .hero-stats{gap:24px;}
+  .bots-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .contact-wrap{grid-template-columns:1fr;}
+  .section-head h2{font-size:28px;}
+  .final-cta{padding:40px 24px;}
+  .final-cta h2{font-size:26px;}
+  .footer-top{flex-direction:column;}
+}
+@media(max-width:480px){
+  .why-grid{grid-template-columns:1fr;}
+  .hero-actions{flex-direction:column;}
+  .hero-actions .btn{width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div class="glow-orb orb1"></div>
+<div class="glow-orb orb2"></div>
+<div class="glow-orb orb3"></div>
+
+<!-- HEADER -->
+<header>
+  <div class="navbar">
+    <div class="logo-wrap" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+      <div class="logo-icon">
+        <svg viewBox="0 0 100 100" fill="none"><path d="M20 78 L58 40 L58 60 L80 38 L80 16 L58 16 L58 38 L20 38 Z" fill="#ffffff"/></svg>
+      </div>
+      <span class="logo-text">Flowzy</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#bots">البوتات</a></li>
+        <li><a href="#about">من نحن</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a href="#bots" class="btn btn-outline">تصفح البوتات</a>
+      <a id="navWaBtn" href="#" target="_blank" class="btn btn-whatsapp" rel="noopener">
+        تواصل واتساب
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="فتح القائمة">☰</button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay" id="overlay"></div>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#home">الرئيسية</a>
+  <a href="#bots">البوتات</a>
+  <a href="#about">من نحن</a>
+  <a href="#faq">الأسئلة الشائعة</a>
+  <a href="#contact">تواصل معنا</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div class="reveal show">
+      <div class="badge"><span class="dot"></span> بوتات ذكاء اصطناعي جاهزة للعمل فورًا</div>
+      <h1>أتمتة أعمالك تبدأ من <span class="gradient-text">هنا</span></h1>
+      <p class="sub">Flowzy توفّر بوتات ذكية جاهزة تنجز مهام السيلز، الإعلانات، وصناعة الفيديو نيابةً عنك — بدون تعقيد، وبدون انتظار.</p>
+      <div class="hero-actions">
+        <a href="#bots" class="btn btn-primary">استعرض البوتات</a>
+        <a id="heroWaBtn" href="#" target="_blank" class="btn btn-whatsapp" rel="noopener">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.4 17.24L2 22l4.9-1.28A8.86 8.86 0 0 0 12 21.9a8.9 8.9 0 0 0 5.6-15.58zM12 20.1a7.3 7.3 0 0 1-3.72-1.02l-.27-.16-2.76.72.74-2.68-.18-.28A7.32 7.32 0 1 1 19.3 12.9 7.33 7.33 0 0 1 12 20.1zm4-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.08-.35-.11-.5.11-.15.22-.57.72-.7.87-.13.15-.26.16-.48.06-1.3-.65-2.16-1.16-3.02-2.62-.23-.4.23-.37.66-1.23.07-.15.04-.28-.03-.4-.07-.11-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47h-.53c-.17 0-.44.06-.68.34-.23.28-.9.88-.9 2.14 0 1.27.93 2.5 1.06 2.67.13.17 1.77 2.7 4.3 3.7 2.04.8 2.55.72 3.01.65.46-.07 1.5-.62 1.7-1.21.2-.6.2-1.1.14-1.21-.06-.11-.22-.17-.44-.28z"/></svg>
+          اطلب على واتساب
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><h3>+3</h3><p>بوتات جاهزة للعمل</p></div>
+        <div class="stat"><h3>24/7</h3><p>تعمل بدون توقف</p></div>
+        <div class="stat"><h3>دقائق</h3><p>لبدء التشغيل</p></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal show">
+      <div class="hero-card">
+        <div class="hero-arrow-wrap">
+          <svg viewBox="0 0 100 100" fill="none"><path d="M18 82 L56 40 L56 58 L82 32 L82 8 L58 8 L58 32 L18 32 Z" fill="#ffffff"/></svg>
+        </div>
+        <h4>Flowzy Automation Engine</h4>
+        <p>بوتات ذكية مصممة لتنجز المهمة، لا لتشرحها فقط.</p>
+        <div class="mini-chips">
+          <span class="chip">Sales</span>
+          <span class="chip">Media Buying</span>
+          <span class="chip">Video AI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">لماذا Flowzy</span>
+      <h2>أتمتة تحل مشكلة حقيقية</h2>
+      <p>كل بوت مصمم لينفذ مهمة محددة بدقة، دون الحاجة لخبرة تقنية أو فرق ضخمة.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h4>سرعة تنفيذ</h4>
+        <p>البوت يبدأ العمل بمجرد التفعيل، بدون انتظار طويل.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
+        <h4>يعمل 24/7</h4>
+        <p>لا يتعطل ولا يحتاج راحة، مهامك تتنفذ باستمرار.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 6 6 1-4.5 4.5L18 20l-6-3-6 3 1.5-6.5L3 9l6-1z"/></svg></div>
+        <h4>نتائج قابلة للقياس</h4>
+        <p>كل بوت يقدّم مخرجات واضحة تدعم قراراتك.</p>
+      </div>
+      <div class="why-card reveal">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/></svg></div>
+        <h4>إعداد بسيط</h4>
+        <p>بدون تعقيد تقني، نساعدك تشغّل البوت بسرعة.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTS -->
+<section id="bots">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">منتجاتنا</span>
+      <h2>جميع البوتات</h2>
+      <p>اختر البوت المناسب لاحتياج عملك، وابدأ التنفيذ فورًا.</p>
+    </div>
+
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">الكل</button>
+      <button class="filter-btn" data-filter="sales">مبيعات</button>
+      <button class="filter-btn" data-filter="marketing">ميديا وإعلانات</button>
+      <button class="filter-btn" data-filter="content">صناعة محتوى</button>
+    </div>
+
+    <div class="bots-grid" id="botsGrid">
+
+      <!-- Sales Bot -->
+      <div class="bot-card reveal" data-category="sales">
+        <span class="tag-use">مبيعات</span>
+        <div class="bot-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5be0ff" stroke-width="1.8"><path d="M3 12l18-8-8 18-2-8-8-2z"/></svg>
+        </div>
+        <h3>Sales Bot</h3>
+        <p class="desc">بوت مبيعات يتابع العملاء المحتملين، يرد على استفساراتهم، ويدفعهم نحو إتمام الشراء دون تدخل يدوي مستمر.</p>
+        <ul class="bot-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> رد فوري على استفسارات العملاء</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> متابعة العملاء المحتملين تلقائيًا</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> يزيد نسبة إغلاق الصفقات</li>
+        </ul>
+        <div class="price-row">
+          <div><span class="price">250$</span><sup> / دفعة واحدة</sup></div>
+        </div>
+        <div class="bot-actions">
+          <a href="#" class="btn btn-primary bot-wa-btn" data-name="Sales Bot">اطلب الآن</a>
+          <a href="#" class="btn btn-outline bot-wa-btn" data-name="Sales Bot">تفاصيل أكثر</a>
+        </div>
+      </div>
+
+      <!-- Media Buyer Bot -->
+      <div class="bot-card reveal" data-category="marketing">
+        <span class="tag-use">إعلانات</span>
+        <div class="bot-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5be0ff" stroke-width="1.8"><path d="M4 4h16v12H8l-4 4V4z"/><path d="M8 10h8M8 7h8"/></svg>
+        </div>
+        <h3>Media Buyer Bot</h3>
+        <p class="desc">بوت مخصص لإدارة ومتابعة الحملات الإعلانية، يحلل الأداء ويقترح تعديلات لرفع كفاءة الإنفاق الإعلاني.</p>
+        <ul class="bot-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> متابعة أداء الحملات لحظيًا</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> تحليل دقيق لتقليل التكلفة</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> اقتراحات تحسين مستمرة</li>
+        </ul>
+        <div class="price-row">
+          <div><span class="price">350$</span><sup> / دفعة واحدة</sup></div>
+        </div>
+        <div class="bot-actions">
+          <a href="#" class="btn btn-primary bot-wa-btn" data-name="Media Buyer Bot">اطلب الآن</a>
+          <a href="#" class="btn btn-outline bot-wa-btn" data-name="Media Buyer Bot">تفاصيل أكثر</a>
+        </div>
+      </div>
+
+      <!-- Video Production Bot -->
+      <div class="bot-card reveal" data-category="content">
+        <span class="tag-use">صناعة محتوى</span>
+        <div class="bot-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#5be0ff" stroke-width="1.8"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="M15 10l6-3v10l-6-3"/></svg>
+        </div>
+        <h3>Video Production Bot</h3>
+        <p class="desc">بوت ينتج فيديوهات ممنتجة وجاهزة للنشر مباشرة، يوفّر عليك وقت المونتاج ويحافظ على جودة ثابتة في كل مقطع.</p>
+        <ul class="bot-features">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> مونتاج تلقائي جاهز للنشر</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> يوفر ساعات من العمل اليدوي</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6L9 17l-5-5"/></svg> جودة ثابتة لكل فيديو</li>
+        </ul>
+        <div class="price-row">
+          <div><span class="price">400$</span><sup> / دفعة واحدة</sup></div>
+        </div>
+        <div class="bot-actions">
+          <a href="#" class="btn btn-primary bot-wa-btn" data-name="Video Production Bot">اطلب الآن</a>
+          <a href="#" class="btn btn-outline bot-wa-btn" data-name="Video Production Bot">تفاصيل أكثر</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container about-wrap">
+    <div class="about-visual reveal">
+      <svg class="big-arrow" viewBox="0 0 100 100" fill="none"><path d="M15 85 L55 40 L55 62 L85 30 L85 5 L58 5 L58 30 L15 30 Z" fill="#5be0ff"/></svg>
+    </div>
+    <div class="about-text reveal">
+      <span class="section-tag">من نحن</span>
+      <h2>Flowzy: نبسّط الأتمتة لتتحرك أسرع</h2>
+      <p>بدأت Flowzy من فكرة واضحة: أصحاب الأعمال يحتاجون أدوات تنفّذ فعليًا، لا أدوات تحتاج لخبرة تقنية معقدة. لذلك صممنا بوتات جاهزة، مركّزة على مهام محددة، تعمل من أول يوم تفعيل.</p>
+      <p>رؤيتنا أن يصبح الذكاء الاصطناعي أداة بسيطة في يد كل صاحب مشروع، لا مجرد مصطلح تقني بعيد عن الاستخدام العملي.</p>
+      <div class="about-values">
+        <div class="value-item"><h5>البساطة</h5><p>حلول جاهزة بدون تعقيد تقني.</p></div>
+        <div class="value-item"><h5>السرعة</h5><p>تفعيل ونتائج في وقت قصير.</p></div>
+        <div class="value-item"><h5>الدقة</h5><p>كل بوت مبني لمهمة واحدة يؤديها جيدًا.</p></div>
+        <div class="value-item"><h5>الشفافية</h5><p>أسعار واضحة بدون تكاليف خفية.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">مساعدة</span>
+      <h2>الأسئلة الشائعة</h2>
+      <p>إجابات سريعة على أكثر الأسئلة التي تصلنا.</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q">كيف أطلب بوت من Flowzy؟<span class="icon-plus">+</span></div>
+        <div class="faq-a">تضغط على زر "اطلب الآن" الموجود بجانب البوت، وسيتم فتح محادثة واتساب مباشرة معنا لتحديد التفاصيل وإتمام الطلب.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">هل يحتاج تشغيل البوت خبرة تقنية؟<span class="icon-plus">+</span></div>
+        <div class="faq-a">لا. نتولى عملية الإعداد والتفعيل بالكامل، وتصلك تعليمات استخدام مبسطة تناسب أي مستوى تقني.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">هل يمكن تخصيص البوت حسب طبيعة عملي؟<span class="icon-plus">+</span></div>
+        <div class="faq-a">نعم، بعد التواصل نناقش تفاصيل نشاطك ونضبط إعدادات البوت لتتوافق مع احتياجك الفعلي.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">ما هي طرق الدفع المتاحة؟<span class="icon-plus">+</span></div>
+        <div class="faq-a">يتم تحديد طريقة الدفع المناسبة أثناء التواصل عبر واتساب حسب موقعك وتفاصيل الطلب.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">هل يوجد دعم بعد الشراء؟<span class="icon-plus">+</span></div>
+        <div class="faq-a">نعم، نقدّم دعمًا لضبط البوت وحل أي استفسار يتعلق بتشغيله بعد التفعيل.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="section-tag">تواصل معنا</span>
+      <h2>ابدأ رحلتك مع Flowzy الآن</h2>
+      <p>تواصل معنا مباشرة عبر واتساب أو البريد الإلكتروني، وسنرد عليك في أقرب وقت.</p>
+    </div>
+    <div class="contact-wrap reveal">
+      <div class="contact-card wa">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.4 17.24L2 22l4.9-1.28A8.86 8.86 0 0 0 12 21.9a8.9 8.9 0 0 0 5.6-15.58zM12 20.1a7.3 7.3 0 0 1-3.72-1.02l-.27-.16-2.76.72.74-2.68-.18-.28A7.32 7.32 0 1 1 19.3 12.9 7.33 7.33 0 0 1 12 20.1z"/></svg>
+        </div>
+        <h4>واتساب</h4>
+        <p>+20 155 385 4203</p>
+        <a href="#" id="contactWaBtn" target="_blank" class="btn btn-whatsapp" rel="noopener">فتح محادثة واتساب</a>
+      </div>
+      <div class="contact-card mail">
+        <div class="ic">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+        </div>
+        <h4>البريد الإلكتروني</h4>
+        <p>m03612301@gmail.com</p>
+        <a href="mailto:m03612301@gmail.com" class="btn btn-outline">إرسال بريد</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container">
+    <div class="final-cta reveal">
+      <h2>جاهز تشغّل أول بوت أتمتة لعملك؟</h2>
+      <p>تواصل معنا الآن عبر واتساب واحصل على التفاصيل الكاملة وخطوات التفعيل في دقائق.</p>
+      <a href="#" id="finalWaBtn" target="_blank" class="btn btn-whatsapp" rel="noopener">تواصل على واتساب الآن</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="logo-wrap">
+          <div class="logo-icon">
+            <svg viewBox="0 0 100 100" fill="none"><path d="M20 78 L58 40 L58 60 L80 38 L80 16 L58 16 L58 38 L20 38 Z" fill="#ffffff"/></svg>
+          </div>
+          <span class="logo-text">Flowzy</span>
+        </div>
+        <p>بوتات ذكاء اصطناعي جاهزة تسرّع أعمالك في المبيعات، الإعلانات، وصناعة المحتوى.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h5>روابط سريعة</h5>
+          <a href="#home">الرئيسية</a>
+          <a href="#bots">البوتات</a>
+          <a href="#about">من نحن</a>
+          <a href="#faq">الأسئلة الشائعة</a>
+        </div>
+        <div class="footer-col">
+          <h5>تواصل</h5>
+          <a href="#" id="footerWaLink" target="_blank" rel="noopener">واتساب: +201553854203</a>
+          <a href="mailto:m03612301@gmail.com">m03612301@gmail.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© Flowzy — جميع الحقوق محفوظة.</p>
+    </div>
+  </div>
+</footer>
+
+<a href="#" id="floatWaBtn" target="_blank" class="wa-float" rel="noopener" aria-label="تواصل عبر واتساب">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 3.4 17.24L2 22l4.9-1.28A8.86 8.86 0 0 0 12 21.9a8.9 8.9 0 0 0 5.6-15.58zM12 20.1a7.3 7.3 0 0 1-3.72-1.02l-.27-.16-2.76.72.74-2.68-.18-.28A7.32 7.32 0 1 1 19.3 12.9 7.33 7.33 0 0 1 12 20.1z"/></svg>
+</a>
+
+<script>
+const WA_NUMBER = "201553854203";
+function buildWaLink(msg){
+  return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+}
+const defaultMsg = "عاوز أعرف أكتر عن بوتات Flowzy";
+document.getElementById('navWaBtn').href = buildWaLink(defaultMsg);
+document.getElementById('heroWaBtn').href = buildWaLink(defaultMsg);
+document.getElementById('contactWaBtn').href = buildWaLink(defaultMsg);
+document.getElementById('finalWaBtn').href = buildWaLink(defaultMsg);
+document.getElementById('floatWaBtn').href = buildWaLink(defaultMsg);
+document.getElementById('footerWaLink').href = buildWaLink(defaultMsg);
+
+document.querySelectorAll('.bot-wa-btn').forEach(btn=>{
+  const name = btn.getAttribute('data-name');
+  btn.href = buildWaLink(`عاوز تفاصيل عن بوت ${name}`);
+});
+
+// Mobile menu
+const menuToggle = document.getElementById('menuToggle');
+const mobileMenu = document.getElementById('mobileMenu');
+const overlay = document.getElementById('overlay');
+menuToggle.addEventListener('click', ()=>{
+  mobileMenu.classList.add('open');
+  overlay.classList.add('show');
+});
+overlay.addEventListener('click', ()=>{
+  mobileMenu.classList.remove('open');
+  overlay.classList.remove('show');
+});
+document.querySelectorAll('.mobile-menu a').forEach(a=>{
+  a.addEventListener('click', ()=>{
+    mobileMenu.classList.remove('open');
+    overlay.classList.remove('show');
+  });
+});
+
+// Filters
+const filterBtns = document.querySelectorAll('.filter-btn');
+const botCards = document.querySelectorAll('.bot-card');
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.getAttribute('data-filter');
+    botCards.forEach(card=>{
+      if(filter === 'all' || card.getAttribute('data-category') === filter){
+        card.style.display = 'flex';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+  });
+});
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.querySelector('.faq-q').addEventListener('click', ()=>{
+    const isActive = item.classList.contains('active');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('active'));
+    if(!isActive) item.classList.add('active');
+  });
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{threshold:0.15});
+revealEls.forEach(el=>observer.observe(el));
+
+// Header shrink on scroll
+window.addEventListener('scroll', ()=>{
+  const header = document.querySelector('header');
+  if(window.scrollY > 40){
+    header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.35)';
+  } else {
+    header.style.boxShadow = 'none';
+  }
+});
+</script>
+</body>
+</html>
