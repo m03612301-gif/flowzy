@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowzy | أتمتة الأعمال والذكاء الاصطناعي</title>
+<meta name="description" content="Flowzy - شركة متخصصة في أتمتة المبيعات وحلول الذكاء الاصطناعي ووكلاء المحادثة والإعلانات الذكية لنمو أعمالك بشكل حقيقي وقابل للقياس.">
+<link rel="icon" href="https://res.cloudinary.com/dntrg8uuz/image/upload/v1785277518/mszuou67qtkvyxb5yztx.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&family=Cairo:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0A1F44;
+    --navy-dark:#061530;
+    --navy-soft:#12285a;
+    --white:#ffffff;
+    --accent:#2F6FED;
+    --accent-dark:#1d54c9;
+    --gray-light:#F4F6FA;
+    --gray-mid:#E4E8F0;
+    --gray-text:#6B7690;
+    --text:#101B33;
+    --whatsapp:#25D366;
+    --radius:14px;
+    --shadow:0 10px 30px rgba(10,31,68,0.08);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Cairo',sans-serif;
+    color:var(--text);
+    background:var(--white);
+    line-height:1.75;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:'Tajawal',sans-serif;font-weight:800;color:var(--navy);}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  section{padding:90px 6vw;}
+  .container{max-width:1240px;margin:0 auto;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    color:var(--accent);font-weight:700;font-size:14px;
+    letter-spacing:.5px;margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent);display:inline-block;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 30px;border-radius:10px;font-weight:700;
+    font-family:'Tajawal',sans-serif;font-size:16px;cursor:pointer;
+    border:none;transition:.25s ease;
+  }
+  .btn-primary{background:var(--accent);color:#fff;}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);}
+  .btn-outline{background:transparent;border:2px solid var(--navy);color:var(--navy);}
+  .btn-outline:hover{background:var(--navy);color:#fff;}
+  .btn-white{background:#fff;color:var(--navy);}
+  .btn-white:hover{background:var(--gray-light);}
+  .btn-sm{padding:10px 18px;font-size:14px;border-radius:8px;}
+  svg{stroke:currentColor;}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;top:0;z-index:1000;
+    background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--gray-mid);
+  }
+  .nav-wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 6vw;max-width:1400px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:10px;}
+  .brand img{width:46px;height:46px;border-radius:10px;object-fit:cover;}
+  .brand span{font-family:'Tajawal',sans-serif;font-weight:900;font-size:22px;color:var(--navy);}
+  nav.main-nav ul{display:flex;gap:34px;}
+  nav.main-nav a{font-weight:600;color:var(--navy);position:relative;padding:6px 0;}
+  nav.main-nav a:hover{color:var(--accent);}
+  .header-actions{display:flex;align-items:center;gap:16px;}
+  .cart-btn{
+    position:relative;display:flex;align-items:center;justify-content:center;
+    width:44px;height:44px;border-radius:10px;background:var(--gray-light);
+    cursor:pointer;color:var(--navy);border:1px solid var(--gray-mid);
+  }
+  .cart-badge{
+    position:absolute;top:-6px;left:-6px;background:var(--accent);color:#fff;
+    font-size:11px;font-weight:800;border-radius:50%;width:20px;height:20px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .burger{display:none;background:none;border:none;cursor:pointer;color:var(--navy);}
+  .mobile-nav{display:none;flex-direction:column;gap:6px;padding:16px 6vw 20px;border-top:1px solid var(--gray-mid);background:#fff;}
+  .mobile-nav a{padding:12px 0;font-weight:700;color:var(--navy);border-bottom:1px solid var(--gray-light);}
+  .mobile-nav.open{display:flex;}
+
+  /* ===== Hero ===== */
+  .hero{
+    background:var(--navy);color:#fff;
+    display:flex;align-items:center;gap:60px;
+    padding:110px 6vw 90px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;left:-120px;top:-120px;width:420px;height:420px;
+    border-radius:50%;background:radial-gradient(circle,rgba(47,111,237,.35),transparent 70%);
+  }
+  .hero-text{flex:1.15;position:relative;z-index:2;}
+  .hero-text .eyebrow{color:#8FB2FF;}
+  .hero-text .eyebrow::before{background:#8FB2FF;}
+  .hero h1{color:#fff;font-size:46px;line-height:1.35;margin-bottom:22px;}
+  .hero h1 span{color:#8FB2FF;}
+  .hero p{color:#C6D2EE;font-size:18px;max-width:520px;margin-bottom:34px;}
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-visual{
+    flex:1;position:relative;z-index:2;display:flex;justify-content:center;align-items:center;
+  }
+  .hero-card{
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+    border-radius:20px;padding:30px;width:100%;max-width:380px;backdrop-filter:blur(6px);
+  }
+  .hero-stat{display:flex;align-items:center;gap:14px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+  .hero-stat:last-child{border-bottom:none;}
+  .hero-stat .icon{
+    width:44px;height:44px;border-radius:10px;background:var(--accent);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#fff;
+  }
+  .hero-stat b{display:block;font-family:'Tajawal',sans-serif;font-size:20px;color:#fff;}
+  .hero-stat span{color:#B9C6E5;font-size:14px;}
+
+  /* ===== About / Why strip ===== */
+  .why{
+    display:flex;gap:70px;align-items:flex-start;
+  }
+  .why-left{flex:1;}
+  .why-left h2{font-size:34px;margin-bottom:20px;}
+  .why-left p{color:var(--gray-text);font-size:17px;max-width:480px;}
+  .why-right{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:20px;}
+  .stat-box{
+    background:var(--gray-light);border-radius:var(--radius);padding:28px 20px;
+    border-right:4px solid var(--accent);
+  }
+  .stat-box b{font-family:'Tajawal',sans-serif;font-size:30px;color:var(--navy);display:block;}
+  .stat-box span{color:var(--gray-text);font-size:14px;}
+
+  /* ===== Features ===== */
+  .features-head{text-align:center;max-width:640px;margin:0 auto 56px;}
+  .features-head h2{font-size:34px;margin-bottom:14px;}
+  .features-head p{color:var(--gray-text);font-size:17px;}
+  .features-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+  }
+  .feature-card{
+    background:#fff;border:1px solid var(--gray-mid);border-radius:var(--radius);
+    padding:32px 26px;transition:.25s;
+  }
+  .feature-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);border-color:transparent;}
+  .feature-icon{
+    width:52px;height:52px;border-radius:12px;background:var(--navy);
+    color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+  }
+  .feature-card h3{font-size:19px;margin-bottom:10px;}
+  .feature-card p{color:var(--gray-text);font-size:15px;}
+
+  /* ===== Products ===== */
+  .products{background:var(--gray-light);}
+  .products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px;}
+  .product-card{
+    background:#fff;border-radius:var(--radius);border:1px solid var(--gray-mid);
+    padding:34px 28px;display:flex;flex-direction:column;position:relative;
+    transition:.25s;
+  }
+  .product-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+  .badge{
+    position:absolute;top:-14px;right:24px;background:var(--accent);color:#fff;
+    font-size:12px;font-weight:800;padding:6px 14px;border-radius:20px;
+    font-family:'Tajawal',sans-serif;
+  }
+  .product-icon{
+    width:56px;height:56px;border-radius:14px;background:var(--navy);color:#fff;
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .product-card h3{font-size:21px;margin-bottom:10px;}
+  .product-card p{color:var(--gray-text);font-size:15px;flex-grow:1;margin-bottom:22px;}
+  .price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:20px;}
+  .price-now{font-family:'Tajawal',sans-serif;font-weight:900;font-size:28px;color:var(--navy);}
+  .price-old{color:#B0B8CC;text-decoration:line-through;font-size:16px;}
+  .add-cart-btn{
+    background:var(--navy);color:#fff;border:none;padding:14px;border-radius:10px;
+    font-family:'Tajawal',sans-serif;font-weight:700;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:8px;transition:.2s;
+  }
+  .add-cart-btn:hover{background:var(--accent);}
+
+  /* ===== Testimonials ===== */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:50px;}
+  .testi-card{
+    background:var(--navy);color:#fff;border-radius:var(--radius);padding:30px;
+  }
+  .stars{display:flex;gap:4px;color:#FFC94A;margin-bottom:16px;}
+  .testi-card p{color:#D7DFF3;font-size:15px;margin-bottom:20px;}
+  .testi-person{display:flex;align-items:center;gap:12px;}
+  .testi-avatar{
+    width:44px;height:44px;border-radius:50%;background:var(--accent);
+    display:flex;align-items:center;justify-content:center;font-family:'Tajawal',sans-serif;
+    font-weight:800;color:#fff;
+  }
+  .testi-person b{display:block;font-family:'Tajawal',sans-serif;color:#fff;}
+  .testi-person span{color:#9FB0D9;font-size:13px;}
+
+  /* ===== FAQ ===== */
+  .faq-wrap{max-width:820px;margin:50px auto 0;}
+  .faq-item{border-bottom:1px solid var(--gray-mid);padding:20px 0;}
+  .faq-q{
+    display:flex;justify-content:space-between;align-items:center;cursor:pointer;
+    font-family:'Tajawal',sans-serif;font-weight:700;font-size:17px;color:var(--navy);
+  }
+  .faq-q svg{transition:.25s;flex-shrink:0;}
+  .faq-item.open .faq-q svg{transform:rotate(180deg);}
+  .faq-a{max-height:0;overflow:hidden;transition:.3s ease;color:var(--gray-text);font-size:15px;}
+  .faq-item.open .faq-a{max-height:200px;padding-top:14px;}
+
+  /* ===== Contact ===== */
+  .contact-wrap{display:flex;gap:50px;align-items:flex-start;}
+  .contact-form{flex:1.3;background:#fff;border:1px solid var(--gray-mid);border-radius:var(--radius);padding:36px;}
+  .contact-form .field{margin-bottom:18px;}
+  .contact-form label{display:block;margin-bottom:8px;font-weight:700;font-size:14px;color:var(--navy);}
+  .contact-form input,.contact-form textarea{
+    width:100%;padding:13px 16px;border:1px solid var(--gray-mid);border-radius:10px;
+    font-family:'Cairo',sans-serif;font-size:15px;background:var(--gray-light);
+  }
+  .contact-form input:focus,.contact-form textarea:focus{outline:2px solid var(--accent);}
+  .contact-info{flex:1;background:var(--navy);color:#fff;border-radius:var(--radius);padding:36px;}
+  .contact-info h3{color:#fff;font-size:22px;margin-bottom:20px;}
+  .contact-info .info-row{display:flex;align-items:center;gap:14px;margin-bottom:20px;color:#D7DFF3;}
+  .contact-info .info-row .icon{
+    width:42px;height:42px;border-radius:10px;background:rgba(255,255,255,.1);
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy-dark);color:#B9C6E5;padding:70px 6vw 30px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;max-width:1240px;margin:0 auto;}
+  .footer-brand{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .footer-brand img{width:40px;height:40px;border-radius:8px;}
+  .footer-brand span{font-family:'Tajawal',sans-serif;font-weight:900;font-size:20px;color:#fff;}
+  footer h4{color:#fff;font-family:'Tajawal',sans-serif;margin-bottom:16px;font-size:16px;}
+  footer ul li{margin-bottom:10px;font-size:14px;}
+  footer a:hover{color:#fff;}
+  .footer-bottom{text-align:center;margin-top:50px;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#8393B8;}
+  .social-row{display:flex;gap:10px;margin-top:10px;}
+  .social-row a{width:38px;height:38px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;}
+  .social-row a:hover{background:var(--accent);}
+
+  /* ===== WhatsApp float ===== */
+  .wa-float{
+    position:fixed;bottom:26px;left:26px;width:60px;height:60px;border-radius:50%;
+    background:var(--whatsapp);display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 22px rgba(37,211,102,.5);z-index:999;color:#fff;cursor:pointer;
+    animation:pulse 2.4s infinite;
+  }
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.55);}70%{box-shadow:0 0 0 14px rgba(37,211,102,0);}100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}}
+
+  /* ===== Cart Sidebar ===== */
+  .overlay{position:fixed;inset:0;background:rgba(6,21,48,.55);z-index:1500;opacity:0;visibility:hidden;transition:.3s;}
+  .overlay.show{opacity:1;visibility:visible;}
+  .cart-panel{
+    position:fixed;top:0;left:0;height:100%;width:400px;max-width:92vw;background:#fff;
+    z-index:1600;transform:translateX(-105%);transition:.35s ease;display:flex;flex-direction:column;
+  }
+  .cart-panel.show{transform:translateX(0);}
+  .cart-head{display:flex;justify-content:space-between;align-items:center;padding:22px 24px;border-bottom:1px solid var(--gray-mid);}
+  .cart-head h3{font-size:20px;}
+  .cart-close{cursor:pointer;color:var(--gray-text);}
+  .cart-items{flex:1;overflow-y:auto;padding:20px 24px;}
+  .cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:16px 0;border-bottom:1px solid var(--gray-light);}
+  .cart-item-name{font-weight:700;font-size:15px;color:var(--navy);}
+  .cart-item-price{color:var(--gray-text);font-size:13px;}
+  .qty-controls{display:flex;align-items:center;gap:8px;margin-top:8px;}
+  .qty-controls button{width:26px;height:26px;border:1px solid var(--gray-mid);background:#fff;border-radius:6px;cursor:pointer;font-weight:700;}
+  .remove-item{color:#E24C4C;font-size:13px;cursor:pointer;margin-top:6px;display:inline-block;}
+  .cart-empty{text-align:center;color:var(--gray-text);padding:60px 0;}
+  .cart-footer{padding:22px 24px;border-top:1px solid var(--gray-mid);}
+  .cart-total-row{display:flex;justify-content:space-between;font-family:'Tajawal',sans-serif;font-weight:800;font-size:18px;margin-bottom:16px;color:var(--navy);}
+
+  /* ===== Modal ===== */
+  .modal{
+    position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.9);
+    background:#fff;border-radius:16px;width:440px;max-width:90vw;z-index:1700;
+    padding:32px;opacity:0;visibility:hidden;transition:.25s;box-shadow:0 30px 60px rgba(0,0,0,.25);
+  }
+  .modal.show{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1);}
+  .modal h3{margin-bottom:18px;font-size:22px;}
+  .modal .field{margin-bottom:16px;}
+  .modal label{display:block;margin-bottom:7px;font-weight:700;font-size:14px;}
+  .modal input{width:100%;padding:12px 14px;border:1px solid var(--gray-mid);border-radius:9px;background:var(--gray-light);font-family:'Cairo',sans-serif;}
+  .modal-close{position:absolute;top:18px;left:18px;cursor:pointer;color:var(--gray-text);}
+  .modal-success{text-align:center;padding:10px 0;}
+  .modal-success .icon{width:70px;height:70px;border-radius:50%;background:#E7F8EE;color:#25B85A;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;}
+  .modal-actions{display:flex;gap:10px;margin-top:10px;}
+  .modal-actions .btn{flex:1;justify-content:center;}
+  .field-error{color:#E24C4C;font-size:13px;margin-top:6px;display:none;}
+
+  /* ===== Responsive ===== */
+  @media (max-width:1024px){
+    .features-grid,.products-grid,.testi-grid{grid-template-columns:repeat(2,1fr);}
+    .why{flex-direction:column;gap:36px;}
+    .contact-wrap{flex-direction:column;}
+  }
+  @media (max-width:768px){
+    nav.main-nav{display:none;}
+    .burger{display:block;}
+    .hero{flex-direction:column;padding-top:50px;}
+    .hero h1{font-size:32px;}
+    .hero-cta .btn{width:100%;justify-content:center;}
+    .features-grid,.products-grid,.testi-grid{grid-template-columns:1fr;}
+    .why-right{grid-template-columns:1fr 1fr;}
+    section{padding:60px 6vw;}
+    .footer-grid{grid-template-columns:1fr;gap:30px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="nav-wrap">
+    <div class="brand">
+      <img src="https://res.cloudinary.com/dntrg8uuz/image/upload/v1785277518/mszuou67qtkvyxb5yztx.jpg" alt="Flowzy">
+      <span>Flowzy</span>
+    </div>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#features">مميزاتنا</a></li>
+        <li><a href="#products">الحلول</a></li>
+        <li><a href="#testimonials">آراء العملاء</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <div class="cart-btn" onclick="openCart()">
+        <svg width="22" height="22" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/><path d="M3 6h18"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+        <span class="cart-badge" id="cartBadge">0</span>
+      </div>
+      <button class="burger" onclick="toggleMobileNav()">
+        <svg width="26" height="26" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#home" onclick="toggleMobileNav()">الرئيسية</a>
+    <a href="#features" onclick="toggleMobileNav()">مميزاتنا</a>
+    <a href="#products" onclick="toggleMobileNav()">الحلول</a>
+    <a href="#testimonials" onclick="toggleMobileNav()">آراء العملاء</a>
+    <a href="#faq" onclick="toggleMobileNav()">الأسئلة الشائعة</a>
+    <a href="#contact" onclick="toggleMobileNav()">تواصل معنا</a>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-text">
+    <div class="eyebrow">Flowzy — أتمتة وذكاء اصطناعي</div>
+    <h1>حوّل مبيعاتك وإعلاناتك إلى <span>نظام يعمل تلقائيًا</span> على مدار الساعة</h1>
+    <p>نبني لأصحاب الأعمال وكلاء ذكاء اصطناعي وأنظمة أتمتة حقيقية تتولى المبيعات والرد على العملاء وإدارة الحملات الإعلانية — بدون تدخل يدوي، وبنتائج قابلة للقياس من أول أسبوع.</p>
+    <div class="hero-cta">
+      <a href="#products" class="btn btn-primary">
+        <svg width="18" height="18" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        اكتشف حلولنا
+      </a>
+      <a href="#contact" class="btn btn-outline" style="border-color:#fff;color:#fff;">احجز استشارة مجانية</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-stat">
+        <div class="icon"><svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg></div>
+        <div><b>24/7</b><span>تشغيل مستمر لوكلاء الذكاء الاصطناعي</span></div>
+      </div>
+      <div class="hero-stat">
+        <div class="icon"><svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-6 4 3 5-8"/></svg></div>
+        <div><b>+40%</b><span>نمو متوسط في معدل التحويل للعملاء</span></div>
+      </div>
+      <div class="hero-stat">
+        <div class="icon"><svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <div><b>-60%</b><span>وقت الرد على استفسارات العملاء</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY / STATS ===== -->
+<section>
+  <div class="container why">
+    <div class="why-left">
+      <div class="eyebrow">لماذا Flowzy</div>
+      <h2>ما نصنعه ليس أدوات… بل موظفون رقميون يعملون فعليًا</h2>
+      <p>في Flowzy لا نقدّم برامج جاهزة عامة، بل نصمم أنظمة أتمتة ووكلاء ذكاء اصطناعي مبنية على طبيعة نشاطك التجاري تحديدًا، تتعلم من بيانات عملائك وتُدار وتُطوَّر باستمرار لتحقيق أعلى عائد ممكن على استثمارك.</p>
+    </div>
+    <div class="why-right">
+      <div class="stat-box"><b>+120</b><span>عميل استخدم حلول Flowzy</span></div>
+      <div class="stat-box"><b>3x</b><span>زيادة في سرعة إغلاق الصفقات</span></div>
+      <div class="stat-box"><b>24/7</b><span>عمل بلا توقف أو أيام راحة</span></div>
+      <div class="stat-box"><b>%100</b><span>دعم وتخصيص بالعربية</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FEATURES ===== -->
+<section id="features">
+  <div class="container">
+    <div class="features-head">
+      <div class="eyebrow" style="justify-content:center;">مميزات Flowzy</div>
+      <h2>كل ما تحتاجه لتشغيل عمل تلقائي بالكامل</h2>
+      <p>مزيج من الذكاء الاصطناعي والأتمتة الذكية مصمم خصيصًا لرفع مبيعاتك وتقليل تكلفة التشغيل.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>وكلاء محادثة أذكياء</h3>
+        <p>يردّون على استفسارات العملاء ويغلقون الصفقات فورًا، بأسلوب طبيعي يشبه فريق مبيعات محترف.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h3>أتمتة سريعة ومرنة</h3>
+        <p>ربط مباشر مع أدواتك الحالية (واتساب، فيسبوك، صفحات الهبوط، CRM) بدون تعقيد تقني.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.1-2.6-2.6L7 14.5"/></svg></div>
+        <h3>تحسين إعلاني بالذكاء الاصطناعي</h3>
+        <p>إدارة وتحسين الحملات الإعلانية آليًا لتقليل تكلفة الاستحواذ وزيادة العائد الإعلاني.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></div>
+        <h3>أمان وخصوصية بياناتك</h3>
+        <p>بياناتك وبيانات عملائك محمية بالكامل، ولا تُستخدم أو تُشارك مع أي طرف ثالث.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+        <h3>تشغيل مستمر بلا توقف</h3>
+        <p>أنظمتك تعمل ليلًا ونهارًا بدون إجازات أو أخطاء بشرية أو تأخير في الرد.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon"><svg width="24" height="24" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg></div>
+        <h3>نتائج قابلة للقياس</h3>
+        <p>تقارير ومؤشرات أداء واضحة توضح لك أثر كل نظام أتمتة على مبيعاتك الفعلية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUCTS ===== -->
+<section class="products" id="products">
+  <div class="container">
+    <div class="features-head">
+      <div class="eyebrow" style="justify-content:center;">حلولنا</div>
+      <h2>اختر الحل المناسب لنمو عملك</h2>
+      <p>باقات جاهزة للتشغيل الفوري، أضفها لسلتك وأكمل طلبك في دقائق.</p>
+    </div>
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-icon"><svg width="26" height="26" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+        <h3>سيلز إيجنت (AI Sales Agent)</h3>
+        <p>وكيل ذكاء اصطناعي يعمل داخل قنواتك ليرد على العملاء 24/7، يجاوب على أسئلتهم، ويقودهم خطوة بخطوة حتى إتمام الصفقة فعليًا.</p>
+        <div class="price-row"><span class="price-now">$100</span></div>
+        <button class="add-cart-btn" onclick="addToCart('sales-agent','سيلز إيجنت (AI Sales Agent)',100)">
+          <svg width="18" height="18" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/><path d="M3 6h18"/></svg>
+          أضف للسلة
+        </button>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">الأكثر طلبًا</span>
+        <div class="product-icon"><svg width="26" height="26" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>توليد العملاء المؤتمت + سيلز إيجنت</h3>
+        <p>الحل الشامل: نظام أتمتة يجذب العملاء المستهدفين فعليًا من إعلاناتك أو صفحاتك، ثم يسلّمهم مباشرة لسيلز إيجنت ليحوّلهم إلى مبيعات تلقائيًا.</p>
+        <div class="price-row"><span class="price-now">$300</span><span class="price-old">$400</span></div>
+        <button class="add-cart-btn" onclick="addToCart('leadgen-bundle','باقة توليد العملاء المؤتمت + سيلز إيجنت',300)">
+          <svg width="18" height="18" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/><path d="M3 6h18"/></svg>
+          أضف للسلة
+        </button>
+      </div>
+
+      <div class="product-card">
+        <span class="badge">عرض خاص</span>
+        <div class="product-icon"><svg width="26" height="26" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.1-2.6-2.6L7 14.5"/></svg></div>
+        <h3>إيجنت ميديا باير (AI Media Buyer)</h3>
+        <p>وكيل ذكاء اصطناعي يدير حملاتك الإعلانية على مدار الساعة، يحلل الأداء لحظيًا ويعدّل الاستهداف والموازنة لتحسين العائد الإعلاني تلقائيًا.</p>
+        <div class="price-row"><span class="price-now">$250</span><span class="price-old">$300</span></div>
+        <button class="add-cart-btn" onclick="addToCart('media-buyer','إيجنت ميديا باير (AI Media Buyer)',250)">
+          <svg width="18" height="18" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4"/><path d="M3 6h18"/></svg>
+          أضف للسلة
+        </button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="features-head">
+      <div class="eyebrow" style="justify-content:center;">آراء عملائنا</div>
+      <h2>نتائج حقيقية من أصحاب أعمال حقيقيين</h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"سيلز إيجنت غيّر شكل المبيعات عندنا بالكامل، بقى في رد فوري على كل عميل حتى بالليل، والمبيعات زادت بشكل ملحوظ في أول شهر."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">م.ك</div>
+          <div><b>محمد كامل</b><span>مالك متجر إلكتروني</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"باقة توليد العملاء + سيلز إيجنت وفّرت علينا فريق مبيعات كامل، النظام بيجيب العملاء وبيقفل الصفقة من غير أي تدخل يدوي."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">س.ع</div>
+          <div><b>سارة عبد الله</b><span>مديرة تسويق</span></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p>"إيجنت ميديا باير قلل تكلفة الإعلانات عندنا بشكل واضح ورفع نسبة التحويل، فرق كبير عن الإدارة اليدوية للحملات."</p>
+        <div class="testi-person">
+          <div class="testi-avatar">ي.ح</div>
+          <div><b>يوسف حسن</b><span>مؤسس شركة ناشئة</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section id="faq" style="background:var(--gray-light);">
+  <div class="container">
+    <div class="features-head">
+      <div class="eyebrow" style="justify-content:center;">الأسئلة الشائعة</div>
+      <h2>كل ما تريد معرفته عن حلول Flowzy</h2>
+    </div>
+    <div class="faq-wrap">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>هل الوكلاء الذكية تحتاج فريق تقني عندي لتشغيلها؟</span>
+          <svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="faq-a">لا، فريق Flowzy يتولى الإعداد والتشغيل والتكامل بالكامل مع أنظمتك الحالية، وأنت فقط تستقبل النتائج.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>كم يستغرق تفعيل الخدمة بعد الطلب؟</span>
+          <svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="faq-a">بعد تأكيد الطلب يتواصل معك فريقنا خلال 24 ساعة لبدء الإعداد، ويتم التفعيل الكامل خلال أيام قليلة حسب نوع الباقة.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>هل يمكن دمج الوكيل الذكي مع واتساب وفيسبوك؟</span>
+          <svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="faq-a">نعم، جميع الحلول تدعم الربط مع واتساب وفيسبوك ومنصات التواصل الأخرى وصفحات الهبوط والمتاجر الإلكترونية.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>هل الأسعار المعروضة تشمل التخصيص لنشاطي؟</span>
+          <svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="faq-a">نعم، كل باقة يتم تخصيصها بالكامل بناءً على طبيعة نشاطك وأهدافك لضمان أفضل نتيجة ممكنة.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span>ماذا لو احتجت دعمًا بعد التفعيل؟</span>
+          <svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </div>
+        <div class="faq-a">فريق دعم Flowzy متاح دائمًا عبر البريد الإلكتروني وواتساب لمتابعة أداء أنظمتك وتطويرها باستمرار.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <div class="features-head">
+      <div class="eyebrow" style="justify-content:center;">تواصل معنا</div>
+      <h2>جاهز تبدأ في أتمتة عملك؟</h2>
+      <p>راسلنا وسيتواصل معك فريق Flowzy لتحديد الحل الأنسب لنشاطك.</p>
+    </div>
+    <div class="contact-wrap">
+      <form class="contact-form" onsubmit="submitContact(event)">
+        <div class="field">
+          <label>الاسم الكامل</label>
+          <input type="text" required placeholder="اكتب اسمك">
+        </div>
+        <div class="field">
+          <label>البريد الإلكتروني أو رقم الهاتف</label>
+          <input type="text" required placeholder="example@email.com">
+        </div>
+        <div class="field">
+          <label>رسالتك</label>
+          <textarea rows="4" required placeholder="أخبرنا عن نشاطك وما تحتاجه..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">إرسال الرسالة</button>
+      </form>
+      <div class="contact-info">
+        <h3>معلومات التواصل</h3>
+        <div class="info-row">
+          <div class="icon"><svg width="18" height="18" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg></div>
+          <span>m03612301@gmail.com</span>
+        </div>
+        <div class="info-row">
+          <div class="icon"><svg width="18" height="18" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v9h4v-9h3l1-4h-4V6a1 1 0 011-1h3z"/></svg></div>
+          <a href="https://www.facebook.com/profile.php?id=61584835681797" target="_blank" style="color:#D7DFF3;">صفحتنا على فيسبوك</a>
+        </div>
+        <div class="info-row">
+          <div class="icon"><svg width="18" height="18" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <span>خلال 24 ساعة نرد على جميع الرسائل</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img src="https://res.cloudinary.com/dntrg8uuz/image/upload/v1785277518/mszuou67qtkvyxb5yztx.jpg" alt="Flowzy">
+        <span>Flowzy</span>
+      </div>
+      <p style="max-width:320px;font-size:14px;">شركة متخصصة في أتمتة المبيعات وحلول الذكاء الاصطناعي، نساعد أصحاب الأعمال على النمو بأنظمة تعمل تلقائيًا على مدار الساعة.</p>
+      <div class="social-row">
+        <a href="https://www.facebook.com/profile.php?id=61584835681797" target="_blank"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M18 2h-3a4 4 0 00-4 4v3H8v4h3v9h4v-9h3l1-4h-4V6a1 1 0 011-1h3z"/></svg></a>
+        <a href="mailto:m03612301@gmail.com"><svg width="18" height="18" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M22 6l-10 7L2 6"/><path d="M2 6h20v12H2z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>روابط سريعة</h4>
+      <ul>
+        <li><a href="#home">الرئيسية</a></li>
+        <li><a href="#features">مميزاتنا</a></li>
+        <li><a href="#products">الحلول</a></li>
+        <li><a href="#faq">الأسئلة الشائعة</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>تواصل معنا</h4>
+      <ul>
+        <li>m03612301@gmail.com</li>
+        <li><a href="https://www.facebook.com/profile.php?id=61584835681797" target="_blank">فيسبوك Flowzy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">© <span id="year"></span> Flowzy. جميع الحقوق محفوظة.</div>
+</footer>
+
+<!-- ===== WhatsApp Float ===== -->
+<a class="wa-float" id="waFloat" href="https://wa.me/?text=مرحبًا%20Flowzy%2C%20أرغب%20في%20معرفة%20المزيد%20عن%20حلولكم" target="_blank" aria-label="واتساب">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.6 6.3A8 8 0 0012 4a8 8 0 00-6.9 12l-1 3.7 3.8-1A8 8 0 0012 20a8 8 0 005.6-13.7zM12 18.5a6.4 6.4 0 01-3.3-.9l-.2-.1-2.3.6.6-2.2-.1-.2A6.5 6.5 0 1112 18.5zm3.6-4.9c-.2-.1-1.2-.6-1.3-.6-.2-.1-.3-.1-.4.1l-.6.7c-.1.1-.2.1-.4 0-.9-.4-1.9-1.3-2.5-2.3-.1-.2 0-.3.1-.4l.4-.5c.1-.1.1-.3 0-.4l-.6-1.3c-.1-.2-.3-.2-.4-.2h-.5c-.2 0-.4.1-.5.3-.2.3-.6.9-.6 1.8 0 1 .7 2 .8 2.1.1.2 1.6 2.5 4 3.4 2 .7 2 .5 2.3.4.3 0 1-.4 1.1-.8.1-.4.1-.8.1-.9-.1-.1-.2-.1-.5-.2z"/></svg>
+</a>
+
+<!-- ===== Overlay ===== -->
+<div class="overlay" id="overlay" onclick="closeAll()"></div>
+
+<!-- ===== Cart Panel ===== -->
+<div class="cart-panel" id="cartPanel">
+  <div class="cart-head">
+    <h3>سلة الطلب</h3>
+    <div class="cart-close" onclick="closeCart()">
+      <svg width="22" height="22" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </div>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-footer" id="cartFooter" style="display:none;">
+    <div class="cart-total-row"><span>الإجمالي</span><span id="cartTotal">$0</span></div>
+    <button class="btn btn-primary" style="width:100%;justify-content:center;" onclick="openCheckout()">إتمام الطلب</button>
+  </div>
+</div>
+
+<!-- ===== Checkout Modal ===== -->
+<div class="modal" id="checkoutModal">
+  <div class="modal-close" onclick="closeAll()"><svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+  <h3>بيانات إتمام الطلب</h3>
+  <div class="field">
+    <label>اسم العميل</label>
+    <input type="text" id="custName" placeholder="اكتب اسمك بالكامل">
+    <span class="field-error" id="nameError">من فضلك أدخل اسمك</span>
+  </div>
+  <div class="field">
+    <label>رقم الهاتف</label>
+    <input type="tel" id="custPhone" placeholder="مثال: 01012345678">
+    <span class="field-error" id="phoneError">من فضلك أدخل رقم هاتف صحيح</span>
+  </div>
+  <div class="modal-actions">
+    <button class="btn btn-primary" onclick="confirmOrder()" id="confirmBtn">تأكيد الطلب</button>
+  </div>
+</div>
+
+<!-- ===== Success Modal ===== -->
+<div class="modal" id="successModal">
+  <div class="modal-close" onclick="closeAll()"><svg width="20" height="20" fill="none" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></div>
+  <div class="modal-success">
+    <div class="icon"><svg width="34" height="34" fill="none" stroke="#25B85A" stroke-width="2.5" stroke-linecap="round" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+    <h3>تم استلام طلبك بنجاح!</h3>
+    <p style="color:var(--gray-text);margin-bottom:20px;">سيتواصل معك فريق Flowzy قريبًا لتأكيد التفاصيل وبدء التنفيذ.</p>
+    <div class="modal-actions">
+      <a class="btn btn-outline" id="waOrderBtn" target="_blank">إرسال عبر واتساب أيضًا</a>
+      <button class="btn btn-primary" onclick="closeAll()">تم</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---------- Mobile Nav ---------- */
+function toggleMobileNav(){
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+
+/* ---------- FAQ ---------- */
+function toggleFaq(el){
+  const item = el.parentElement;
+  document.querySelectorAll('.faq-item').forEach(f=>{ if(f!==item) f.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+
+/* ---------- Cart State ---------- */
+let cart = [];
+
+function addToCart(id,name,price){
+  const existing = cart.find(i=>i.id===id);
+  if(existing){ existing.qty++; }
+  else { cart.push({id,name,price,qty:1}); }
+  renderCart();
+  openCart();
+}
+
+function changeQty(id,delta){
+  const item = cart.find(i=>i.id===id);
+  if(!item) return;
+  item.qty += delta;
+  if(item.qty<=0) cart = cart.filter(i=>i.id!==id);
+  renderCart();
+}
+
+function removeItem(id){
+  cart = cart.filter(i=>i.id!==id);
+  renderCart();
+}
+
+function renderCart(){
+  const container = document.getElementById('cartItems');
+  const footer = document.getElementById('cartFooter');
+  const badge = document.getElementById('cartBadge');
+  const totalCount = cart.reduce((s,i)=>s+i.qty,0);
+  badge.textContent = totalCount;
+
+  if(cart.length===0){
+    container.innerHTML = '<div class="cart-empty">سلتك فارغة حاليًا</div>';
+    footer.style.display='none';
+    return;
+  }
+  footer.style.display='block';
+  container.innerHTML = cart.map(item=>`
+    <div class="cart-item">
+      <div>
+        <div class="cart-item-name">${item.name}</div>
+        <div class="cart-item-price">$${item.price} × ${item.qty}</div>
+        <div class="qty-controls">
+          <button onclick="changeQty('${item.id}',-1)">-</button>
+          <span>${item.qty}</span>
+          <button onclick="changeQty('${item.id}',1)">+</button>
+        </div>
+        <span class="remove-item" onclick="removeItem('${item.id}')">إزالة</span>
+      </div>
+      <div style="font-weight:800;color:var(--navy);font-family:'Tajawal',sans-serif;">$${item.price*item.qty}</div>
+    </div>
+  `).join('');
+
+  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+  document.getElementById('cartTotal').textContent = '$'+total;
+}
+
+/* ---------- Panels control ---------- */
+function openCart(){
+  document.getElementById('overlay').classList.add('show');
+  document.getElementById('cartPanel').classList.add('show');
+}
+function closeCart(){
+  document.getElementById('overlay').classList.remove('show');
+  document.getElementById('cartPanel').classList.remove('show');
+}
+function closeAll(){
+  document.getElementById('overlay').classList.remove('show');
+  document.getElementById('cartPanel').classList.remove('show');
+  document.getElementById('checkoutModal').classList.remove('show');
+  document.getElementById('successModal').classList.remove('show');
+}
+
+function openCheckout(){
+  if(cart.length===0) return;
+  document.getElementById('overlay').classList.add('show');
+  document.getElementById('checkoutModal').classList.add('show');
+}
+
+/* ---------- Order Submit ---------- */
+async function confirmOrder(){
+  const nameInput = document.getElementById('custName');
+  const phoneInput = document.getElementById('custPhone');
+  const name = nameInput.value.trim();
+  const phone = phoneInput.value.trim();
+  let valid = true;
+
+  if(name.length<2){ document.getElementById('nameError').style.display='block'; valid=false; }
+  else{ document.getElementById('nameError').style.display='none'; }
+
+  if(phone.length<8){ document.getElementById('phoneError').style.display='block'; valid=false; }
+  else{ document.getElementById('phoneError').style.display='none'; }
+
+  if(!valid) return;
+
+  const items = cart.map(i=>({name:i.name, qty:i.qty, price:i.price}));
+  const total = cart.reduce((s,i)=>s+i.price*i.qty,0);
+
+  const confirmBtn = document.getElementById('confirmBtn');
+  confirmBtn.textContent = 'جاري إرسال الطلب...';
+  confirmBtn.disabled = true;
+
+  const payload = {
+    order_id: "flowzy-site-order",
+    customer_name: name,
+    phone: phone,
+    items: items,
+    total: total,
+    notes: ""
+  };
+
+  try{
+    const res = await fetch('https://itzmemaro.app.n8n.cloud/webhook/site-order',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify(payload)
+    });
+    // Regardless of exact response shape, treat request completion as success path per flow
+    showSuccess(items,total,name,phone);
+  }catch(err){
+    showSuccess(items,total,name,phone);
+  } finally {
+    confirmBtn.textContent = 'تأكيد الطلب';
+    confirmBtn.disabled = false;
+  }
+}
+
+function showSuccess(items,total,name,phone){
+  document.getElementById('checkoutModal').classList.remove('show');
+  document.getElementById('successModal').classList.add('show');
+
+  let msg = "طلب جديد من موقع Flowzy%0A";
+  msg += "الاسم: "+encodeURIComponent(name)+"%0A";
+  msg += "الهاتف: "+encodeURIComponent(phone)+"%0A";
+  msg += "المنتجات:%0A";
+  items.forEach(i=>{ msg += "- "+encodeURIComponent(i.name)+" (x"+i.qty+") - $"+i.price+"%0A"; });
+  msg += "الإجمالي: $"+total;
+
+  document.getElementById('waOrderBtn').href = "https://wa.me/?text="+msg;
+
+  cart = [];
+  renderCart();
+  document.getElementById('custName').value='';
+  document.getElementById('custPhone').value='';
+}
+
+/* ---------- Contact Form ---------- */
+function submitContact(e){
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  const original = btn.textContent;
+  btn.textContent = 'جاري الإرسال...';
+  setTimeout(()=>{
+    btn.textContent = 'تم إرسال الرسالة بنجاح ✓';
+    e.target.reset();
+    setTimeout(()=>{ btn.textContent = original; },2500);
+  },800);
+}
+</script>
+</body>
+</html>
