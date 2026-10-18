@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>mac — برجر مشوي على الفحم</title>
-<meta name="description" content="mac مطعم برجر عصري في القاهرة: لحم بلدي طازج مشوي على الفحم، خبز بريوش يومي، صوصات منزلية، وتوصيل في 25 دقيقة.">
+<meta name="description" content="mac مطعم برجر عصري في القاهرة: لحم بلدي طازج مشوي على الفحم، خبز بريوش يومي، وتوصيل في 25 دقيقة.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230d0b0a'/%3E%3Ctext x='32' y='46' font-family='Arial' font-size='34' font-weight='900' fill='%23e9b44c' text-anchor='middle'%3Em%3C/text%3E%3Ccircle cx='49' cy='47' r='6' fill='%23d2352a'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Tajawal:wght@400;500;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,7 +12,7 @@
 :root{--ink:#0d0b0a;--ink2:#171412;--ink3:#241f1c;--cream:#fff9f1;--sand:#f6e9d8;--sand2:#f0dfc9;--ember:#d2352a;--emberd:#a8241b;--gold:#e9b44c;--goldd:#c9962f;--muted:#7d726a;--line:rgba(13,11,10,.12);--lined:rgba(255,255,255,.14);--r:18px;--rlg:28px;--rxl:38px;--sh:0 22px 55px -22px rgba(24,16,10,.45);--shs:0 10px 28px -14px rgba(24,16,10,.35);--fd:'Anton','Tajawal',sans-serif;--fb:'Outfit','Tajawal',sans-serif;--navh:74px}
 html[lang=ar]{--fd:'Tajawal',sans-serif;--fb:'Tajawal',sans-serif}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--cream);color:var(--ink);line-height:1.65;overflow-x:hidden}
 img{max-width:100%;display:block}a{color:inherit;text-decoration:none}
 button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;background:none;border:0}
@@ -20,15 +20,14 @@ button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer;ba
 .wrap{width:100%;max-width:1240px;margin-inline:auto;padding-inline:22px}
 .hide{display:none!important}
 h1,h2,h3,h4{font-family:var(--fd);font-weight:900;line-height:1.08;letter-spacing:-.5px}
-html[lang=en] h1,html[lang=en] h2,html[lang=en] h3{font-family:'Anton',sans-serif;letter-spacing:0}
+html[lang=en] h1,html[lang=en] h2,html[lang=en] h3{font-family:'Anton',sans-serif}
 .d1{font-size:clamp(2.3rem,6vw,4.5rem)}.d2{font-size:clamp(1.85rem,4vw,2.9rem)}.d3{font-size:clamp(1.2rem,2vw,1.55rem)}
 .lead{font-size:clamp(1rem,1.15vw,1.1rem);color:var(--muted);max-width:56ch}
 .eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.76rem;font-weight:700;letter-spacing:2.4px;text-transform:uppercase;color:var(--ember)}
 .eyebrow:before{content:"";width:26px;height:2px;background:var(--gold);display:block}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 26px;border-radius:100px;font-weight:700;font-size:.95rem;transition:.28s cubic-bezier(.2,.7,.3,1);white-space:nowrap}
 .btn svg{width:18px;height:18px}
-.btn-p{background:var(--ember);color:#fff;box-shadow:0 14px 30px -14px rgba(210,53,42,.9)}
-.btn-p:hover{background:var(--emberd);transform:translateY(-2px)}
+.btn-p{background:var(--ember);color:#fff}.btn-p:hover{background:var(--emberd);transform:translateY(-2px)}
 .btn-d{background:var(--ink);color:var(--cream)}.btn-d:hover{background:var(--ink3);transform:translateY(-2px)}
 .btn-g{background:var(--gold);color:var(--ink)}.btn-g:hover{background:var(--goldd);transform:translateY(-2px)}
 .btn-o{border:1.6px solid var(--line)}.btn-o:hover{border-color:var(--ink);background:var(--ink);color:var(--cream)}
@@ -44,7 +43,7 @@ header.small{box-shadow:var(--shs)}
 .mark span{font-family:var(--fd);font-size:1.55rem;color:var(--gold);line-height:1;transform:translateY(-2px)}
 .mark i{position:absolute;width:11px;height:11px;border-radius:50%;background:var(--ember);inset-inline-end:6px;bottom:6px}
 .brand-t{display:flex;flex-direction:column;line-height:1.1}
-.brand-t strong{font-family:var(--fd);font-size:1.45rem;letter-spacing:-.5px}
+.brand-t strong{font-family:var(--fd);font-size:1.45rem}
 .brand-t small{font-size:.64rem;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600}
 .menu-links{display:flex;gap:24px;font-weight:600;font-size:.92rem}
 .menu-links a{position:relative;padding:6px 0;color:#3a322c}
@@ -55,7 +54,7 @@ header.small{box-shadow:var(--shs)}
 .icon-btn:hover{border-color:var(--ink);background:var(--ink);color:var(--cream)}
 .icon-btn svg{width:19px;height:19px}
 .badge{position:absolute;top:-4px;inset-inline-end:-4px;min-width:21px;height:21px;border-radius:11px;background:var(--ember);color:#fff;font-size:.68rem;font-weight:800;display:grid;place-items:center;padding:0 5px;border:2px solid var(--cream)}
-.lang-btn{display:flex;align-items:center;gap:7px;padding:10px 16px;border-radius:100px;border:1.5px solid var(--line);font-weight:700;font-size:.82rem;background:#fff;transition:.25s}
+.lang-btn{display:flex;align-items:center;gap:7px;padding:10px 16px;border-radius:100px;border:1.5px solid var(--line);font-weight:700;font-size:.82rem;background:#fff}
 .lang-btn:hover{border-color:var(--ink)}
 .burger{display:none;width:46px;height:46px;border-radius:14px;border:1.5px solid var(--line);background:#fff;place-items:center}
 .burger svg{width:22px;height:22px}
@@ -88,7 +87,7 @@ header.small{box-shadow:var(--shs)}
 .spin-tag{position:absolute;top:44%;inset-inline-end:-2%;width:104px;height:104px;border-radius:50%;background:var(--ink);color:var(--gold);display:grid;place-items:center;z-index:4;box-shadow:var(--shs)}
 .spin-tag b{font-family:var(--fd);font-size:1.1rem;text-align:center;line-height:1.1;padding:10px}
 .marquee{background:var(--ink);color:var(--sand);padding:16px 0;overflow:hidden;white-space:nowrap}
-.mq-track{display:inline-flex;gap:44px;animation:slide 26s linear infinite;font-size:.9rem;font-weight:600;letter-spacing:1px}
+.mq-track{display:inline-flex;gap:44px;animation:slide 26s linear infinite;font-size:.9rem;font-weight:600}
 .mq-track span{display:inline-flex;align-items:center;gap:44px}
 .mq-track span:after{content:"◆";color:var(--ember);font-size:.6rem}
 @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -213,7 +212,7 @@ footer .brand-t strong{color:#fff}footer .brand-t small{color:#8b8078}footer .ma
 .admin-link:hover{color:var(--gold);border-color:var(--gold)}.admin-link svg{width:14px;height:14px}
 .overlay{position:fixed;inset:0;background:rgba(13,11,10,.55);backdrop-filter:blur(3px);z-index:80;opacity:0;visibility:hidden;transition:.35s}
 .overlay.on{opacity:1;visibility:visible}
-.drawer{position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(420px,92vw);background:var(--cream);z-index:90;display:flex;flex-direction:column;transform:translateX(105%);transition:.42s cubic-bezier(.3,.8,.25,1);box-shadow:-20px 0 60px rgba(0,0,0,.25)}
+.drawer{position:fixed;top:0;bottom:0;inset-inline-end:0;width:min(420px,92vw);background:var(--cream);z-index:90;display:flex;flex-direction:column;transform:translateX(105%);transition:.42s cubic-bezier(.3,.8,.25,1)}
 html[dir=rtl] .drawer{transform:translateX(-105%)}
 .drawer.on{transform:translateX(0)!important}
 .drawer-h{padding:22px 24px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:#fff}
@@ -226,7 +225,7 @@ html[dir=rtl] .drawer{transform:translateX(-105%)}
 .ci-b h4{font-size:.9rem;font-family:var(--fb);font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .ci-b .p{font-size:.82rem;color:var(--ember);font-weight:700;margin-top:2px}
 .qty{display:flex;align-items:center;gap:10px;margin-top:8px}
-.qty button{width:28px;height:28px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;background:var(--cream);transition:.2s}
+.qty button{width:28px;height:28px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;background:var(--cream)}
 .qty button:hover{background:var(--ink);color:#fff}.qty svg{width:13px;height:13px}
 .qty span{font-weight:800;font-size:.88rem;min-width:18px;text-align:center}
 .ci-x{color:var(--muted);align-self:flex-start;padding:2px}.ci-x:hover{color:var(--ember)}.ci-x svg{width:16px;height:16px}
@@ -237,7 +236,7 @@ html[dir=rtl] .drawer{transform:translateX(-105%)}
 .empty svg{width:52px;height:52px;color:var(--sand2);margin-bottom:14px}
 .modal{position:fixed;inset:0;z-index:95;display:grid;place-items:center;padding:20px;opacity:0;visibility:hidden;transition:.3s}
 .modal.on{opacity:1;visibility:visible}
-.modal-bg{position:absolute;inset:0;background:rgba(13,11,10,.62);backdrop-filter:blur(4px)}
+.modal-bg{position:absolute;inset:0;background:rgba(13,11,10,.62)}
 .modal-c{position:relative;background:var(--cream);border-radius:var(--rxl);padding:clamp(24px,3vw,38px);width:min(560px,100%);max-height:90vh;overflow-y:auto;transform:translateY(22px) scale(.98);transition:.35s;box-shadow:var(--sh)}
 .modal.on .modal-c{transform:none}.modal-c h3{font-size:1.45rem;margin-bottom:8px}
 .x-btn{position:absolute;top:18px;inset-inline-end:18px;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;background:#fff}
@@ -251,7 +250,7 @@ html[dir=rtl] .drawer{transform:translateX(-105%)}
 #adminApp{position:fixed;inset:0;z-index:200;background:#f4f5f7;display:none;overflow:hidden}
 #adminApp.on{display:block}
 #admLogin{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(140deg,#0d0b0a,#2a221d 60%,#3d2a1e);padding:22px;overflow-y:auto}
-.login-card{width:min(430px,100%);background:#fff;border-radius:26px;padding:36px 32px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6);animation:tin .5s ease}
+.login-card{width:min(430px,100%);background:#fff;border-radius:26px;padding:36px 32px;box-shadow:0 40px 90px -30px rgba(0,0,0,.6)}
 .login-card .mark{margin:0 auto 18px}
 .login-card h2{text-align:center;font-size:1.45rem;font-family:var(--fb);font-weight:800}
 .login-card .sub{text-align:center;color:var(--muted);font-size:.87rem;margin:8px 0 24px}
@@ -267,12 +266,12 @@ html[dir=rtl] .drawer{transform:translateX(-105%)}
 .adm-nav button{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:12px;font-size:.89rem;font-weight:600;color:#9aa4b0;transition:.22s;text-align:start;width:100%}
 .adm-nav button svg{width:18px;height:18px;flex:none}
 .adm-nav button:hover{background:#1a2028;color:#fff}
-.adm-nav button.on{background:var(--ember);color:#fff;box-shadow:0 10px 24px -12px rgba(210,53,42,.9)}
+.adm-nav button.on{background:var(--ember);color:#fff}
 .adm-side-f{border-top:1px solid #232a32;padding-top:14px;display:flex;flex-direction:column;gap:8px}
 .adm-side-f button{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:11px;font-size:.85rem;color:#9aa4b0;width:100%;transition:.22s}
 .adm-side-f button:hover{background:#1a2028;color:#fff}.adm-side-f svg{width:17px;height:17px}
 .adm-main{flex:1;overflow-y:auto;background:#f4f5f7}
-.adm-top{position:sticky;top:0;z-index:5;background:rgba(244,245,247,.92);backdrop-filter:blur(10px);border-bottom:1px solid #e3e6ea;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.adm-top{position:sticky;top:0;z-index:5;background:rgba(244,245,247,.92);border-bottom:1px solid #e3e6ea;padding:16px 28px;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .adm-top h2{font-family:var(--fb);font-weight:800;font-size:1.18rem}
 .adm-top .whoami{font-size:.78rem;color:#7b848f}
 .adm-body{padding:26px 28px 60px}
@@ -300,7 +299,7 @@ tbody tr:hover{background:#fafbfc}
 .row-acts{display:flex;gap:7px}
 .a-field{margin-bottom:14px}
 .a-field label{display:block;font-size:.78rem;font-weight:700;color:#5b646e;margin-bottom:6px}
-.a-field input,.a-field select,.a-field textarea{width:100%;padding:11px 14px;border-radius:11px;border:1.5px solid #e3e6ea;background:#fff;font-size:.88rem;transition:.2s}
+.a-field input,.a-field select,.a-field textarea{width:100%;padding:11px 14px;border-radius:11px;border:1.5px solid #e3e6ea;background:#fff;font-size:.88rem}
 .a-field input:focus,.a-field select:focus,.a-field textarea:focus{outline:0;border-color:var(--ember);box-shadow:0 0 0 4px rgba(210,53,42,.07)}
 .a-grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
 .a-btn{padding:11px 20px;border-radius:11px;background:var(--ember);color:#fff;font-weight:700;font-size:.86rem;transition:.22s;display:inline-flex;align-items:center;gap:8px}
@@ -325,11 +324,9 @@ html[data-theme=dark] .adm-top h2,html[data-theme=dark] .kpi b,html[data-theme=d
 html[data-theme=dark] .kpi,html[data-theme=dark] .card,html[data-theme=dark] .mcard,html[data-theme=dark] .mini-btn,html[data-theme=dark] .a-btn.ghost{background:#161b21;border-color:#242c35;color:#c9d2dc}
 html[data-theme=dark] th{background:#1b2129;color:#98a3af}
 html[data-theme=dark] td{border-color:#232b34}
-html[data-theme=dark] tbody tr:hover{background:#1a2027}
 html[data-theme=dark] .tbl-wrap{border-color:#242c35}
 html[data-theme=dark] .pill{background:#232b34;color:#a6b0bb}
 html[data-theme=dark] .a-field input,html[data-theme=dark] .a-field select,html[data-theme=dark] .a-field textarea{background:#1b2129;border-color:#242c35;color:#e8ecf1}
-html[data-theme=dark] .adm-top .whoami{color:#8892a0}
 @media(max-width:1080px){.grid-menu{grid-template-columns:repeat(2,1fr)}.feats{grid-template-columns:repeat(2,1fr)}
 .feat:nth-child(2){border-inline-end:0}.feat:nth-child(-n+2){border-bottom:1px solid var(--line)}
 .f-grid{grid-template-columns:1fr 1fr;gap:34px}.kpis{grid-template-columns:repeat(2,1fr)}
@@ -357,10 +354,8 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
     <div data-i18n="tb_left"></div>
     <div class="tb-r"><span data-i18n="tb_hours"></span><span dir="ltr">+20 10 1234 5678</span></div>
   </div></div>
-
   <header id="hdr"><div class="wrap nav">
-    <a href="#top" class="brand"><span class="mark"><span>m</span><i></i></span>
-      <span class="brand-t"><strong>mac</strong><small data-i18n="brand_sub"></small></span></a>
+    <a href="#top" class="brand"><span class="mark"><span>m</span><i></i></span><span class="brand-t"><strong>mac</strong><small data-i18n="brand_sub"></small></span></a>
     <nav class="menu-links">
       <a href="#menu" data-i18n="nav_menu"></a><a href="#offers" data-i18n="nav_offers"></a>
       <a href="#reserve" data-i18n="nav_reserve"></a><a href="#reviews" data-i18n="nav_reviews"></a>
@@ -368,8 +363,8 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
     </nav>
     <div class="nav-acts">
       <button class="lang-btn" id="langToggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg><span id="langLabel">EN</span></button>
-      <button class="icon-btn" id="cartBtn" aria-label="cart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6L5 3H3"/></svg><span class="badge" id="cartCount">0</span></button>
-      <button class="burger" id="burgerBtn" aria-label="menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      <button class="icon-btn" id="cartBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M6 6L5 3H3"/></svg><span class="badge" id="cartCount">0</span></button>
+      <button class="burger" id="burgerBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
   <div class="mob-menu" id="mobMenu">
@@ -398,10 +393,8 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
       <div class="collage">
         <div class="ph c1"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80" alt="burger" onerror="this.parentNode.classList.add('img-fail')"></div>
         <div class="ph c2"><img src="https://images.unsplash.com/photo-1561758033-d89a9ad46330?w=600&q=80" alt="fries" onerror="this.parentNode.classList.add('img-fail')"></div>
-        <div class="float-card fc-a"><span class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></span>
-          <span><strong data-i18n="fc_a_t"></strong><small data-i18n="fc_a_s"></small></span></div>
-        <div class="float-card fc-b"><span class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7h13v9H3zM16 10h3l2 3v3h-5z"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg></span>
-          <span><strong data-i18n="fc_b_t"></strong><small data-i18n="fc_b_s"></small></span></div>
+        <div class="float-card fc-a"><span class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></span><span><strong data-i18n="fc_a_t"></strong><small data-i18n="fc_a_s"></small></span></div>
+        <div class="float-card fc-b"><span class="fc-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 7h13v9H3zM16 10h3l2 3v3h-5z"/><circle cx="7" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></svg></span><span><strong data-i18n="fc_b_t"></strong><small data-i18n="fc_b_s"></small></span></div>
         <div class="spin-tag"><b data-i18n-html="spin"></b></div>
       </div>
     </div></section>
@@ -411,24 +404,18 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
       <span data-i18n="mq1"></span><span data-i18n="mq2"></span><span data-i18n="mq3"></span><span data-i18n="mq4"></span><span data-i18n="mq5"></span><span data-i18n="mq6"></span>
     </div></div>
 
-    <section style="padding-block:clamp(44px,5vw,68px)"><div class="wrap">
-      <div class="feats" data-reveal>
-        <div class="feat"><div class="num">01</div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c2 4 4 5 4 8a4 4 0 11-8 0c0-1 .3-2 1-3"/><path d="M12 21a6 6 0 006-6H6a6 6 0 006 6z"/></svg></div>
-          <h4 data-i18n="f1t"></h4><p data-i18n="f1d"></p></div>
-        <div class="feat"><div class="num">02</div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></div>
-          <h4 data-i18n="f2t"></h4><p data-i18n="f2d"></p></div>
-        <div class="feat"><div class="num">03</div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
-          <h4 data-i18n="f3t"></h4><p data-i18n="f3d"></p></div>
-        <div class="feat"><div class="num">04</div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h4 data-i18n="f4t"></h4><p data-i18n="f4d"></p></div>
-      </div>
-    </div></section>
+    <section style="padding-block:clamp(44px,5vw,68px)"><div class="wrap"><div class="feats" data-reveal>
+      <div class="feat"><div class="num">01</div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c2 4 4 5 4 8a4 4 0 11-8 0c0-1 .3-2 1-3"/><path d="M12 21a6 6 0 006-6H6a6 6 0 006 6z"/></svg></div><h4 data-i18n="f1t"></h4><p data-i18n="f1d"></p></div>
+      <div class="feat"><div class="num">02</div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 8h12l-1 12H7z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg></div><h4 data-i18n="f2t"></h4><p data-i18n="f2d"></p></div>
+      <div class="feat"><div class="num">03</div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h4 data-i18n="f3t"></h4><p data-i18n="f3d"></p></div>
+      <div class="feat"><div class="num">04</div><div class="fi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l7 3v6c0 4-3 7-7 9-4-2-7-5-7-9V6z"/><path d="M9 12l2 2 4-4"/></svg></div><h4 data-i18n="f4t"></h4><p data-i18n="f4d"></p></div>
+    </div></div></section>
 
     <section id="menu" class="sand"><div class="wrap">
-      <div class="sec-head" data-reveal>
-        <div><span class="eyebrow" data-i18n="menu_eyebrow"></span>
-          <h2 class="d2" style="margin-top:14px" data-i18n="menu_title"></h2>
-          <p class="lead" data-i18n="menu_lead"></p></div>
+      <div class="sec-head" data-reveal><div>
+        <span class="eyebrow" data-i18n="menu_eyebrow"></span>
+        <h2 class="d2" style="margin-top:14px" data-i18n="menu_title"></h2>
+        <p class="lead" data-i18n="menu_lead"></p></div>
         <button class="btn btn-d" id="jumpCart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M6 6h15l-1.5 9h-12z"/><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg><span data-i18n="menu_cart"></span></button>
       </div>
       <div class="cats" id="catTabs" data-reveal></div>
@@ -436,17 +423,12 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
     </div></section>
 
     <section id="offers" class="on-dark"><div class="wrap">
-      <div class="sec-head" data-reveal>
-        <div><span class="eyebrow" data-i18n="off_eyebrow"></span><h2 class="d2" style="margin-top:14px" data-i18n="off_title"></h2></div>
-        <p class="lead" data-i18n="off_lead"></p>
-      </div>
+      <div class="sec-head" data-reveal><div><span class="eyebrow" data-i18n="off_eyebrow"></span><h2 class="d2" style="margin-top:14px" data-i18n="off_title"></h2></div><p class="lead" data-i18n="off_lead"></p></div>
       <div class="offers" data-reveal>
-        <div class="offer-main">
-          <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1000&q=80" alt="offer" onerror="this.style.display='none'">
-          <div class="oi"><span class="pct" data-i18n="off1_pct"></span>
-            <h3 data-i18n="off1_t"></h3><p style="color:#cfc4b8;font-size:.92rem" data-i18n="off1_d"></p>
-            <button class="btn btn-g" style="margin-top:22px" data-add-combo="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="off_add"></span></button>
-          </div>
+        <div class="offer-main"><img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1000&q=80" alt="offer" onerror="this.style.display='none'">
+          <div class="oi"><span class="pct" data-i18n="off1_pct"></span><h3 data-i18n="off1_t"></h3>
+            <p style="color:#cfc4b8;font-size:.92rem" data-i18n="off1_d"></p>
+            <button class="btn btn-g" style="margin-top:22px" data-add-combo="1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg><span data-i18n="off_add"></span></button></div>
         </div>
         <div class="offer-side">
           <div class="offer-mini"><span class="pct" data-i18n="off2_pct"></span><div><h4 data-i18n="off2_t"></h4><p data-i18n="off2_d"></p></div></div>
@@ -456,16 +438,13 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
     </div></section>
 
     <section id="reserve"><div class="wrap"><div class="reserve" data-reveal>
-      <div class="reserve-img">
-        <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=900&q=80" alt="restaurant" onerror="this.style.display='none'">
+      <div class="reserve-img"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=900&q=80" alt="restaurant" onerror="this.style.display='none'">
         <div class="ri"><h3 data-i18n="res_t"></h3><p style="font-size:.88rem;color:#cfc4b8" data-i18n="res_d"></p>
           <div class="hours">
             <div><span data-i18n="hr1"></span><b dir="ltr">11:00 – 02:00</b></div>
             <div><span data-i18n="hr2"></span><b dir="ltr">11:00 – 03:00</b></div>
             <div style="border:0"><span data-i18n="hr3"></span><b data-i18n="hr4"></b></div>
-          </div>
-        </div>
-      </div>
+          </div></div></div>
       <div class="reserve-form">
         <h3 class="d3" data-i18n="resf_t"></h3>
         <p style="color:var(--muted);font-size:.86rem;margin:8px 0 22px" data-i18n="resf_d"></p>
@@ -487,37 +466,24 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
     </div></div></section>
 
     <section id="reviews" class="sand"><div class="wrap">
-      <div class="sec-head" data-reveal>
-        <div><span class="eyebrow" data-i18n="rev_eyebrow"></span><h2 class="d2" style="margin-top:14px" data-i18n="rev_title"></h2></div>
-        <div class="trust" style="margin:0;border:0;padding:0">
-          <div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></div>
-          <div class="trust-txt" data-i18n="rev_avg"></div>
-        </div>
+      <div class="sec-head" data-reveal><div><span class="eyebrow" data-i18n="rev_eyebrow"></span><h2 class="d2" style="margin-top:14px" data-i18n="rev_title"></h2></div>
+        <div class="trust" style="margin:0;border:0;padding:0"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></div><div class="trust-txt" data-i18n="rev_avg"></div></div>
       </div>
       <div class="revs" data-reveal>
-        <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></div>
-          <p data-i18n="r1"></p><div class="who"><span class="av">ن</span><span><strong data-i18n="r1n"></strong><small data-i18n="r1c"></small></span></div></div>
-        <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></div>
-          <p data-i18n="r2"></p><div class="who"><span class="av">م</span><span><strong data-i18n="r2n"></strong><small data-i18n="r2c"></small></span></div></div>
-        <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></div>
-          <p data-i18n="r3"></p><div class="who"><span class="av">س</span><span><strong data-i18n="r3n"></strong><small data-i18n="r3c"></small></span></div></div>
+        <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></div><p data-i18n="r1"></p><div class="who"><span class="av">ن</span><span><strong data-i18n="r1n"></strong><small data-i18n="r1c"></small></span></div></div>
+        <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></div><p data-i18n="r2"></p><div class="who"><span class="av">م</span><span><strong data-i18n="r2n"></strong><small data-i18n="r2c"></small></span></div></div>
+        <div class="rev"><div class="stars"><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg><svg viewBox="0 0 24 24"><path d="M12 2l3 6.5 7 .9-5 4.8 1.2 7L12 17.8 5.8 21.2 7 14.2 2 9.4l7-.9z"/></svg></div><p data-i18n="r3"></p><div class="who"><span class="av">س</span><span><strong data-i18n="r3n"></strong><small data-i18n="r3c"></small></span></div></div>
       </div>
     </div></section>
 
     <section id="branches"><div class="wrap">
-      <div class="sec-head" data-reveal>
-        <div><span class="eyebrow" data-i18n="br_eyebrow"></span><h2 class="d2" style="margin-top:14px" data-i18n="br_title"></h2>
-          <p class="lead" data-i18n="br_lead"></p></div>
-      </div>
+      <div class="sec-head" data-reveal><div><span class="eyebrow" data-i18n="br_eyebrow"></span><h2 class="d2" style="margin-top:14px" data-i18n="br_title"></h2><p class="lead" data-i18n="br_lead"></p></div></div>
       <div class="branches" data-reveal>
         <div class="map"><iframe title="map" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=31.2300%2C29.9800%2C31.3400%2C30.0900&layer=mapnik"></iframe></div>
         <div class="blist">
-          <div class="branch"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-            <div><h4 data-i18n="br1"></h4><p data-i18n="br1d"></p><div class="tel" dir="ltr">+20 10 1234 5678</div></div></div>
-          <div class="branch"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-            <div><h4 data-i18n="br2"></h4><p data-i18n="br2d"></p><div class="tel" dir="ltr">+20 10 1234 5679</div></div></div>
-          <div class="branch"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
-            <div><h4 data-i18n="br3"></h4><p data-i18n="br3d"></p><div class="tel" dir="ltr">+20 10 1234 5680</div></div></div>
+          <div class="branch"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4 data-i18n="br1"></h4><p data-i18n="br1d"></p><div class="tel" dir="ltr">+20 10 1234 5678</div></div></div>
+          <div class="branch"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4 data-i18n="br2"></h4><p data-i18n="br2d"></p><div class="tel" dir="ltr">+20 10 1234 5679</div></div></div>
+          <div class="branch"><span class="bi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-5.5 7-11a7 7 0 10-14 0c0 5.5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><h4 data-i18n="br3"></h4><p data-i18n="br3d"></p><div class="tel" dir="ltr">+20 10 1234 5680</div></div></div>
         </div>
       </div>
     </div></section>
@@ -526,27 +492,22 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
       <span class="eyebrow" data-i18n="mo_eyebrow"></span>
       <h2 class="d2" style="margin-top:14px" data-i18n="mo_title"></h2>
       <p class="lead" style="margin-top:12px" data-i18n="mo_lead"></p>
-      <div class="mo-search">
-        <input type="tel" id="moPhone" dir="ltr" placeholder="01xxxxxxxxx" data-i18n-ph="ph_phone">
-        <button class="btn btn-d" id="moBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span data-i18n="mo_btn"></span></button>
-      </div>
-      <div class="note" id="moNote"></div>
-      <div class="mo-list" id="moList"></div>
+      <div class="mo-search"><input type="tel" id="moPhone" dir="ltr" placeholder="01xxxxxxxxx" data-i18n-ph="ph_phone">
+        <button class="btn btn-d" id="moBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span data-i18n="mo_btn"></span></button></div>
+      <div class="note" id="moNote"></div><div class="mo-list" id="moList"></div>
     </div></div></section>
   </main>
 
   <footer><div class="wrap">
     <div class="f-grid">
-      <div class="f-about">
-        <div class="brand"><span class="mark"><span>m</span><i></i></span><span class="brand-t"><strong>mac</strong><small data-i18n="brand_sub"></small></span></div>
+      <div class="f-about"><div class="brand"><span class="mark"><span>m</span><i></i></span><span class="brand-t"><strong>mac</strong><small data-i18n="brand_sub"></small></span></div>
         <p data-i18n="ft_about"></p>
         <div class="socials">
           <a href="#top" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
           <a href="#top" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 8h3V5h-3a4 4 0 00-4 4v2H8v3h2v7h3v-7h3l1-3h-4V9a1 1 0 011-1z"/></svg></a>
           <a href="#top" aria-label="WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 12a9 9 0 01-13.3 7.9L3 21l1.2-4.5A9 9 0 1121 12z"/><path d="M8.5 9.5c0 3 2.5 5.5 5.5 5.5"/></svg></a>
           <a href="#top" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 4c.5 2.5 2 4 4.5 4.2V11c-1.8 0-3.3-.5-4.5-1.4V16a5 5 0 11-5-5c.4 0 .7 0 1 .1v3a2 2 0 101.4 1.9V4z"/></svg></a>
-        </div>
-      </div>
+        </div></div>
       <div><h5 data-i18n="ft_links"></h5><ul>
         <li><a href="#menu" data-i18n="nav_menu"></a></li><li><a href="#offers" data-i18n="nav_offers"></a></li>
         <li><a href="#reserve" data-i18n="nav_reserve"></a></li><li><a href="#branches" data-i18n="nav_branches"></a></li>
@@ -554,15 +515,11 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
       <div><h5 data-i18n="ft_cats"></h5><ul>
         <li><a href="#menu" data-i18n="cat_burgers"></a></li><li><a href="#menu" data-i18n="cat_meals"></a></li>
         <li><a href="#menu" data-i18n="cat_drinks"></a></li><li><a href="#menu" data-i18n="cat_extras"></a></li></ul></div>
-      <div><h5 data-i18n="ft_contact"></h5><ul>
-        <li dir="ltr">+20 10 1234 5678</li><li>hello@mac.rest</li><li data-i18n="ft_addr"></li></ul>
-        <div class="news"><input type="email" id="nlEmail" data-i18n-ph="ph_email"><button id="nlBtn" aria-label="subscribe"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button></div>
-      </div>
+      <div><h5 data-i18n="ft_contact"></h5><ul><li dir="ltr">+20 10 1234 5678</li><li>hello@mac.rest</li><li data-i18n="ft_addr"></li></ul>
+        <div class="news"><input type="email" id="nlEmail" data-i18n-ph="ph_email"><button id="nlBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M5 12h13M13 6l6 6-6 6"/></svg></button></div></div>
     </div>
-    <div class="f-bot">
-      <span data-i18n="ft_rights"></span>
-      <a href="#admin" class="admin-link" id="adminLink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg><span data-i18n="ft_admin"></span></a>
-    </div>
+    <div class="f-bot"><span data-i18n="ft_rights"></span>
+      <a href="#admin" class="admin-link" id="adminLink"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg><span data-i18n="ft_admin"></span></a></div>
   </div></footer>
 </div>
 
@@ -578,10 +535,8 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
   </div>
 </aside>
 
-<div class="modal" id="coModal">
-  <div class="modal-bg" data-close="coModal"></div>
-  <div class="modal-c">
-    <button class="x-btn" data-close="coModal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+<div class="modal" id="coModal"><div class="modal-bg" data-close="coModal"></div>
+  <div class="modal-c"><button class="x-btn" data-close="coModal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
     <h3 data-i18n="co_t"></h3><p style="color:var(--muted);font-size:.87rem;margin:8px 0 22px" data-i18n="co_d"></p>
     <form id="coForm">
       <div class="field"><label data-i18n="lbl_name"></label><input type="text" id="coName" required data-i18n-ph="ph_name"></div>
@@ -590,30 +545,25 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
       <div class="note" id="coNote"></div>
       <button class="btn btn-p btn-full" type="submit" id="coSubmit" style="margin-top:16px"><span data-i18n="co_submit"></span></button>
     </form>
-  </div>
-</div>
+  </div></div>
 
 <div id="toasts"></div>
 
 <div id="adminApp" dir="rtl">
-  <div id="admLogin">
-    <div class="login-card">
-      <span class="mark"><span>m</span><i></i></span>
-      <h2>لوحة تحكم mac</h2>
-      <p class="sub">سجّل الدخول لإدارة المنتجات والطلبات والوسائط</p>
-      <div class="err-box" id="admLoginErr"></div>
-      <form id="admLoginForm">
-        <div class="a-field"><label>الإيميل</label><input type="email" id="admEmail" required dir="ltr" placeholder="admin@mac.com" autocomplete="username"></div>
-        <div class="a-field"><label>كلمة المرور</label><div class="pw-wrap">
-          <input type="password" id="admPass" required dir="ltr" placeholder="••••••••" autocomplete="current-password">
-          <button type="button" class="eye" id="eyeBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button>
-        </div></div>
-        <button class="a-btn" type="submit" id="admLoginBtn" style="width:100%;justify-content:center;padding:13px"><span>تسجيل الدخول</span></button>
-      </form>
-      <div class="hint">بيانات الدخول الافتراضية:<br>الإيميل: <b>admin@mac.com</b><br>كلمة المرور: <b>admin123</b></div>
-      <button class="a-btn ghost" id="backToSite" style="width:100%;justify-content:center;margin-top:14px">← الرجوع للموقع</button>
-    </div>
-  </div>
+  <div id="admLogin"><div class="login-card">
+    <span class="mark"><span>m</span><i></i></span>
+    <h2>لوحة تحكم mac</h2><p class="sub">سجّل الدخول لإدارة المنتجات والطلبات والوسائط</p>
+    <div class="err-box" id="admLoginErr"></div>
+    <form id="admLoginForm">
+      <div class="a-field"><label>الإيميل</label><input type="email" id="admEmail" required dir="ltr" placeholder="admin@mac.com"></div>
+      <div class="a-field"><label>كلمة المرور</label><div class="pw-wrap">
+        <input type="password" id="admPass" required dir="ltr" placeholder="••••••••">
+        <button type="button" class="eye" id="eyeBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+      <button class="a-btn" type="submit" id="admLoginBtn" style="width:100%;justify-content:center;padding:13px"><span>تسجيل الدخول</span></button>
+    </form>
+    <div class="hint">بيانات الدخول الافتراضية:<br>الإيميل: <b>admin@mac.com</b><br>كلمة المرور: <b>admin123</b></div>
+    <button class="a-btn ghost" id="backToSite" style="width:100%;justify-content:center;margin-top:14px">← الرجوع للموقع</button>
+  </div></div>
   <div id="admShell" class="hide">
     <aside class="adm-side">
       <div class="brand"><span class="mark"><span>m</span><i></i></span><span class="brand-t"><strong>mac</strong><small>Admin Panel</small></span></div>
@@ -632,10 +582,8 @@ html[data-theme=dark] .adm-top .whoami{color:#8892a0}
       </div>
     </aside>
     <div class="adm-main">
-      <div class="adm-top">
-        <div><h2 id="admTitle">نظرة عامة</h2><div class="whoami" id="admWho"></div></div>
-        <div style="display:flex;gap:10px;align-items:center"><span class="pill g">متصل</span><button class="a-btn ghost" id="toSite">الموقع</button></div>
-      </div>
+      <div class="adm-top"><div><h2 id="admTitle">نظرة عامة</h2><div class="whoami" id="admWho"></div></div>
+        <div style="display:flex;gap:10px;align-items:center"><span class="pill g">متصل</span><button class="a-btn ghost" id="toSite">الموقع</button></div></div>
       <div class="adm-body" id="admBody"></div>
     </div>
   </div>
@@ -737,8 +685,8 @@ var I18N={ar:{
 }};
 var LANG=localStorage.getItem(LS.lang)||'ar';
 function t(k){return I18N[LANG][k]!==undefined?I18N[LANG][k]:(I18N.ar[k]||k);}
-var $=function(s){return document.querySelector(s);};
-var $$=function(s){return Array.prototype.slice.call(document.querySelectorAll(s));};
+function $(s){return document.querySelector(s);}
+function $$(s){return Array.prototype.slice.call(document.querySelectorAll(s));}
 function money(n){return Number(n).toLocaleString('en-US')+' '+t('cur');}
 
 var CATS=[{id:'all',icon:'<path d="M4 6h16M4 12h16M4 18h10"/>'},
@@ -765,15 +713,15 @@ var SEED=[
 {id:'e2',cat:'extras',price:40,img:'https://images.unsplash.com/photo-1585109649139-366815a0d713?w=700&q=80',badge:'',ar:{n:'حلقات البصل',d:'حلقات بصل مقرمشة مع صوص الرانش.'},en:{n:'Onion Rings',d:'Crispy onion rings with ranch dip.'}},
 {id:'e3',cat:'extras',price:55,img:'https://images.unsplash.com/photo-1639024471283-03518883512d?w=700&q=80',badge:'hot',ar:{n:'أجنحة حارة',d:'6 أجنحة فراخ بصوص البافلو الحار مع صوص الجبن.'},en:{n:'Hot Wings',d:'6 chicken wings in hot buffalo sauce with cheese dip.'}}];
 
-var PRODUCTS=loadProducts(),CART=[],ACTIVE_CAT='all',ADM={token:'',role:'',email:''},revealObs=null;
-function loadProducts(){try{var raw=localStorage.getItem(LS.products);if(raw){var p=JSON.parse(raw);if(Array.isArray(p)&&p.length)return p;}}catch(e){}return JSON.parse(JSON.stringify(SEED));}
+var PRODUCTS,CART=[],ACTIVE_CAT='all',ADM={token:'',role:'',email:''},revealObs=null;
+function loadProducts(){try{var raw=localStorage.getItem(LS.products);if(raw){var p=JSON.parse(raw);if(p&&p.length)return p;}}catch(e){}return JSON.parse(JSON.stringify(SEED));}
 function saveProducts(){try{localStorage.setItem(LS.products,JSON.stringify(PRODUCTS));}catch(e){}}
 function saveCart(){try{localStorage.setItem(LS.cart,JSON.stringify(CART));}catch(e){}}
-try{var c0=JSON.parse(localStorage.getItem(LS.cart)||'[]');if(Array.isArray(c0))CART=c0;}catch(e){}
+PRODUCTS=loadProducts();
+try{var c0=JSON.parse(localStorage.getItem(LS.cart)||'[]');if(c0&&c0.length)CART=c0;}catch(e){}
 
 function applyLang(){
- document.documentElement.lang=LANG;
- document.documentElement.dir=LANG==='ar'?'rtl':'ltr';
+ document.documentElement.lang=LANG;document.documentElement.dir=LANG==='ar'?'rtl':'ltr';
  $$('[data-i18n]').forEach(function(el){el.textContent=t(el.getAttribute('data-i18n'));});
  $$('[data-i18n-html]').forEach(function(el){el.innerHTML=t(el.getAttribute('data-i18n-html'));});
  $$('[data-i18n-ph]').forEach(function(el){el.setAttribute('placeholder',t(el.getAttribute('data-i18n-ph')));});
@@ -801,7 +749,7 @@ function renderMenu(){
   return '<article class="dish" data-reveal><div class="dish-img ph">'+(b?'<span class="chip'+(p.badge==='hot'?' hot':'')+'">'+b+'</span>':'')+
    '<img loading="lazy" src="'+p.img+'" alt="'+L.n+'" onerror="this.parentNode.classList.add(\'img-fail\')"></div>'+
    '<div class="dish-body"><h3>'+L.n+'</h3><p>'+L.d+'</p><div class="dish-foot"><span class="price">'+money(p.price)+'</span>'+
-   '<button class="add-btn" data-add="'+p.id+'" aria-label="add"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>';
+   '<button class="add-btn" data-add="'+p.id+'"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg></button></div></div></article>';
  }).join('');
  grid.querySelectorAll('[data-add]').forEach(function(b){b.addEventListener('click',function(){addToCart(b.getAttribute('data-add'),1);});});
  observeReveal();
@@ -841,7 +789,7 @@ function observeReveal(){
  $$('[data-reveal]:not(.in)').forEach(function(el){revealObs.observe(el);});
 }
 function stLabel(s){return t('st_'+(s||'new'));}
-/* ============ ADMIN ============ */
+/* ADMIN */
 function getCreds(){try{var raw=localStorage.getItem(LS.creds);if(raw){var c=JSON.parse(raw);if(c&&c.email&&c.password)return c;}}catch(e){}return{email:DEFAULT_CREDS.email,password:DEFAULT_CREDS.password};}
 function setCreds(c){try{localStorage.setItem(LS.creds,JSON.stringify(c));}catch(e){}}
 function saveSession(){try{localStorage.setItem(LS.session,JSON.stringify({token:ADM.token,role:ADM.role,email:ADM.email}));}catch(e){}}
@@ -854,11 +802,13 @@ function toastAdmin(msg,type){
  el.querySelector('span').textContent=msg;$('#toasts').appendChild(el);setTimeout(function(){el.remove();},2600);
 }
 function admApi(action,extra){
- var body=Object.assign({action:action,business_id:ORDER_ID,token:ADM.token},extra||{});
- return fetch(DASH_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}).then(function(r){return r.json();}).then(function(data){
-  if(data&&data.code==='unauthorized'){clearSession();ADM.token='';showAdmin(false);admLoginErr('انتهت الجلسة، سجّل الدخول مرة أخرى.');throw new Error('unauthorized');}
-  return data;
- }).catch(function(e){if(e.message==='unauthorized')throw e;return{success:false,message:'تعذر الاتصال بالسيرفر'};});
+ var body={action:action,business_id:ORDER_ID,token:ADM.token};
+ if(extra)for(var k in extra)body[k]=extra[k];
+ return fetch(DASH_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)})
+  .then(function(r){return r.json();}).then(function(data){
+   if(data&&data.code==='unauthorized'){clearSession();ADM.token='';showAdmin(false);admLoginErr('انتهت الجلسة، سجّل الدخول مرة أخرى.');throw new Error('unauthorized');}
+   return data;
+  }).catch(function(e){if(e&&e.message==='unauthorized')throw e;return{success:false,message:'تعذر الاتصال بالسيرفر'};});
 }
 function showAdmin(on){
  if(on){$('#admLogin').classList.add('hide');$('#admShell').classList.remove('hide');
@@ -872,18 +822,13 @@ var VIEWS={overview:'نظرة عامة',products:'إدارة المنتجات',o
 function admNav(view){
  $$('#admNav button').forEach(function(b){b.classList.toggle('on',b.getAttribute('data-view')===view);});
  $('#admTitle').textContent=VIEWS[view];
- $('#admBody').innerHTML='<div class="card" style="text-align:center"><span class="spinner" style="border-color:#e3e6ea;border-top-color:var(--ember);width:22px;height:22px;margin:18px"></span></div>';
- if(view==='overview')viewOverview();
- else if(view==='products')viewProducts();
- else if(view==='orders')viewOrders();
- else if(view==='media')viewMedia();
- else if(view==='business')viewBusiness();
- else if(view==='admins')viewAdmins();
- else if(view==='security')viewSecurity();
+ $('#admBody').innerHTML='<div class="card" style="text-align:center"><span class="spinner" style="border-color:#e3e6ea;border-top-color:#d2352a;width:22px;height:22px;margin:18px"></span></div>';
+ if(view==='overview')viewOverview();else if(view==='products')viewProducts();else if(view==='orders')viewOrders();
+ else if(view==='media')viewMedia();else if(view==='business')viewBusiness();else if(view==='admins')viewAdmins();else viewSecurity();
 }
 function viewOverview(){
  admApi('get_orders').then(function(d){
-  var orders=(d&&d.success&&Array.isArray(d.orders))?d.orders:[],apiOk=!!(d&&d.success);
+  var orders=(d&&d.success&&d.orders)?d.orders:[],apiOk=!!(d&&d.success);
   var revenue=orders.reduce(function(s,o){return s+Number(o.total||0);},0);
   var news=orders.filter(function(o){return (o.status||'new')==='new';}).length;
   $('#admBody').innerHTML='<div class="kpis">'+kpi('عدد المنتجات',PRODUCTS.length,'متاح في القائمة')+kpi('عدد الطلبات',orders.length,apiOk?'من السيرفر':'غير متاح حاليًا')+
@@ -943,10 +888,10 @@ function productForm(id){
 }
 function viewOrders(){
  admApi('get_orders').then(function(d){
-  var orders=(d&&d.success&&Array.isArray(d.orders))?d.orders:[],apiOk=!!(d&&d.success),errMsg=(d&&d.message)?d.message:'';
+  var orders=(d&&d.success&&d.orders)?d.orders:[],apiOk=!!(d&&d.success),errMsg=(d&&d.message)?d.message:'';
   $('#admBody').innerHTML='<div class="card"><div class="card-h"><div><h3>كل الطلبات</h3><p>'+(apiOk?'غيّر الحالة من القائمة المنسدلة':(errMsg||'لا توجد بيانات'))+'</p></div><button class="a-btn ghost" id="oReload">تحديث</button></div>'+
    (orders.length?'<div class="tbl-wrap"><table><thead><tr><th>رقم الطلب</th><th>العميل</th><th>الموبايل</th><th>المنتجات</th><th>الإجمالي</th><th>ملاحظات</th><th>التاريخ</th><th>الحالة</th></tr></thead><tbody>'+
-    orders.map(function(o){var items=Array.isArray(o.items)?o.items:[];
+    orders.map(function(o){var items=(o.items||[]);
      return '<tr><td>#'+(o.site_order_id||'-')+'</td><td>'+(o.customer_name||'-')+'</td><td dir="ltr">'+(o.customer_phone||'-')+'</td>'+
       '<td style="font-size:.8rem;color:#5b646e">'+items.map(function(i){return (i.name||'')+' ×'+(i.qty||1);}).join('<br>')+'</td>'+
       '<td><b>'+money(o.total||0)+'</b></td><td style="font-size:.78rem;color:#7b848f;max-width:150px">'+(o.notes||'—')+'</td>'+
@@ -967,7 +912,7 @@ function viewOrders(){
 function loadMediaList(){
  var grid=$('#mdGrid');if(!grid)return;
  admApi('get_business_data').then(function(d){
-  var media=(d&&d.data&&Array.isArray(d.media))?d.media:((d&&Array.isArray(d.media))?d.media:[]);
+  var media=(d&&d.data&&d.media)?d.media:((d&&d.media)?d.media:[]);
   if(!media.length){grid.innerHTML='<p style="color:#7b848f;font-size:.88rem">لا توجد وسائط مرفوعة بعد.</p>';return;}
   grid.innerHTML=media.map(function(m){return '<div class="mcard"><div class="mimg">'+(m.media_type==='video'?'<video src="'+m.url+'" controls></video>':'<img src="'+m.url+'" alt="" onerror="this.style.visibility=\'hidden\'">')+'</div>'+
    '<div class="mt"><b>'+(m.caption||'بدون وصف')+'</b>'+(m.uploaded_at?new Date(m.uploaded_at).toLocaleDateString('ar-EG'):'')+'</div></div>';}).join('');
@@ -1060,7 +1005,7 @@ function viewSecurity(){
  $('#scReset').addEventListener('click',function(){setCreds({email:DEFAULT_CREDS.email,password:DEFAULT_CREDS.password});toastAdmin('تم استرجاع بيانات الدخول الافتراضية');viewSecurity();});
  $('#scLogout').addEventListener('click',function(){$('#admLogout').click();});
 }
-/* ============ EVENTS ============ */
+/* EVENTS */
 $('#langToggle').addEventListener('click',function(){LANG=LANG==='ar'?'en':'ar';localStorage.setItem(LS.lang,LANG);applyLang();showToast(LANG==='ar'?'تم تغيير اللغة إلى العربية':'Language switched to English');});
 $('#cartBtn').addEventListener('click',openCart);
 $('#jumpCart').addEventListener('click',openCart);
@@ -1070,7 +1015,7 @@ $('#burgerBtn').addEventListener('click',function(){$('#mobMenu').classList.togg
 $$('#mobMenu a').forEach(function(a){a.addEventListener('click',function(){$('#mobMenu').classList.remove('on');});});
 window.addEventListener('scroll',function(){var h=$('#hdr');if(window.scrollY>20)h.classList.add('small');else h.classList.remove('small');});
 $('#nlBtn').addEventListener('click',function(){var v=$('#nlEmail').value.trim();if(!v||v.indexOf('@')<0){showToast(LANG==='ar'?'اكتب إيميل صحيح':'Enter a valid email','err');return;}$('#nlEmail').value='';showToast(LANG==='ar'?'تم تسجيل إيميلك في قائمة العروض':'You are on the offers list','ok');});
-document.addEventListener('click',function(e){var b=e.target.closest?e.target.closest('[data-add-combo]'):null;if(b){addToCart('m2',1);openCart();}});
+document.addEventListener('click',function(e){var el=e.target;while(el&&el!==document){if(el.getAttribute&&el.getAttribute('data-add-combo')){addToCart('m2',1);openCart();return;}el=el.parentNode;}});
 $('#checkoutBtn').addEventListener('click',function(){
  if(!CART.length){showToast(t('cart_empty'),'err');return;}
  $('#coNote').className='note';$('#coNote').textContent='';$('#coModal').classList.add('on');closeCart();
@@ -1106,12 +1051,12 @@ function fetchMyOrders(){
  btn.disabled=true;btn.innerHTML='<span class="spinner" style="border-color:rgba(255,255,255,.3);border-top-color:#fff"></span>';
  fetch(DASH_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'get_customer_orders',business_id:ORDER_ID,phone:phone})})
  .then(function(r){return r.json();}).then(function(data){
-  var orders=(data&&Array.isArray(data.orders))?data.orders:[];
+  var orders=(data&&data.orders)?data.orders:[];
   if(!orders.length){n.className='note err';n.textContent=t('no_orders');}
   else{
    n.className='note ok';n.textContent=(LANG==='ar'?'عدد الطلبات: ':'Orders found: ')+orders.length;
    list.innerHTML=orders.map(function(o){
-    var items=Array.isArray(o.items)?o.items:[];
+    var items=(o.items||[]);
     var rows=items.map(function(i){return '<li>'+(i.name||'')+' × '+(i.qty||1)+' — '+money(i.price||0)+'</li>';}).join('');
     var when=o.created_at?new Date(o.created_at).toLocaleString(LANG==='ar'?'ar-EG':'en-GB'):'';
     return '<div class="mo-card"><div style="min-width:220px"><div class="id">#'+(o.site_order_id||'-')+'</div><ul>'+rows+'</ul><div style="font-size:.82rem;color:var(--muted);margin-top:8px">'+when+'</div></div>'+
@@ -1121,7 +1066,6 @@ function fetchMyOrders(){
   btn.disabled=false;btn.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span>'+t('mo_btn')+'</span>';
  }).catch(function(){n.className='note err';n.textContent=t('load_err');btn.disabled=false;btn.innerHTML='<span>'+t('mo_btn')+'</span>';});
 }
-/* admin events */
 $('#eyeBtn').addEventListener('click',function(){var i=$('#admPass');i.type=i.type==='password'?'text':'password';});
 $('#backToSite').addEventListener('click',function(){location.hash='';});
 $('#toSite').addEventListener('click',function(){location.hash='';});
