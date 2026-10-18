@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>برغر ستار - مطعم وجبات سريعة</title>
     <meta name="description" content="برغر ستار - أشهى البرغر والوجبات السريعة الطازجة في مصر">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23DA291C'/><text x='50' y='68' text-anchor='middle' font-size='44' font-weight='bold' fill='%23FFC72C' font-family='Arial'>ب</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><defs><linearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' stop-color='%23FFC72C'/><stop offset='100%25' stop-color='%23E6A800'/></linearGradient></defs><circle cx='50' cy='50' r='48' fill='%23DA291C' stroke='url(%23g)' stroke-width='4'/><path d='M28 70 Q38 20 50 20 Q62 20 72 70' fill='none' stroke='%23FFC72C' stroke-width='7' stroke-linecap='round'/><polygon points='50,32 55,47 71,47 58,56 63,72 50,62 37,72 42,56 29,47 45,47' fill='%23FFC72C'/></svg>">
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         :root {
             --red: #DA291C;
             --red-dark: #B52015;
+            --red-light: #E8483B;
             --gold: #FFC72C;
+            --gold-dark: #E6A800;
             --gold-light: #FFD866;
             --white: #FFFFFF;
             --gray-50: #F9FAFB;
@@ -63,6 +65,20 @@
             line-height: 1.7;
             overflow-x: hidden;
             transition: background var(--transition), color var(--transition);
+            position: relative;
+        }
+
+        /* ── Watermark Pattern ── */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.018;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220' viewBox='0 0 120 120'%3E%3Cg transform='translate(60,60)'%3E%3Cpath d='M-22 42 Q-30 -10 0 -15 Q30 -10 22 42' fill='none' stroke='%23DA291C' stroke-width='5' stroke-linecap='round'/%3E%3Cpath d='M-30 42 Q-38 -10 0 -15 Q38 -10 30 42' fill='none' stroke='%23FFC72C' stroke-width='3' stroke-linecap='round'/%3E%3Cpolygon points='0,-22 5,-7 20,-7 8,3 13,18 0,10 -13,18 -8,3 -20,-7 -5,-7' fill='%23DA291C'/%3E%3C/g%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 180px 180px;
         }
 
         .header {
@@ -70,7 +86,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow-lg);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.12);
             border-bottom: 3px solid var(--gold);
             transition: all var(--transition);
         }
@@ -80,57 +96,73 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 8px 20px;
+            padding: 6px 20px;
             gap: 16px;
         }
         .logo-area {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
             text-decoration: none;
             flex-shrink: 0;
         }
-        .logo-icon {
-            width: 52px;
-            height: 52px;
-            background: var(--red);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--gold);
-            font-weight: 900;
-            font-size: 26px;
-            box-shadow: 0 3px 12px rgba(218,41,28,0.35);
-            transition: transform var(--transition);
+        .logo-svg-wrap {
+            position: relative;
+            width: 56px;
+            height: 56px;
+            flex-shrink: 0;
         }
-        .logo-area:hover .logo-icon { transform: scale(1.08) rotate(-8deg); }
+        .logo-svg-wrap svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 3px 6px rgba(218,41,28,0.3));
+            transition: transform var(--transition), filter var(--transition);
+        }
+        .logo-area:hover .logo-svg-wrap svg {
+            transform: scale(1.08) rotate(-6deg);
+            filter: drop-shadow(0 6px 12px rgba(218,41,28,0.45));
+        }
+        .logo-text-block {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.15;
+        }
         .logo-text {
-            font-size: 1.4rem;
-            font-weight: 800;
+            font-size: 1.45rem;
+            font-weight: 900;
             color: var(--gray-800);
-            line-height: 1.1;
+            letter-spacing: -0.3px;
         }
         .logo-text .red { color: var(--red); }
         .logo-text .gold { color: #c49a0e; }
-        .logo-sub { font-size: 0.7rem; font-weight: 400; color: var(--gray-500); }
+        .logo-sub {
+            font-size: 0.68rem;
+            font-weight: 500;
+            color: var(--gray-500);
+            letter-spacing: 0.8px;
+        }
+        .logo-sub .en {
+            font-weight: 700;
+            color: var(--gold-dark);
+        }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 6px;
+            gap: 4px;
             flex-wrap: wrap;
         }
         .nav-links a {
             display: block;
-            padding: 10px 18px;
+            padding: 10px 16px;
             text-decoration: none;
             color: var(--gray-700);
             font-weight: 600;
-            font-size: 0.95rem;
+            font-size: 0.93rem;
             border-radius: 25px;
             transition: all var(--transition);
             white-space: nowrap;
+            position: relative;
         }
         .nav-links a:hover, .nav-links a.active {
             background: var(--red);
@@ -187,12 +219,24 @@
             cursor: pointer;
         }
 
+        /* ── Hero ── */
         .hero {
             position: relative;
             background: linear-gradient(135deg, #1a1a1a 0%, #2d1a0a 40%, #3d1c0a 70%, #1a1a1a 100%);
-            padding: 80px 20px 100px;
+            padding: 70px 20px 90px;
             overflow: hidden;
         }
+        .hero-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            height: 500px;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+        .hero-watermark svg { width: 100%; height: 100%; }
         .hero::before {
             content: '';
             position: absolute;
@@ -285,16 +329,18 @@
             justify-content: center;
             position: relative;
         }
-        .hero-burger {
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle at 40% 40%, var(--gold) 0%, #e6a800 100%);
-            border-radius: 50%;
+        .hero-logo-display {
+            position: relative;
+            width: 260px;
+            height: 260px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 8rem;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.5), inset 0 -8px 0 rgba(0,0,0,0.15);
+        }
+        .hero-logo-display svg {
+            width: 100%;
+            height: 100%;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
             animation: float 3s ease-in-out infinite;
         }
         @keyframes float {
@@ -316,22 +362,45 @@
             box-shadow: var(--shadow-xl);
             animation: float2 4s ease-in-out infinite;
         }
-        .hero-floating.f1 { top: 0; left: 10%; animation-delay: 0s; }
-        .hero-floating.f2 { bottom: 10%; right: 5%; animation-delay: 1.5s; width: 60px; height: 60px; font-size: 0.75rem; }
+        .hero-floating.f1 { top: 0; left: 5%; animation-delay: 0s; }
+        .hero-floating.f2 { bottom: 8%; right: 0; animation-delay: 1.5s; width: 60px; height: 60px; font-size: 0.75rem; }
         @keyframes float2 {
             0%, 100% { transform: translateY(0) rotate(0deg); }
             30% { transform: translateY(-14px) rotate(3deg); }
             60% { transform: translateY(-6px) rotate(-2deg); }
         }
 
+        /* ── Sections ── */
         .section {
             padding: 70px 20px;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
+        .section-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            height: 350px;
+            opacity: 0.025;
+            pointer-events: none;
+            z-index: 0;
+        }
+        .section-watermark svg { width: 100%; height: 100%; }
         .section-header {
             text-align: center;
             margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        .section-header .mini-logo {
+            display: block;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 12px;
         }
         .section-label {
             display: inline-block;
@@ -348,6 +417,16 @@
             font-weight: 900;
             color: var(--gray-900);
             margin-bottom: 10px;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--red), var(--gold));
+            margin: 10px auto 0;
+            border-radius: 2px;
         }
         .section-subtitle {
             color: var(--gray-500);
@@ -360,6 +439,8 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 24px;
+            position: relative;
+            z-index: 1;
         }
         .card {
             background: var(--white);
@@ -368,6 +449,7 @@
             box-shadow: var(--shadow);
             transition: all var(--transition);
             border: 1px solid var(--gray-200);
+            position: relative;
         }
         .card:hover {
             transform: translateY(-6px);
@@ -383,6 +465,18 @@
             justify-content: center;
             font-size: 5rem;
             color: var(--gray-400);
+            position: relative;
+            overflow: hidden;
+        }
+        .card-img::after {
+            content: '';
+            position: absolute;
+            top: -30px;
+            right: -30px;
+            width: 80px;
+            height: 80px;
+            background: rgba(255,199,44,0.12);
+            border-radius: 50%;
         }
         .card-body { padding: 20px; }
         .card-title {
@@ -410,7 +504,7 @@
         .card-price span { font-size: 0.75rem; font-weight: 500; color: var(--gray-500); }
         .card-calories {
             font-size: 0.8rem;
-            color: var(--gold);
+            color: var(--gold-dark);
             font-weight: 600;
             background: rgba(255,199,44,0.12);
             padding: 3px 10px;
@@ -458,8 +552,19 @@
             font-size: 6rem;
             color: #fff;
             min-height: 200px;
+            position: relative;
+            overflow: hidden;
         }
-        .offer-body { padding: 28px; display: flex; flex-direction: column; justify-content: center; }
+        .offer-visual::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,199,44,0.25) 0%, transparent 70%);
+        }
+        .offer-body { padding: 28px; display: flex; flex-direction: column; justify-content: center; position: relative; z-index: 1; }
         .offer-badge {
             display: inline-block;
             background: var(--gold);
@@ -481,10 +586,22 @@
             box-shadow: var(--shadow);
             border-right: 4px solid var(--red);
             transition: all var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+        .branch-card::before {
+            content: '';
+            position: absolute;
+            top: -40px;
+            left: -40px;
+            width: 100px;
+            height: 100px;
+            background: rgba(255,199,44,0.08);
+            border-radius: 50%;
         }
         .branch-card:hover { transform: translateX(-4px); box-shadow: var(--shadow-lg); }
         .branch-name { font-size: 1.25rem; font-weight: 800; color: var(--gray-900); }
-        .branch-info { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; }
+        .branch-info { display: flex; flex-direction: column; gap: 8px; margin-top: 14px; position: relative; z-index: 1; }
         .branch-info span { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; color: var(--gray-600); }
         .branch-info i { color: var(--red); width: 18px; text-align: center; }
 
@@ -518,6 +635,7 @@
             box-shadow: 0 0 0 3px rgba(255,199,44,0.15);
         }
 
+        /* ── Cart ── */
         .cart-overlay {
             position: fixed;
             inset: 0;
@@ -525,7 +643,7 @@
             z-index: 2000;
             opacity: 0;
             pointer-events: none;
-            transition: opacity var(--transition);
+            transition: opacity var(-transition);
         }
         .cart-overlay.open { opacity: 1; pointer-events: auto; }
         .cart-panel {
@@ -553,6 +671,12 @@
             background: var(--red);
             color: #fff;
         }
+        .cart-header .cart-logo-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .cart-header .cart-logo-row svg { width: 30px; height: 30px; }
         .cart-header h3 { font-size: 1.3rem; font-weight: 800; }
         .cart-close {
             background: none;
@@ -663,6 +787,7 @@
         }
         .btn-checkout:hover { background: var(--red-dark); transform: translateY(-2px); }
 
+        /* ── Modals ── */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -673,7 +798,7 @@
             justify-content: center;
             opacity: 0;
             pointer-events: none;
-            transition: opacity var(--transition);;
+            transition: opacity var(--transition);
         }
         .modal-overlay.open { opacity: 1; pointer-events: auto; }
         .modal {
@@ -705,53 +830,102 @@
         }
         .modal-close:hover { background: var(--red); color: #fff; }
         .modal h2 { font-size: 1.4rem; font-weight: 900; margin-bottom: 20px; color: var(--gray-900); }
+        .modal .modal-logo {
+            display: block;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 14px;
+        }
 
-        .order-timeline {
-            display: flex;
-            justify-content: space-between;
-            margin: 20px ；
+        /* ── Footer ── */
+        .footer {
+            background: var(--gray-900);
+            color: rgba(255,255,255,0.7);
+            padding: 40px 20px 20px;
             position: relative;
+            z-index: 1;
         }
-        .order-timeline::befor {
-            content: '';
-            position: absolut;
-            top: 18p;
-            left: 10;
-            right: 10;
-            height: 3p;
-            background: var(--gray-200);
-            -index: ;
+        .footer-brand-strip {
+            max-width: 1100px;
+            margin: 0 auto 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid rgba(255,255,255,0.12);
+            flex-wrap: wrap;
+            text-align: center;
         }
-        .timeline-ste {
-            display: fle;
-            flex-direction: colum;
-            align-items: cente;
-            gap: 8p;
-            position: relativ;
-            z-index: ;
-            flex: ;
+        .footer-brand-strip .ft-logo-svg {
+            width: 65px;
+            height: 65px;
+            flex-shrink: 0;
+            filter: drop-shadow(0 4px 10px rgba(218,41,28,0.5));
         }
-        .timeline-do {
-            width: 38p;
-            height: 38p;
-            border-radius: 50;
-            background: var(--gray-200);
-            display: fle;
-            align-items: cente;
-            justify-content: cente;
-            font-size: 0.9re;
-            color: var(--gray-400);
-            transition: all var(--transition);
+        .footer-brand-strip .ft-logo-svg svg { width: 100%; height: 100%; }
+        .footer-brand-strip .ft-brand-text {
+            font-size: 2rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.2;
         }
-        .timeline-ste.don .timeline-do { background: var(--red); color: #fff; }
-        .timeline-ste.curren .timeline-do { background: var(--gold); color: var(--gray-900); animation: puls 1.8 infinit; }
-        @keyframes puls { 0%,100%{box-shadow:0 0 0 0 rgba(255,199,44,0.6);} 50%{box-shadow:0 0 0 14px rgba(255,199,44,0);} }
-        .timeline-labe { font-size: 0.7re; font-weight: 600; color: var(--gray-500); text-align: cente; }
+        .footer-brand-strip .ft-brand-text .ft-red { color: var(--red); }
+        .footer-brand-strip .ft-brand-text .ft-gold { color: var(--gold); }
+        .footer-brand-strip .ft-brand-sub {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 1px;
+        }
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 32px;
+            margin-bottom: 36px;
+        }
+        .footer-col h4 { color: #fff; font-weight: 800; margin-bottom: 14px; font-size: 1.05rem; }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li { margin-bottom: 8px; }
+        .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color var(--transition); font-size: 0.9rem; }
+        .footer-col ul li a:hover { color: var(--gold); }
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .footer-bottom .mini-logo-inline {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .admin-link {
+            display: inline-block;
+            color: rgba(255,255,255,0.35);
+            font-size: 0.75rem;
+            margin-top: 8px;
+            text-decoration: none;
+            transition: color var(--transition);
+        }
+        .admin-link:hover { color: var(--gold); }
 
-        . dashboard {
+        /* ── Dashboard ── */
+        .dashboard {
             display: none;
             min-height: 100vh;
             background: var(--gray-50);
+            position: relative;
+            z-index: 1;
         }
         .dashboard.active { display: flex; }
         .dash-sidebar {
@@ -772,6 +946,12 @@
             align-items: center;
             gap: 10px;
         }
+        .dash-sidebar-header .dash-logo-svg {
+            width: 40px;
+            height: 40px;
+            flex-shrink: 0;
+        }
+        .dash-sidebar-header .dash-logo-svg svg { width: 100%; height: 100%; }
         .dash-nav { list-style: none; padding: 12px 0; flex: 1; }
         .dash-nav li a {
             display: flex;
@@ -794,7 +974,7 @@
             padding: 16px 20px;
             border-top: 1px solid rgba(255,255,255,0.08);
         }
-        . dash-main {
+        .dash-main {
             flex: 1;
             padding: 28px 32px;
             overflow-y: auto;
@@ -902,42 +1082,24 @@
         }
         .calc-total-cal { font-size: 2.5rem; font-weight: 900; color: var(--red); }
 
-        .footer {
-            background: var(--gray-900);
-            color: rgba(255,255,255,0.7);
-            padding: 50px 20px 20px;
+        /* ── Brand watermark on section bg ── */
+        .branded-section {
+            position: relative;
         }
-        .footer-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 32px;
-            margin-bottom: 36px;
+        .branded-section .bg-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
         }
-        .footer-col h4 { color: #fff; font-weight: 800; margin-bottom: 14px; font-size: 1.05rem; }
-        .footer-col ul { list-style: none; }
-        .footer-col ul li { margin-bottom: 8px; }
-        .footer-col ul li a { color: rgba(255,255,255,0.6); text-decoration: none; transition: color var(--transition); font-size: 0.9rem; }
-        .footer-col ul li a:hover { color: var(--gold); }
-        .footer-bottom {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-            font-size: 0.8rem;
-        }
-        .admin-link {
-            display: inline-block;
-            color: rgba(255,255,255,0.35);
-            font-size: 0.75rem;
-            margin-top: 8px;
-            text-decoration: none;
-            transition: color var(--transition);
-        }
-        .admin-link:hover { color: var(--gold); }
+        .branded-section .bg-watermark svg { width: 100%; height: 100%; }
 
+        /* ── Responsive ── */
         @media (max-width: 900px) {
             .nav-links {
                 display: none;
@@ -956,7 +1118,7 @@
             .hero-inner { grid-template-columns: 1fr; text-align: center; }
             .hero-text p { max-width: 100%; }
             .hero-btns { justify-content: center; }
-            .hero-burger { width: 220px; height: 220px; font-size: 5rem; }
+            .hero-logo-display { width: 200px; height: 200px; }
             .offer-card { grid-template-columns: 1fr; }
             .contact-grid { grid-template-columns: 1fr; }
             .dashboard.active { flex-direction: column; }
@@ -969,8 +1131,9 @@
 
         @media (max-width: 600px) {
             .header-inner { padding: 6px 12px; }
+            .logo-svg-wrap { width: 42px; height: 42px; }
             .logo-text { font-size: 1.1rem; }
-            .logo-icon { width: 40px; height: 40px; font-size: 20px; }
+            .logo-sub { font-size: 0.6rem; }
             .btn { padding: 10px 20px; font-size: 0.85rem; }
             .section { padding: 40px 14px; }
             .cards-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
@@ -978,6 +1141,8 @@
             .hero { padding: 50px 14px 60px; }
             .cart-panel { width: 100%; max-width: 100vw; }
             .dash-panel { padding: 16px; }
+            .footer-brand-strip .ft-brand-text { font-size: 1.5rem; }
+            .footer-brand-strip .ft-logo-svg { width: 48px; height: 48px; }
         }
     </style>
 </head>
@@ -986,10 +1151,32 @@
 <header class="header" id="mainHeader">
     <div class="header-inner">
         <a href="#home" class="logo-area" onclick="navigate('home')">
-            <div class="logo-icon">ب</div>
-            <div>
+            <div class="logo-svg-wrap">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#FFD866"/>
+                            <stop offset="50%" stop-color="#FFC72C"/>
+                            <stop offset="100%" stop-color="#E6A800"/>
+                        </linearGradient>
+                        <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#E8483B"/>
+                            <stop offset="100%" stop-color="#B52015"/>
+                        </linearGradient>
+                        <filter id="glow"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                    </defs>
+                    <!-- Background circle -->
+                    <circle cx="50" cy="50" r="47" fill="url(#redGrad)" stroke="url(#goldGrad)" stroke-width="3"/>
+                    <!-- Golden Arches -->
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="url(#goldGrad)" stroke-width="7" stroke-linecap="round" filter="url(#glow)"/>
+                    <path d="M32 72 Q39 28 50 32 Q61 28 68 72" fill="none" stroke="#FFD866" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+                    <!-- Star -->
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="url(#goldGrad)" filter="url(#glow)"/>
+                </svg>
+            </div>
+            <div class="logo-text-block">
                 <div class="logo-text"><span class="red">برغر</span> <span class="gold">ستار</span></div>
-                <div class="logo-sub">Burger Star</div>
+                <div class="logo-sub">BURGER <span class="en">STAR</span> ⭐</div>
             </div>
         </a>
         <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="القائمة"><i class="fas fa-bars"></i></button>
@@ -1014,7 +1201,10 @@
 <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
 <div class="cart-panel" id="cartPanel">
     <div class="cart-header">
-        <h3><i class="fas fa-shopping-bag"></i> سلة المشتريات</h3>
+        <div class="cart-logo-row">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD866"/><stop offset="100%" stop-color="#E6A800"/></linearGradient></defs><circle cx="50" cy="50" r="47" fill="#B52015" stroke="url(#cg)" stroke-width="3"/><path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="url(#cg)" stroke-width="7" stroke-linecap="round"/><polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="url(#cg)"/></svg>
+        </div>
+        <h3>سلة المشتريات</h3>
         <button class="cart-close" onclick="toggleCart()"><i class="fas fa-times"></i></button>
     </div>
     <div class="cart-items" id="cartItems"></div>
@@ -1029,8 +1219,16 @@
 
 <main id="mainContent">
 
+    <!-- ── HOME PAGE ── -->
     <div class="page active" id="page-home">
         <section class="hero">
+            <div class="hero-watermark">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="47" fill="none" stroke="#FFC72C" stroke-width="3"/>
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#FFC72C" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="#FFC72C"/>
+                </svg>
+            </div>
             <div class="hero-inner">
                 <div class="hero-text">
                     <h1>أشهى <span class="gold-span">برغر</span> في<br>انتظارك الآن</h1>
@@ -1041,14 +1239,40 @@
                     </div>
                 </div>
                 <div class="hero-visual">
-                    <div class="hero-burger">🍔</div>
+                    <div class="hero-logo-display">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="hgGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#FFD866"/>
+                                    <stop offset="50%" stop-color="#FFC72C"/>
+                                    <stop offset="100%" stop-color="#E6A800"/>
+                                </linearGradient>
+                                <linearGradient id="hgRed" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#E8483B"/>
+                                    <stop offset="100%" stop-color="#B52015"/>
+                                </linearGradient>
+                                <filter id="hgGlow"><feGaussianBlur stdDeviation="2" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                            </defs>
+                            <circle cx="50" cy="50" r="47" fill="url(#hgRed)" stroke="url(#hgGold)" stroke-width="3.5"/>
+                            <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="url(#hgGold)" stroke-width="8" stroke-linecap="round" filter="url(#hgGlow)"/>
+                            <path d="M31 72 Q38.5 26 50 30 Q61.5 26 69 72" fill="none" stroke="#FFF" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+                            <polygon points="50,26 56.5,45 77,45 61,57 67,76 50,64 33,76 39,57 23,45 43.5,45" fill="url(#hgGold)" filter="url(#hgGlow)"/>
+                        </svg>
+                    </div>
                     <div class="hero-floating f1">🔥 حار</div>
                     <div class="hero-floating f2">⭐ طازج</div>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section branded-section" style="position:relative;">
+            <div class="bg-watermark">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="47" fill="none" stroke="#DA291C" stroke-width="3"/>
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#DA291C" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="#DA291C"/>
+                </svg>
+            </div>
             <div class="section-header">
                 <span class="section-label">الأكثر مبيعاً</span>
                 <h2 class="section-title">وجباتنا المميزة</h2>
@@ -1057,16 +1281,30 @@
             <div class="cards-grid" id="featuredCards"></div>
         </section>
 
-        <section class="section" style="background:var(--white); border-radius: var(--radius-xl) 0 0 0; padding: 50px 20px;">
+        <section class="section" style="background:var(--white); border-radius: var(--radius-xl) 0 0 0; padding: 50px 20px; position:relative;">
+            <div class="bg-watermark">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="47" fill="none" stroke="#FFC72C" stroke-width="3"/>
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#FFC72C" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="#FFC72C"/>
+                </svg>
+            </div>
             <div class="section-header">
                 <span class="section-label">أداة تفاعلية</span>
                 <h2 class="section-title">حاسبة السعرات الحرارية</h2>
                 <p class="section-subtitle">اختر وجباتك واعرف مجموع السعرات الحرارية بسهولة</p>
             </div>
-            <div style="max-width:600px; margin:0 auto;" id="calorieCalc"></div>
+            <div style="max-width:600px; margin:0 auto; position:relative; z-index:1;" id="calorieCalc"></div>
         </section>
 
-        <section class="section">
+        <section class="section branded-section">
+            <div class="bg-watermark">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle c="50" cy="50" r="47" fill="none" stroke="#DA291C" stroke-width="3"/>
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#DA291C" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="#DA291C"/>
+                </svg>
+            </div>
             <div class="section-header">
                 <h2 class="section-title">ليه برغر ستار؟</h2>
             </div>
@@ -1095,10 +1333,18 @@
         </section>
     </div>
 
+    <!-- ── MENU PAGE ── -->
     <div class="page" id="page-menu">
-        <section class="section">
+        <section class="section branded-section">
+            <div class="bg-watermark">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle c="50" cy="50" r="47" fill="none" stroke="#DA291C" stroke-width="3"/>
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#DA291C" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="#DA291C"/>
+                </svg>
+            </div>
             <div class="section-header">
-                <span class="section-label">قائمة الطعام</span>
+                <span class="section-label">قائمة الطع ام</span>
                 <h2 class="section-title">المنيو الكامل</h2>
                 <p class="section-subtitle">جميع الوجبات محضرة بكل حب وعناية</p>
             </div>
@@ -1106,19 +1352,35 @@
         </section>
     </div>
 
+    <!-- ── OFFERS PAGE ── -->
     <div class="page" id="page-offers">
-        <section class="section">
+        <section class="section branded-section">
+            <div class="bg-watermark">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle c="50" cy="50" r="47" fill="none" stroke="#FFC72C" stroke-width="3"/>
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#FFC72C" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="#FFC72C"/>
+                </svg>
+            </div>
             <div class="section-header">
                 <span class="section-label">لفترة محدودة</span>
                 <h2 class="section-title">العروض الخاصة</h2>
                 <p class="section-subtitle">استغل العروض ووفر أكتر</p>
             </div>
-            <div style="display:flex; flex-direction:column; gap:24px;" id="offersList"></div>
+            <div style="display:flex; flex-direction: column; gap:24px;" id="offersList"></div>
         </section>
     </div>
 
+    <!-- ── BRANCHES PAGE ── -->
     <div class="page" id="page-branches">
-        <section class="section">
+        <section class="section branded-section">
+            <div class="bg-watermark">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="47" fill="none" stroke="#DA291C" stroke-width="3"/>
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#DA291C" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="#DA291C"/>
+                </svg>
+            </div>
             <div class="section-header">
                 <span class="section-label">مواقعنا</span>
                 <h2 class="section-title">الفروع</h2>
@@ -1128,10 +1390,18 @@
         </section>
     </div>
 
+    <!-- ── CONTACT PAGE ── -->
     <div class="page" id="page-contact">
-        <section class="section">
+        <section class="section branded-section">
+            <div class="bg-watermark">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="47" fill="none" stroke="#DA291C" stroke-width="3"/>
+                    <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#DA291C" stroke-width="7" stroke-linecap="round"/>
+                    <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="#DA291C"/>
+                </svg>
+            </div>
             <div class="section-header">
-                <span class="section-label">تواصل معنا</span>
+                <span class="section-label">تواصل معن ا</span>
                 <h2 class="section-title">نحب نسمع منك</h2>
             </div>
             <div class="contact-grid">
@@ -1157,11 +1427,11 @@
                 </div>
                 <div>
                     <div style="background:var(--white); border-radius:var(--radius-lg); padding:28px; box-shadow:var(--shadow); margin-bottom:20px;">
-                        <h3 style="font-weight:800; margin-bottom:16px;">معلومات التواصل</h3>
-                        <div style="display:flex; flex-direction:column; gap:14px;">
-                            <div style="display:flex; align-items:center; gap:12px;"><div style="width:42px;height:42px;background:rgba(218,41,28,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--red);"><i class="fas fa-phone"></i></div><div><strong>اتصل بنا</strong><br><span style="color:var(--gray-500);">19999</span></div></div>
+                        <h3 style="font-weight:800; margin-bottom:16px;">معلومات التو اص ل</h3>
+                        <div style="display:flex; flex-direction: column; gap:14px;">
+                            <div style="display:flex; align-items:center; gap:12px;"><div style="width:42px;height:42px;background:rgba(218,41,28,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--red);"><i class="fas fa-phone"></i></div><div><strong>اتصل بن ا</strong><br><span style="color:var(--gray-500);">19999</span></div></div>
                             <div style="display:flex; align-items:center; gap:12px;"><div style="width:42px;height:42px;background:rgba(255,199,44,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#c49a0e;"><i class="fas fa-envelope"></i></div><div><strong>البريد الإلكتروني</strong><br><span style="color:var(--gray-500);">info@burgerstar.com</span></div></div>
-                            <div style="display:flex; align-items:center; gap:12px;"><div style="width:42px;height:42px;background:rgba(218,41,28,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--red);"><i class="fas fa-clock"></i></div><div><strong>مواعيد العمل</strong><br><span style="color:var(--gray-500);">يومياً من 10 ص إلى 2 بعد منتصف اليل</span></div></div>
+                            <div style="display:flex; align-items:center; gap:12px;"><div style="width:42px;height:42px;background:rgba(218,41,28,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--red);"><i class="fas fa-clock"></i></div><div><strong>مواعيد العمل</strong><br><span style="color:var(--gray-500);">يومياً من 10 ص إلى 2 بعد منتصف الليل</span></div></div>
                         </div>
                     </div>
                     <div style="background:var(--white); border-radius:var(--radius-lg); padding:28px; box-shadow:var(--shadow);">
@@ -1179,9 +1449,13 @@
     </div>
 </main>
 
+<!-- ── TRACKING MODAL ── -->
 <div class="modal-overlay" id="trackingModalOverlay">
     <div class="modal" id="trackingModal">
         <button class="modal-close" onclick="closeTracking()"><i class="fas fa-times"></i></button>
+        <div class="modal-logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD866"/><stop offset="100%" stop-color="#E6A800"/></linearGradient></defs><circle c="50" cy="50" r="47" fill="#B52015" stroke="url(#mg)" stroke-width="3"/><path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="url(#mg)" stroke-width="7" stroke-linecap="round"/><polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="url(#mg)"/></svg>
+        </div>
         <h2><i class="fas fa-map-marker-alt"></i> تتبع الطلب</h2>
         <div class="form-group">
             <label>رقم الهاتف</label>
@@ -1192,9 +1466,13 @@
     </div>
 </div>
 
+<!-- ── CHECKOUT MODAL ── -->
 <div class="modal-overlay" id="checkoutModalOverlay">
     <div class="modal" id="checkoutModal">
         <button class="modal-close" onclick="closeCheckout()"><i class="fas fa-times"></i></button>
+        <div class="modal-logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="mg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD866"/><stop offset="100%" stop-color="#E6A800"/></linearGradient></defs><circle c="50" cy="50" r="47" fill="#B52015" stroke="url(#mg2)" stroke-width="3"/><path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="url(#mg2)" stroke-width="7" stroke-linecap="round"/><polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="url(#mg2)"/></svg>
+        </div>
         <h2>إتمام الطلب</h2>
         <div class="form-group">
             <label>الاسم الكامل</label>
@@ -1214,11 +1492,38 @@
     </div>
 </div>
 
+<!-- ── FOOTER ── -->
 <footer class="footer">
+    <div class="footer-brand-strip">
+        <div class="ft-logo-svg">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="ftGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#FFD866"/>
+                        <stop offset="50%" stop-color="#FFC72C"/>
+                        <stop offset="100%" stop-color="#E6A800"/>
+                    </linearGradient>
+                    <filter id="ftGlow"><feGaussianBlur stdDeviation="1.5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                </defs>
+                <circle c="50" cy="50" r="47" fill="#DA291C" stroke="url(#ftGold)" stroke-width="3.5"/>
+                <path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="url(#ftGold)" stroke-width="8" stroke-linecap="round" filter="url(#ftGlow)"/>
+                <polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="url(#ftGold)" filter="url(#ftGlow)"/>
+            </svg>
+        </div>
+        <div>
+            <div class="ft-brand-text"><span class="ft-red">برغر</span> <span class="ft-gold">ستار</span></div>
+            <div class="ft-brand-sub">BURGER STAR ⭐ — أشهى البرغر في مصر</div>
+        </div>
+    </div>
     <div class="footer-grid">
         <div class="footer-col">
             <h4>برغر ستار</h4>
             <p style="font-size:0.9rem;">أشهى البرغر في مصر، مصنوع بحب وجودة من أجود المكونات.</p>
+            <div style="display:flex; gap:8px; margin-top:12px;">
+                <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.9rem;transition:all 0.2s;"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.9rem;transition:all 0.2s;"><i class="fab fa-instagram"></i></a>
+                <a href="#" style="width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);display:flex;align-items:center;justify-content:center;text-decoration:none;font-size:0.9rem;transition:all 0.2s;"><i class="fab fa-tiktok"></i></a>
+            </div>
         </div>
         <div class="footer-col">
             <h4>روابط سريعة</h4>
@@ -1232,7 +1537,7 @@
             <h4>خدماتنا</h4>
             <ul>
                 <li><a href="#branches" onclick="navigate('branches')">الفروع</a></li>
-                <li><a href="#contact" onclick="navigate('contact')">تواصل معنا</a></li>
+                <li><a href="#contact" onclick="navigate('contact')">تواصل معن ا</a></li>
                 <li><a href="#" onclick="openTracking()">تتبع الطلب</a></li>
             </ul>
         </div>
@@ -1245,15 +1550,20 @@
         </div>
     </div>
     <div class="footer-bottom">
-        <p>© 2025 برغر ستار - جميع الحقوق محفوظة</p>
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:18px;height:18px;display:inline-block;vertical-align:middle;"><circle cx="50" cy="50" r="47" fill="#DA291C" stroke="#FFC72C" stroke-width="3"/><path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="#FFC72C" stroke-width="6" stroke-linecap="round"/><polygon points="50,30 55,44 70,44 58,53 62,68 50,59 38,68 42,53 30,44 45,44" fill="#FFC72C"/></svg>
+        <span>© 2025 برغر ستار - جميع الحقوق محفوظة</span>
         <a href="#admin" class="admin-link" onclick="location.hash='admin'; checkAdminRoute();">دخول الإدارة</a>
     </div>
 </footer>
 
+<!-- ── DASHBOARD ── -->
 <div class="dashboard" id="dashboard">
     <div class="dash-sidebar">
         <div class="dash-sidebar-header">
-            <i class="fas fa-burger"></i> لوحة التحكم
+            <div class="dash-logo-svg">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="dsGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD866"/><stop offset="100%" stop-color="#E6A800"/></linearGradient></defs><circle c="50" cy="50" r="47" fill="#B52015" stroke="url(#dsGold)" stroke-width="3"/><path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="url(#dsGold)" stroke-width="7" stroke-linecap="round"/><polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="url(#dsGold)"/></svg>
+            </div>
+            <span>برغر ستار</span>
         </div>
         <ul class="dash-nav">
             <li><a href="#" class="active" data-dtab="overview"><i class="fas fa-chart-bar"></i> نظرة عامة</a></li>
@@ -1320,7 +1630,7 @@
                 <button class="btn btn-sm" onclick="toggleTheme()" style="background:var(--gray-200);color:var(--gray-700);"><i class="fas fa-moon"></i> الوضع الليلي</button>
             </div>
             <div class="dash-panel">
-                <h3>إضافة أدمن جديد</h3>
+                <h3>إضافة أدمن جيد</h3>
                 <div class="form-group">
                     <label>البريد الإلكتروني</label>
                     <input type="email" id="newAdminEmail" placeholder="admin@example.com">
@@ -1336,8 +1646,12 @@
     </div>
 </div>
 
+<!-- ── LOGIN MODAL ── -->
 <div class="modal-overlay" id="loginModalOverlay">
     <div class="modal" id="loginModal">
+        <div class="modal-logo">
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lgGold" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#FFD866"/><stop offset="100%" stop-color="#E6A800"/></linearGradient></defs><circle c="50" cy="50" r="47" fill="#B52015" stroke="url(#lgGold)" stroke-width="3"/><path d="M26 72 Q35 16 50 20 Q65 16 74 72" fill="none" stroke="url(#lgGold)" stroke-width="7" stroke-linecap="round"/><polygon points="50,28 56,46 75,46 60,56 66,74 50,63 34,74 40,56 25,46 44,46" fill="url(#lgGold)"/></svg>
+        </div>
         <h2>تسجيل دخول الإدارة</h2>
         <div class="form-group">
             <label>البريد الإلكتروني</label>
@@ -1628,7 +1942,7 @@ async function submitOrder() {
             errorEl.style.display = 'block';
         }
     } catch (e) {
-        errorEl.textContent = 'خطأ في الاتصال، الرجاء التحقق من اتصالك';
+        errorEl.textContent = 'خطأ في الاتصال، الرجاء التحقق من ات صالك';
         errorEl.style.display = 'block';
     }
 }
@@ -1660,7 +1974,7 @@ async function trackOrder() {
         const data = await res.json();
         if (data.success && data.orders && data.orders.length > 0) {
             resultEl.innerHTML = data.orders.map(o => {
-                const statusMap = { new: 'جديد', processing: 'قيد التجهيز', shipped: 'تم التوصيل', completed: 'مكتمل', cancelled: 'ملغي' };
+                const statusMap = { new: 'جديد', processing: 'قيد التج هيز', shipped: 'تم الت وصيل', completed: 'مكتمل', cancelled: 'ملغي' };
                 const statusClassMap = { new: 'badge-new', processing: 'badge-processing', shipped: 'badge-shipped', completed: 'badge-completed', cancelled: 'badge-cancelled' };
                 const statusLabel = statusMap[o.status] || o.status;
                 const statusClass = statusClassMap[o.status] || 'badge-new';
@@ -2036,7 +2350,7 @@ async function uploadMedia() {
             } else {
                 showToast(data.message || 'فشل الرفع');
             }
-        } catch (e) { /* ignor */ }
+        } catch (e) { /* ignore */ }
     };
     reader.readAsDataURL(file);
 }
@@ -2045,7 +2359,7 @@ async function addAdmin() {
     const email = document.getElementById('newAdminEmail').value.trim();
     const password = document.getElementById('newAdminPassword').value;
     const msgEl = document.getElementById('adminMsg');
-    if (!email || !password) { msgEl.textContent = 'الرجاء ملء جميع الحقو'; msgEl.style.color = 'var(--red)'; return; }
+    if (!email || !password) { msgEl.textContent = 'الرجاء ملء جميع الحقول'; msgEl.style.color = 'var(--red)'; return; }
     if (password.length < 6) { msgEl.textContent = 'كلمة المرور يجب أن تكون 6 حروف على الأقل'; msgEl.style.color = 'var(--red)'; return; }
     try {
         const data = await apiDash({ action: 'add_admin', new_email: email, new_password: password });
@@ -2067,10 +2381,10 @@ function toggleTheme() {
     const next = current === 'dark' ? '' : 'dark';
     html.setAttribute('data-theme', next);
     localStorage.setItem('bs_theme', next);
-    const btn = document.querySelector('.dash-topbar .btn-sm');
-    if (btn) {
+    const btns = document.querySelectorAll('.dash-topbar .btn-sm');
+    btns.forEach(btn => {
         btn.innerHTML = next === 'dark' ? '<i class="fas fa-sun"></i> الوضع النهاري' : '<i class="fas fa-moon"></i> الوضع الليلي';
-    }
+    });
 }
 
 window.addEventListener('hashchange', () => {
