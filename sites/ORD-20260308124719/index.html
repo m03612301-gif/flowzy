@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ماك | برجر مشوي ووجبات سريعة</title>
+<meta name="description" content="ماك — مطعم وجبات سريعة: برجر لحم مشوي على الفحم، دجاج مقرمش، وجبات توفير وعروض يومية، مع توصيل سريع داخل القاهرة.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23DB2B1E'/%3E%3Ctext x='32' y='46' font-size='36' font-family='Arial' font-weight='bold' fill='%23FFB627' text-anchor='middle'%3E%D9%85%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;600;700;800&family=Almarai:wght@400;700;800&family=Barlow:wght@400;500;600;800&family=Anton&display=swap" rel="stylesheet">
+<style>
+/* ============ BASE ============ */
+*{box-sizing:border-box}
+:root{
+  --red:#DB2B1E; --red-2:#A81C12; --yellow:#FFB627; --yellow-2:#FFD166;
+  --cream:#FFF6E9; --cream-2:#FDEDD6; --ink:#141110; --ink-2:#221D19;
+  --line:#E9DCC5; --mut:#756B5C; --white:#fff; --green:#1F8A5B;
+  --r:22px; --r-sm:14px;
+  --sh:0 22px 45px -24px rgba(20,17,16,.42);
+  --sh-sm:0 10px 24px -14px rgba(20,17,16,.35);
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:'Almarai','Barlow',system-ui,sans-serif;font-size:16px;line-height:1.7;
+  overflow-x:hidden;
+}
+html[dir=ltr] body{font-family:'Barlow','Almarai',sans-serif}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
+h1,h2,h3,h4{font-family:'Baloo Bhaijaan 2','Almarai',sans-serif;line-height:1.15;margin:0;font-weight:800}
+html[dir=ltr] h1,html[dir=ltr] h2,html[dir=ltr] h3,html[dir=ltr] h4{letter-spacing:-.01em}
+p{margin:0}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.lat{font-family:'Barlow',sans-serif}
+.num{font-family:'Anton','Barlow',sans-serif;letter-spacing:.02em}
+section{scroll-margin-top:110px}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:9px;font-size:.76rem;font-weight:800;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--red);background:#fff6e9;border:1px solid var(--line);
+  padding:7px 14px;border-radius:999px;
+}
+.eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--red)}
+.sec-h{font-size:clamp(1.9rem,4vw,3.1rem);margin:16px 0 10px}
+.sec-p{color:var(--mut);max-width:620px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;cursor:pointer;
+  padding:15px 26px;border-radius:999px;border:2px solid transparent;font-weight:800;font-size:.95rem;
+  transition:transform .18s ease,box-shadow .18s ease,background .18s ease,color .18s;background:var(--red);color:#fff;
+  box-shadow:0 14px 26px -16px rgba(219,43,30,.9);
+}
+.btn:hover{transform:translateY(-2px)}
+.btn--yellow{background:var(--yellow);color:var(--ink);box-shadow:0 14px 26px -16px rgba(255,182,39,.95)}
+.btn--ghost{background:transparent;border-color:currentColor;color:var(--ink);box-shadow:none}
+.btn--dark{background:var(--ink);color:#fff;box-shadow:none}
+.btn--white{background:#fff;color:var(--ink);box-shadow:none}
+.btn svg{width:18px;height:18px;flex:0 0 auto}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-sm)}
+
+/* ============ TOPBAR ============ */
+.topbar{background:var(--ink);color:#F7EFE2;font-size:.8rem}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:42px}
+.topbar .tinfo{display:flex;align-items:center;gap:20px;overflow:hidden;white-space:nowrap}
+.topbar .tinfo span{display:inline-flex;align-items:center;gap:7px;opacity:.9}
+.topbar svg{width:15px;height:15px}
+.tlang{display:flex;align-items:center;gap:6px;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.15);border-radius:999px;padding:4px 6px}
+.tlang button{background:none;border:0;cursor:pointer;color:#F7EFE2;font-weight:700;font-size:.75rem;padding:3px 9px;border-radius:999px;opacity:.6}
+.tlang button.on{background:var(--yellow);color:var(--ink);opacity:1}
+.tadmin{opacity:.75;cursor:pointer;display:inline-flex;align-items:center;gap:6px;border:0;background:none;color:inherit;font-size:.78rem}
+.tadmin:hover{opacity:1;color:var(--yellow)}
+
+/* ============ NAV ============ */
+.nav{position:sticky;top:0;z-index:60;background:rgba(255,246,233,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;gap:20px;height:76px}
+.brand{display:flex;align-items:center;gap:11px;flex:0 0 auto}
+.mark{width:46px;height:46px;border-radius:14px;background:var(--red);color:var(--yellow);display:grid;place-items:center;font-family:'Baloo Bhaijaan 2',sans-serif;font-size:1.5rem;font-weight:800;box-shadow:0 10px 18px -12px rgba(219,43,30,.95);position:relative}
+.mark::after{content:"";position:absolute;inset:5px;border:2px dashed rgba(255,255,255,.35);border-radius:9px}
+.brand-txt strong{display:block;font-family:'Baloo Bhaijaan 2',sans-serif;font-size:1.35rem;line-height:1}
+.brand-txt small{font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;color:var(--mut);font-weight:800}
+.nav-links{display:flex;align-items:center;gap:4px;margin-inline-start:14px;flex:1}
+.nav-links a{padding:9px 13px;border-radius:999px;font-weight:700;font-size:.92rem;color:#3c342c;transition:.16s}
+.nav-links a:hover{background:#fff;color:var(--red)}
+.nav-act{display:flex;align-items:center;gap:10px}
+.icon-btn{position:relative;width:48px;height:48px;border-radius:14px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:.16s}
+.icon-btn:hover{border-color:var(--red)}
+.icon-btn svg{width:21px;height:21px}
+.count{position:absolute;top:-7px;inset-inline-end:-7px;min-width:22px;height:22px;border-radius:999px;background:var(--red);color:#fff;font-size:.72rem;font-weight:800;display:grid;place-items:center;padding:0 5px;font-family:'Barlow',sans-serif}
+.count.zero{display:none}
+.burger-nav{display:none;width:48px;height:48px;border-radius:14px;border:1px solid var(--line);background:#fff;cursor:pointer;place-items:center}
+.burger-nav svg{width:22px;height:22px}
+
+/* ============ HERO ============ */
+.hero{position:relative;padding:56px 0 70px;overflow:hidden}
+.hero::before{content:"";position:absolute;width:640px;height:640px;border-radius:50%;background:radial-gradient(circle,rgba(255,182,39,.35),transparent 65%);top:-260px;inset-inline-end:-160px;pointer-events:none}
+.hero::after{content:"MAK";position:absolute;font-family:'Anton',sans-serif;font-size:22rem;line-height:.8;color:rgba(20,17,16,.035);bottom:-70px;inset-inline-start:-30px;pointer-events:none;letter-spacing:-.04em}
+html[dir=rtl] .hero::after{content:"ماك"}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.06fr .94fr;gap:54px;align-items:center;z-index:2}
+.hero h1{font-size:clamp(2.5rem,5.6vw,4.4rem);margin:20px 0 18px}
+.hero h1 .hl{position:relative;display:inline-block;color:var(--red)}
+.hero h1 .hl::after{content:"";position:absolute;inset-inline:-6px;bottom:6px;height:16px;background:var(--yellow);z-index:-1;border-radius:4px;transform:rotate(-1deg)}
+.hero-p{color:#4d4438;font-size:1.06rem;max-width:520px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.stats{display:flex;gap:26px;margin-top:38px;padding-top:26px;border-top:1px dashed var(--line);flex-wrap:wrap}
+.stats b{display:block;font-family:'Anton','Barlow',sans-serif;font-size:1.9rem;line-height:1;color:var(--ink)}
+.stats span{font-size:.8rem;color:var(--mut);font-weight:700}
+.collage{position:relative;height:520px}
+.c-shot{position:absolute;border-radius:26px;overflow:hidden;box-shadow:var(--sh);border:6px solid #fff;background:var(--cream-2)}
+.c-shot img{width:100%;height:100%;object-fit:cover}
+.c-main{inset:0 34px 60px 0;transform:rotate(-2.4deg)}
+.c-sub{width:210px;height:210px;bottom:-6px;inset-inline-start:-14px;transform:rotate(3.5deg);z-index:3}
+.c-tag{position:absolute;inset-inline-start:-6px;top:34px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px 16px;box-shadow:var(--sh);z-index:4;display:flex;align-items:center;gap:11px}
+.c-tag b{font-family:'Baloo Bhaijaan 2',sans-serif;font-size:1.05rem}
+.c-tag small{display:block;color:var(--mut);font-size:.72rem;font-weight:700}
+.sticker{
+  position:absolute;inset-inline-end:-14px;bottom:56px;width:112px;height:112px;border-radius:50%;background:var(--red);color:#fff;
+  display:grid;place-items:center;text-align:center;z-index:5;box-shadow:warning 0 0 0;box-shadow:0 18px 30px -18px rgba(219,43,30,.95);
+  animation:spin 18s linear infinite;
+}
+.sticker span{display:block;font-family:'Baloo Bhaijaan 2',sans-serif;font-weight:800;line-height:1.05;font-size:.95rem}
+.sticker span b{font-family:'Anton',sans-serif;font-size:1.9rem;display:block}
+@keyframes spin{to{transform:rotate(360deg)}}
+.thumb-fb{position:absolute;inset:0;display:grid;place-items:center;font-family:'Baloo Bhaijaan 2',sans-serif;font-size:3rem;color:rgba(255,255,255,.85);background:linear-gradient(135deg,var(--red),#8f1a10)}
+img.dead{opacity:0}
+
+/* ============ TICKER ============ */
+.ticker{background:var(--red);color:#fff;padding:14px 0;overflow:hidden;border-block:5px solid var(--ink)}
+.tk-track{display:flex;gap:38px;width:max-content;animation:slide 34s linear infinite;direction:ltr}
+.ticker:hover .tk-track{animation-play-state:paused}
+.tk-item{display:inline-flex;align-items:center;gap:14px;font-family:'Baloo Bhaijaan 2',sans-serif;font-size:1.12rem;font-weight:700;white-space:nowrap}
+.tk-item svg{width:17px;height:17px;color:var(--yellow)}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ============ MENU ============ */
+.menu-sec{padding:78px 0 86px}
+.menu-head{display:flex;align-items:flex-end;justify-content:space-between;gap:26px;flex-wrap:wrap}
+.chips{display:flex;gap:9px;overflow-x:auto;padding:22px 0 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{
+  white-space:nowrap;border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:11px 19px;
+  font-weight:800;font-size:.87rem;cursor:pointer;transition:.16s;color:#413830
+}
+.chip:hover{border-color:var(--red);color:var(--red)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.pgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:26px}
+.pcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:.2s;box-shadow:var(--sh-sm)}
+.pcard:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:#e0cfae}
+.pcard.wide{grid-column:span 2}
+.pcard.wide .pbody{display:grid;grid-template-columns:1fr auto;gap:8px 20px;align-items:center}
+.pcard.wide .ptop{grid-column:1}
+.pcard.wide .pdesc{grid-column:1}
+.pcard.wide .pfoot{grid-column:2;grid-row:1/4;flex-direction:column;align-items:flex-end;gap:14px;border:0;margin:0;padding:0}
+.pthumb{position:relative;aspect-ratio:4/3;background:var(--cream-2);overflow:hidden}
+.pcard.wide .pthumb{aspect-ratio:auto;height:100%;min-height:230px}
+.pthumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.pcard:hover .pthumb img{transform:scale(1.06)}
+.badge{
+  position:absolute;top:12px;inset-inline-start:12px;width:64px;height:64px;border-radius:50%;background:var(--yellow);color:var(--ink);
+  display:grid;place-items:center;text-align:center;font-size:.64rem;font-weight:800;line-height:1.1;padding:6px;
+  box-shadow:0 10px 18px -12px rgba(0,0,0,.6);transform:rotate(-9deg);z-index:3
+}
+.badge.b-best{background:var(--red);color:#fff}
+.badge.b-new{background:var(--ink);color:var(--yellow)}
+.pbody{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.ptop{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.ptop h3{font-size:1.14rem}
+.kcal{font-size:.68rem;font-weight:800;color:var(--mut);background:var(--cream);border-radius:999px;padding:3px 9px;white-space:nowrap}
+.pdesc{font-size:.85rem;color:var(--mut);line-height:1.6}
+.pfoot{margin-top:auto;padding-top:14px;border-top:1px dashed var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px}
+.prices{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.prices .new{font-family:'Anton','Barlow',sans-serif;font-size:1.5rem;color:var(--red);line-height:1}
+.prices .old{font-size:.86rem;color:#a89a85;text-decoration:line-through;font-weight:700}
+.add{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:11px 17px;font-weight:800;font-size:.82rem;cursor:pointer;transition:.16s}
+.add:hover{background:var(--red)}
+.add svg{width:15px;height:15px}
+.add.done{background:var(--green)}
+
+/* ============ DEAL ============ */
+.deal{background:var(--ink);color:#FBF3E7;padding:74px 0;position:relative;overflow:hidden}
+.deal::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(219,43,30,.55),transparent 68%);top:-180px;inset-inline-start:-140px}
+.deal .wrap{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:52px;align-items:center;z-index:2}
+.deal h2{font-size:clamp(2rem,4.4vw,3.4rem)}
+.deal .pct{font-family:'Anton',sans-serif;color:var(--yellow);font-size:clamp(3.4rem,8vw,6rem);line-height:.9;display:block}
+.deal p{color:#c9bda9;max-width:520px;margin-top:14px}
+.clock{display:flex;gap:12px;margin:30px 0 26px}
+.clock div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:12px 16px;text-align:center;min-width:82px}
+.clock b{display:block;font-family:'Anton',sans-serif;font-size:1.9rem;color:var(--yellow);line-height:1}
+.clock small{font-size:.7rem;color:#b8ab97;font-weight:700}
+.deal-img{border-radius:26px;overflow:hidden;border:6px solid rgba(255,255,255,.1);height:340px;position:relative;background:#2a231d}
+.deal-img img{width:100%;height:100%;object-fit:cover}
+
+/* ============ OFFERS BENTO ============ */
+.offers{padding:80px 0}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:172px;gap:18px;margin-top:34px}
+.tile{border-radius:var(--r);padding:24px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid var(--line);background:#fff;transition:.2s}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+.tile.t-big{grid-column:span 2;grid-row:span 2;background:linear-gradient(150deg,var(--red),var(--red-2));color:#fff;border:0;justify-content:space-between}
+.tile.t-yellow{background:var(--yellow);border:0}
+.tile.t-dark{background:var(--ink);color:#FBF3E7;border:0}
+.tile h3{font-size:1.24rem;margin-bottom:6px}
+.tile p{font-size:.84rem;opacity:.8}
+.tile .t-tag{align-self:flex-start;font-size:.68rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;background:rgba(255,255,255,.2);padding:5px 11px;border-radius:999px;margin-bottom:auto}
+.tile.t-big h3{font-size:2rem;max-width:80%}
+.tile.t-big .big-num{font-family:'Anton',sans-serif;font-size:6rem;line-height:.85;opacity:.28;position:absolute;top:6px;inset-inline-end:20px}
+.tile .t-ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.16);margin-bottom:auto}
+.tile.t-yellow .t-ico,.tile.t-dark .t-ico{background:rgba(20,17,16,.1)}
+.tile.t-dark .t-ico{background:rgba(255,255,255,.12)}
+.tile svg{width:20px;height:20px}
+
+/* ============ ABOUT / WHY ============ */
+.about{padding:80px 0;background:linear-gradient(180deg,transparent,#FDEDD6 30%,#FDEDD6 70%,transparent)}
+.about .wrap{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
+.about-img{position:sticky;top:110px;border-radius:26px;overflow:hidden;height:470px;border:1px solid var(--line);background:var(--cream-2)}
+.about-img img{width:100%;height:100%;object-fit:cover}
+.reasons{display:flex;flex-direction:column;gap:14px;margin-top:26px}
+.reason{display:flex;gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;transition:.2s}
+.reason:hover{border-color:var(--red)}
+.reason .rnum{font-family:'Anton',sans-serif;font-size:1.7rem;color:var(--red);line-height:1;flex:0 0 auto;opacity:.85}
+.reason h3{font-size:1.1rem;margin-bottom:4px}
+.reason p{font-size:.87rem;color:var(--mut)}
+
+/* ============ BRANCHES ============ */
+.branches{padding:80px 0}
+.map-wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;margin-top:34px}
+.map{position:relative;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:#F3E7D2;min-height:430px}
+.map svg{width:100%;height:100%;position:absolute;inset:0}
+.pin{position:absolute;transform:translate(-50%,-100%);cursor:pointer;z-index:3;transition:.2s}
+.pin b{width:40px;height:40px;border-radius:50% 50% 50% 6px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:'Barlow',sans-serif;font-weight:800;font-size:.9rem;transform:rotate(45deg);border:3px solid #fff;box-shadow:0 8px 16px -8px rgba(0,0,0,.5)}
+.pin b span{transform:rotate(-45deg)}
+.pin.on b{background:var(--red);scale:1.18}
+.pin em{position:absolute;top:-4px;inset-inline-start:50%;transform:translate(-50%,-100%);background:#fff;border:1px solid var(--line);border-radius:9px;padding:3px 9px;font-style:normal;font-size:.72rem;font-weight:800;white-space:nowrap;opacity:0;transition:.2s}
+.pin.on em{opacity:1}
+.blist{display:flex;flex-direction:column;gap:13px}
+.bcard{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;cursor:pointer;transition:.2s}
+.bcard:hover,.bcard.on{border-color:var(--red);box-shadow:var(--sh-sm)}
+.bcard h3{font-size:1.08rem;display:flex;align-items:center;gap:10px}
+.bcard h3 i{width:26px;height:26px;border-radius:50%;background:var(--cream-2);display:grid;place-items:center;font-style:normal;font-weight:800;font-size:.78rem;color:var(--red)}
+.bcard .bmeta{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:9px;font-size:.82rem;color:var(--mut)}
+.bcard .bmeta span{display:inline-flex;align-items:center;gap:6px}
+.bcard svg{width:14px;height:14px;color:var(--red)}
+.open-now{display:inline-flex;align-items:center;gap:6px;font-size:.72rem;font-weight:800;color:var(--green);background:rgba(31,138,91,.1);border-radius:999px;padding:3px 10px;margin-inline-start:auto}
+.open-now::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green)}
+
+/* ============ REVIEWS ============ */
+.reviews{padding:80px 0;background:var(--cream-2)}
+.rev-track{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:30px 4px 20px;scrollbar-width:none}
+.rev-track::-webkit-scrollbar{display:none}
+.rev{flex:0 0 min(390px,84vw);scroll-snap-align:start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;gap:14px}
+.stars{display:flex;gap:3px;color:var(--yellow)}
+.stars svg{width:17px;height:17px}
+.rev p{font-size:.93rem;color:#463c31}
+.rev-by{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:16px;border-top:1px dashed var(--line)}
+.av{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--yellow);font-weight:800;font-family:'Baloo Bhaijaan 2',sans-serif}
+.rev-by b{display:block;font-size:.92rem}
+.rev-by small{color:var(--mut);font-size:.76rem}
+.rev-nav{display:flex;gap:9px;justify-content:center;margin-top:6px}
+.dot{width:9px;height:9px;border-radius:50%;background:#ddcfb6;border:0;cursor:pointer;padding:0}
+.dot.on{background:var(--red);width:26px;border-radius:999px}
+
+/* ============ CONTACT / RESERVE ============ */
+.contact{padding:80px 0}
+.tabs{display:flex;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px;width:max-content;margin-bottom:26px}
+.tabs button{border:0;background:none;border-radius:999px;padding:10px 22px;font-weight:800;font-size:.88rem;cursor:pointer;color:var(--mut)}
+.tabs button.on{background:var(--red);color:#fff}
+.contact .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:start}
+.form-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--sh-sm)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
+.fld{display:flex;flex-direction:column;gap:7px}
+.fld.full{grid-column:1/-1}
+.fld label{font-size:.8rem;font-weight:800;color:#4a4034}
+.fld input,.fld select,.fld textarea{
+  border:1.5px solid var(--line);border-radius:13px;padding:13px 14px;background:var(--cream);outline:none;transition:.16s;font-size:.9rem
+}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--red);background:#fff}
+.fld textarea{resize:vertical;min-height:96px}
+.msg{margin-top:16px;border-radius:13px;padding:13px 16px;font-weight:700;font-size:.86rem;display:none}
+.msg.ok{display:block;background:rgba(31,138,91,.12);color:#146442}
+.msg.err{display:block;background:rgba(219,43,30,.1);color:var(--red-2)}
+.contact-side{display:flex;flex-direction:column;gap:14px}
+.cbox{background:var(--ink);color:#FBF3E7;border-radius:var(--r);padding:26px}
+.cbox h3{font-size:1.15rem;margin-bottom:14px}
+.cline{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:.88rem}
+.cline:last-child{border:0}
+.cline svg{width:17px;height:17px;color:var(--yellow);flex:0 0 auto;margin-top:4px}
+.cline small{display:block;opacity:.6;font-size:.74rem}
+
+/* ============ MY ORDERS ============ */
+.myorders{padding:0 0 88px}
+.orders-box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px;box-shadow:var(--sh-sm)}
+.search-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.search-row input{flex:1;min-width:230px;border:1.5px solid var(--line);border-radius:13px;padding:13px 15px;background:var(--cream);outline:none}
+.search-row input:focus{border-color:var(--red);background:#fff}
+.order-row{border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:15px;display:grid;grid-template-columns:1fr auto;gap:10px 20px;align-items:center;background:var(--cream)}
+.order-row .oid{font-weight:800;font-size:.9rem}
+.order-row .odate{font-size:.76rem;color:var(--mut)}
+.order-row ul{margin:8px 0 0;padding:0;list-style:none;font-size:.85rem;color:#4b4136;grid-column:1}
+.order-row ul li{display:flex;gap:8px}
+.order-row ul li b{margin-inline-start:auto;font-weight:800}
+.pill{font-size:.72rem;font-weight:800;border-radius:999px;padding:5px 13px;white-space:nowrap}
+.p-new{background:rgba(255,182,39,.22);color:#8a5a00}
+.p-processing{background:rgba(219,43,30,.12);color:var(--red-2)}
+.p-shipped{background:rgba(45,110,220,.14);color:#1c4ea8}
+.p-completed{background:rgba(31,138,91,.14);color:#146442}
+.p-cancelled{background:rgba(20,17,16,.1);color:#4a4034}
+.total-line{grid-column:2;text-align:end;font-weight:800}
+.total-line b{font-family:'Anton','Barlow',sans-serif;color:var(--red);font-size:1.3rem;display:block}
+
+/* ============ FOOTER ============ */
+footer{background:var(--ink);color:#D9CDB9;padding:64px 0 26px;border-top:6px solid var(--yellow)}
+.fgrid2{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:36px}
+footer h4{color:#fff;font-size:1rem;margin-bottom:16px}
+footer a:hover{color:var(--yellow)}
+footer ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;font-size:.88rem}
+.fnote{font-size:.88rem;line-height:1.8;max-width:330px}
+.fpay{display:flex;gap:9px;margin-top:18px}
+.fpay span{border:1px solid rgba(255,255,255,.16);border-radius:9px;padding:5px 11px;font-size:.72rem;font-weight:700}
+.fbot{margin-top:44px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.79rem;opacity:.8}
+.fadmin{background:none;border:0;cursor:pointer;color:#8f8371;font-size:.79rem;text-decoration:underline;text-underline-offset:3px}
+.fadmin:hover{color:var(--yellow)}
+
+/* ============ CART DRAWER ============ */
+.dim{position:fixed;inset:0;background:rgba(20,17,16,.55);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:.3s;z-index:90}
+.dim.on{opacity:1;pointer-events:auto}
+.drawer{
+  position:fixed;top:0;right:0;bottom:0;width:min(430px,100%);background:var(--cream);z-index:100;
+  transform:translateX(105%);transition:transform .34s cubic-bezier(.4,.8,.3,1);display:flex;flex-direction:column;box-shadow:-20px 0 60px -30px rgba(0,0,0,.6)
+}
+.drawer.on{transform:translateX(0)}
+.dhead{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px}
+.dhead h3{font-size:1.2rem;flex:1}
+.dhead button{background:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:12px;cursor:pointer;display:grid;place-items:center}
+.dhead svg{width:18px;height:18px}
+.ditems{flex:1;overflow-y:auto;padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.citem{display:grid;grid-template-columns:64px 1fr auto;gap:12px;background:#fff;border:1px solid var(--line);border-radius:16px;padding:11px;align-items:center}
+.citem .cth{width:64px;height:64px;border-radius:12px;overflow:hidden;background:var(--cream-2);position:relative}
+.citem .cth img{width:100%;height:100%;object-fit:cover}
+.citem h4{font-size:.92rem}
+.citem .cprice{font-family:'Barlow',sans-serif;font-weight:800;color:var(--red);font-size:.9rem;margin-top:3px}
+.qty{display:flex;align-items:center;gap:8px;background:var(--cream);border-radius:999px;padding:4px;border:1px solid var(--line)}
+.qty button{width:26px;height:26px;border-radius:50%;border:0;background:#fff;cursor:pointer;font-weight:800;line-height:1;display:grid;place-items:center}
+.qty button:hover{background:var(--red);color:#fff}
+.qty b{min-width:18px;text-align:center;font-size:.85rem;font-family:'Barlow',sans-serif}
+.crm{background:none;border:0;cursor:pointer;color:#b3a591;font-size:.72rem;text-decoration:underline;margin-top:4px}
+.dempty{text-align:center;color:var(--mut);padding:60px 24px;font-size:.92rem}
+.dfoot{padding:20px 22px;border-top:1px solid var(--line);background:#fff}
+.sumline{display:flex;justify-content:space-between;font-size:.88rem;padding:5px 0;color:#4d4337}
+.sumline.tot{font-size:1.06rem;font-weight:800;border-top:1px dashed var(--line);margin-top:8px;padding-top:12px}
+.sumline.tot b{font-family:'Anton','Barlow',sans-serif;color:var(--red);font-size:1.45rem}
+.dfoot .btn{width:100%;margin-top:14px}
+.free-note{background:rgba(255,182,39,.2);color:#7a4f00;border-radius:11px;padding:9px 12px;font-size:.78rem;font-weight:700;margin-top:10px}
+
+/* ============ MODAL ============ */
+.modal{position:fixed;inset:0;z-index:120;display:none;place-items:center;padding:20px;background:rgba(20,17,16,.6);backdrop-filter:blur(4px)}
+.modal.on{display:grid}
+.mbox{background:var(--cream);border-radius:24px;width:min(520px,100%);max-height:92vh;overflow:auto;box-shadow:var(--sh)}
+.mhead{padding:22px 24px;border-bottom:1px solid var(--line);display:flex;align-items:center}
+.mhead h3{flex:1;font-size:1.25rem}
+.mhead button{background:#fff;border:1px solid var(--line);width:38px;height:38px;border-radius:12px;cursor:pointer;display:grid;place-items:center}
+.mbody{padding:24px}
+.mbody .btn{width:100%;margin-top:18px}
+.confirm{text-align:center;padding:40px 26px}
+.confirm .ck{width:76px;height:76px;border-radius:50%;background:rgba(31,138,91,.13);color:var(--green);display:grid;place-items:center;margin:0 auto 18px}
+.confirm .ck svg{width:38px;height:38px}
+.confirm h3{font-size:1.5rem;margin-bottom:10px}
+.confirm p{color:var(--mut);font-size:.92rem}
+
+/* ============ ADMIN ============ */
+.admin{position:fixed;inset:0;z-index:200;display:none;background:var(--abg);color:var(--atx);font-family:'Almarai','Barlow',sans-serif}
+.admin.on{display:flex}
+.admin[data-theme=light]{
+  --abg:#FFF6E9;--acard:#fff;--atx:#141110;--amut:#756B5C;--aline:#E9DCC5;--ainput:#FFF6E9;
+}
+.admin[data-theme=dark]{
+  --abg:#14100E;--acard:#1D1815;--atx:#F6EFE3;--amut:#A2937F;--aline:#332B25;--ainput:#241E1A;
+}
+.admin h2,.admin h3,.admin h4{color:var(--atx)}
+.login-wrap{width:100%;display:grid;place-items:center;padding:24px;background:
+  radial-gradient(900px 480px at 80% -10%,rgba(219,43,30,.24),transparent 60%),var(--abg)}
+.login-card{background:var(--acard);border:1px solid var(--aline);border-radius:24px;padding:34px;width:min(430px,100%);box-shadow:var(--sh)}
+.login-card .mark{margin-bottom:16px}
+.login-card h2{font-size:1.6rem;margin-bottom:6px}
+.login-card p.sub{color:var(--amut);font-size:.87rem;margin-bottom:22px}
+.login-card .fld label{color:var(--amut)}
+.login-card input{border-color:var(--aline);background:var(--ainput);color:var(--atx);width:100%}
+.login-card .btn{width:100%;margin-top:20px}
+.admin-shell{display:flex;width:100%;overflow:hidden}
+html[dir=ltr] .admin-shell{flex-direction:row-reverse}
+.admin-side{
+  width:262px;flex:0 0 262px;background:var(--acard);border-left:1px solid var(--aline);
+  display:flex;flex-direction:column;padding:20px 16px;gap:6px;overflow-y:auto
+}
+.admin-brand{display:flex;align-items:center;gap:11px;padding:6px 6px 18px;border-bottom:1px solid var(--aline);margin-bottom:14px}
+.admin-brand .mark{width:40px;height:40px;border-radius:12px;font-size:1.25rem}
+.admin-brand b{display:block;font-family:'Baloo Bhaijaan 2',sans-serif;font-size:1.05rem;line-height:1.1}
+.admin-brand small{font-size:.68rem;color:var(--amut);font-weight:700}
+.atab{
+  display:flex;align-items:center;gap:12px;border:0;background:none;color:var(--amut);font-weight:800;font-size:.9rem;
+  padding:12px 14px;border-radius:13px;cursor:pointer;text-align:start;transition:.16s
+}
+.atab svg{width:18px;height:18px}
+.atab:hover{background:var(--ainput);color:var(--atx)}
+.atab.on{background:var(--red);color:#fff}
+.admin-main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.admin-top{display:flex;align-items:center;gap:14px;padding:16px 24px;border-bottom:1px solid var(--aline);background:var(--acard);flex-wrap:wrap}
+.admin-top h2{font-size:1.25rem;flex:1}
+.whoami{font-size:.78rem;color:var(--amut);font-weight:700}
+.tbtn{background:var(--ainput);border:1px solid var(--aline);color:var(--atx);border-radius:11px;padding:9px 14px;font-weight:800;font-size:.8rem;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+.tbtn:hover{border-color:var(--red)}
+.tbtn svg{width:16px;height:16px}
+.admin-body{flex:1;overflow-y:auto;padding:24px}
+.apanel{display:none}
+.apanel.on{display:block}
+.apanel .card,.apanel .panel{background:var(--acard);border:1px solid var(--aline);border-radius:18px;padding:22px;margin-bottom:18px}
+.apanel h3{font-size:1.05rem;margin-bottom:4px}
+.apanel .hint{color:var(--amut);font-size:.81rem;margin-bottom:16px}
+.arow{display:grid;grid-template-columns:220px 1fr;gap:14px;align-items:center;margin-bottom:12px}
+.arow label{font-size:.84rem;font-weight:800;color:var(--amut);word-break:break-word}
+.admin input,.admin select,.admin textarea{
+  border:1.5px solid var(--aline);background:var(--ainput);color:var(--atx);border-radius:12px;padding:11px 13px;outline:none;width:100%;font-size:.88rem
+}
+.admin input:focus,.admin select:focus{border-color:var(--red)}
+.atable{width:100%;border-collapse:collapse;font-size:.86rem}
+.atable th{text-align:start;font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--amut);padding:10px 8px;border-bottom:1px solid var(--aline)}
+.atable td{padding:9px 8px;border-bottom:1px solid var(--aline);vertical-align:middle}
+.atable input{padding:8px 10px;font-size:.84rem}
+.mini{background:var(--red);color:#fff;border:0;border-radius:10px;padding:8px 13px;font-weight:800;font-size:.77rem;cursor:pointer}
+.mini.grey{background:var(--ainput);color:var(--atx);border:1px solid var(--aline)}
+.mini:hover{filter:brightness(1.08)}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.media-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;margin-top:8px}
+.mcell{border:1px solid var(--aline);border-radius:14px;overflow:hidden;background:var(--ainput)}
+.mcell img,.mcell video{width:100%;height:120px;object-fit:cover;display:block}
+.mcell .cap{padding:8px 10px;font-size:.74rem;color:var(--amut)}
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:18px}
+.stat{background:var(--acard);border:1px solid var(--aline);border-radius:18px;padding:18px}
+.stat small{color:var(--amut);font-size:.76rem;font-weight:800;display:block;margin-bottom:6px}
+.stat b{font-family:'Anton',sans-serif;font-size:2rem;line-height:1}
+.aorder{border:1px solid var(--aline);border-radius:16px;padding:16px;margin-bottom:12px;background:var(--ainput)}
+.aorder .ah{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.aorder .am{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin-top:12px;font-size:.83rem;color:var(--amut)}
+.aorder .am b{color:var(--atx)}
+.aorder ul{margin:12px 0 0;padding:0;list-style:none;font-size:.85rem;border-top:1px dashed var(--aline);padding-top:10px}
+.aorder ul li{display:flex;gap:10px}
+.aorder ul li b{margin-inline-start:auto}
+@media(max-width:860px){.admin-side{position:fixed;bottom:0;left:0;right:0;top:auto;width:100%;flex:0 0 auto;flex-direction:row;border:0;border-top:1px solid var(--aline);overflow-x:auto;padding:10px}
+ .atab span{display:none}.atab{justify-content:center}.admin-main{padding-bottom:74px}}
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1080px){
+  .pgrid{grid-template-columns:repeat(3,1fr)}
+  .fgrid2{grid-template-columns:1fr 1fr;gap:30px}
+}
+@media(max-width:960px){
+  .nav-links{display:none}
+  .nav-links.show{display:flex;position:absolute;top:76px;inset-inline:14px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px;flex-direction:column;align-items:stretch;box-shadow:var(--sh);z-index:70}
+  .nav-links.show a{padding:12px 14px}
+  .burger-nav{display:grid}
+  .hero .wrap{grid-template-columns:1fr;gap:38px}
+  .collage{height:400px}
+  .hero::after{font-size:13rem}
+  .deal .wrap,.about .wrap,.map-wrap,.contact .wrap{grid-template-columns:1fr}
+  .about-img{position:static;height:320px}
+  .bento{grid-template-columns:repeat(2,1fr)}
+  .pgrid{grid-template-columns:repeat(2,1fr)}
+  .pcard.wide{grid-column:span 2}
+  .pcard.wide .pbody{display:flex}
+  .pcard.wide .pfoot{flex-direction:row;align-items:center;border-top:1px dashed var(--line);margin-top:auto;padding-top:14px}
+  .deal-img{height:260px}
+}
+@media(max-width:640px){
+  .topbar .tinfo span:nth-child(2){display:none}
+  .pgrid{grid-template-columns:1fr}
+  .pcard.wide{grid-column:span 1}
+  .bento{grid-template-columns:1fr;grid-auto-rows:auto}
+  .tile{min-height:150px}
+  .tile.t-big{grid-column:span 1;grid-row:span 1;min-height:240px}
+  .stats{gap:18px}
+  .fgrid,.fgrid2{grid-template-columns:1fr}
+  .fgrid .fld.full{grid-column:auto}
+  .collage{height:330px}
+  .c-sub{width:140px;height:140px}
+  .sticker{width:92px;height:92px;bottom:34px}
+  .arow{grid-template-columns:1fr}
+  .order-row{grid-template-columns:1fr}
+  .order-row .total-line{grid-column:1;text-align:start}
+  .sec-h{font-size:1.9rem}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== TOPBAR ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tinfo">
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><em id="topHours" style="font-style:normal">مفتوح يومياً 10ص — 2ص</em></span>
+      <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v4a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1z"/></svg><b class="num lat" id="topPhone" style="font-family:'Barlow',sans-serif">19283</b></span>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px">
+      <button class="tadmin" id="topAdmin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M3 9h18M8 14h8"/></svg><span data-i18n="admin_link">دخول الإدارة</span></button>
+      <div class="tlang">
+        <button id="btnAr" class="on">العربية</button>
+        <button id="btnEn">English</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav">
+  <div class="wrap">
+    <a href="#home" class="brand">
+      <span class="mark">م</span>
+      <span class="brand-txt"><strong>ماك</strong><small data-i18n="brand_tag">وجبات سريعة</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#home" data-i18n="nav_home">الرئيسية</a>
+      <a href="#menu" data-i18n="nav_menu">المنيو</a>
+      <a href="#offers" data-i18n="nav_offers">العروض</a>
+      <a href="#branches" data-i18n="nav_branches">الفروع</a>
+      <a href="#about" data-i18n="nav_about">عن المطعم</a>
+      <a href="#contact" data-i18n="nav_contact">اتصل بنا</a>
+      <a href="#myorders" data-i18n="nav_orders">طلباتي</a>
+    </nav>
+    <div class="nav-act">
+      <button class="icon-btn" id="cartBtn" aria-label="cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h7.8a2 2 0 002-1.6L21 8H6"/><circle cx="10" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/></svg>
+        <span class="count zero" id="cartCount">0</span>
+      </button>
+      <button class="icon-btn" id="navAdmin" aria-label="admin" title="Admin">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3l8 3v6c0 5-3.4 8.2-8 9-4.6-.8-8-4-8-9V6l8-3z"/><path d="M9.5 12l1.8 1.8L15 10"/></svg>
+      </button>
+      <button class="burger-nav" id="navBurger" aria-label="menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="siteMain">
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="hero_eyebrow">مطعم وجبات سريعة · القاهرة</span>
+      <h1 data-i18n-html="hero_title">الطعم اللي <span class="hl">بيرجعلك</span> تاني</h1>
+      <p class="hero-p" data-i18n="hero_p">لحم بقري بيتفرم طازة في مطبخنا كل يوم، برجر بيتشوى على الفحم، دجاج مقرمش، وبطاطس بتتقلي على الطلب. اطلب في أقل من دقيقة واستلم سخن على بابك.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h10"/></svg><span data-i18n="hero_cta1">اطلب الآن</span></a>
+        <a href="#offers" class="btn btn--ghost"><span data-i18n="hero_cta2">تصفح العروض</span></a>
+      </div>
+      <div class="stats">
+        <div><b class="num">4.9</b><span data-i18n="stat1">تقييم العملاء</span></div>
+        <div><b class="num">4</b><span data-i18n="stat2">فروع بالقاهرة</span></div>
+        <div><b class="num">20<span style="font-size:1rem"> د</span></b><span data-i18n="stat3">متوسط التوصيل</span></div>
+        <div><b class="num">26</b><span data-i18n="stat4">صنف على المنيو</span></div>
+      </div>
+    </div>
+    <div class="collage">
+      <div class="c-shot c-main"><span class="thumb-fb">B</span><img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=1000&q=70" alt="برجر ماك" onerror="this.classList.add('dead')"></div>
+      <div class="c-shot c-sub"><span class="thumb-fb">F</span><img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=70" alt="بطاطس مقرمشة" onerror="this.classList.add('dead')"></div>
+      <div class="c-tag">
+        <span style="width:38px;height:38px;border-radius:11px;background:var(--yellow);display:grid;place-items:center;color:var(--ink)">
+          <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v18M5 10l7-7 7 7"/></svg>
+        </span>
+        <span><b class="num" style="font-family:'Barlow',sans-serif">20 دقيقة</b><small data-i18n="hero_tag_sub">متوسط زمن التوصيل</small></span>
+      </div>
+      <div class="sticker"><span><b>25%</b><span data-i18n="hero_sticker">خصم العائلة</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TICKER ===== -->
+<div class="ticker"><div class="tk-track" id="tkTrack"></div></div>
+
+<!-- ===== MENU ===== -->
+<section class="menu-sec" id="menu">
+  <div class="wrap">
+    <div class="menu-head">
+      <div>
+        <span class="eyebrow" data-i18n="menu_eyebrow">المنيو</span>
+        <h2 class="sec-h" data-i18n="menu_title">اختار وجبتك</h2>
+        <p class="sec-p" data-i18n="menu_p">٢٦ صنف مقسّمين على ٥ تصنيفات — كل حاجة بتتحضّر بعد ما تطلبها، ومفيش أي تجميد.</p>
+      </div>
+      <div class="card" style="padding:14px 18px;display:flex;align-items:center;gap:12px">
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="var(--red)" stroke-width="2"><path d="M3 13l2-7h14l2 7v6H3v-6z"/><circle cx="7.5" cy="17" r="1.6"/><circle cx="16.5" cy="17" r="1.6"/></svg>
+        <span style="font-size:.84rem;font-weight:700" data-i18n="menu_delivery">توصيل مجاني فوق 250 ج.م</span>
+      </div>
+    </div>
+    <div class="chips" id="chips"></div>
+    <div class="pgrid" id="pgrid"></div>
+  </div>
+</section>
+
+<!-- ===== DEAL ===== -->
+<section class="deal">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" style="background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.16);color:var(--yellow)" data-i18n="deal_eyebrow">عرض اليوم</span>
+      <h2><span class="pct">25%</span><span data-i18n="deal_title">خصم على كل وجبات العائلة</span></h2>
+      <p data-i18n="deal_p">الأربع برجر + بطاطس كبير + ٤ مشروبات، بسعر أقل من المعتاد. العرض متاح لحد ما اليوم يخلص أو لحد ما الكمية تخلص.</p>
+      <div class="clock">
+        <div><b class="num" id="cdH">00</b><small data-i18n="cd_h">ساعة</small></div>
+        <div><b class="num" id="cdM">00</b><small data-i18n="cd_m">دقيقة</small></div>
+        <div><b class="num" id="cdS">00</b><small data-i18n="cd_s">ثانية</small></div>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="btn btn--yellow" id="dealBtn"><span data-i18n="deal_cta">اطلب عرض العائلة</span></button>
+        <a href="#menu" class="btn btn--ghost" style="color:#FBF3E7"><span data-i18n="deal_cta2">شوف المنيو كامل</span></a>
+      </div>
+    </div>
+    <div class="deal-img"><span class="thumb-fb">X</span><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=70" alt="وجبة عائلية" onerror="this.classList.add('dead')"></div>
+  </div>
+</section>
+
+<!-- ===== OFFERS ===== -->
+<section class="offers" id="offers">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="offers_eyebrow">العروض والخصومات</span>
+    <h2 class="sec-h" data-i18n="offers_title">وفّر أكتر مع عروضنا</h2>
+    <p class="sec-p" data-i18n="offers_p">عروض بتتغير كل أسبوع على الوجبات، الفروع، والتوصيل.</p>
+    <div class="bento" id="bento"></div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="about-img"><span class="thumb-fb">M</span><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=70" alt="مطبخ ماك" onerror="this.classList.add('dead')"></div>
+    <div>
+      <span class="eyebrow" data-i18n="about_eyebrow">عن المطعم</span>
+      <h2 class="sec-h" data-i18n="about_title">مطبخ مفتوح، مكونات بتتشوفها بعينك</h2>
+      <p class="sec-p" data-i18n="about_p">بدأنا من فرع واحد صغير، والنهاردة عندنا ٤ فروع في القاهرة. كل حاجة بنعملها من الأول: العجين، الصوصات، وحتى مخلل البرجر. شغلنا كله ماشي على معيار واحد مهما كان الفرع.</p>
+      <div class="reasons" id="reasons"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BRANCHES ===== -->
+<section class="branches" id="branches">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="br_eyebrow">الفروع</span>
+    <h2 class="sec-h" data-i18n="br_title">أقرب فرع ليك</h2>
+    <p class="sec-p" data-i18n="br_p">دوس على الفرع على الخريطة أو من القايمة، وهتعرف العنوان ومواعيد العمل ورقم الفرع.</p>
+    <div class="map-wrap">
+      <div class="map" id="map">
+        <svg viewBox="0 0 600 430" preserveAspectRatio="none">
+          <rect width="600" height="430" fill="#F3E7D2"/>
+          <path d="M-20 120 C120 100 200 190 340 170 C460 152 520 210 640 190" stroke="#DCCBAE" stroke-width="26" fill="none"/>
+          <path d="M-20 300 C140 320 220 250 360 280 C480 305 540 260 640 275" stroke="#DCCBAE" stroke-width="20" fill="none"/>
+          <path d="M170 -20 C185 120 120 200 150 450" stroke="#E3D5BB" stroke-width="18" fill="none"/>
+          <path d="M420 -20 C400 130 470 230 440 450" stroke="#E3D5BB" stroke-width="18" fill="none"/>
+          <path d="M-10 210 C150 205 300 235 610 220" stroke="#BFD8DE" stroke-width="14" fill="none" opacity=".85"/>
+        </svg>
+        <div id="pins"></div>
+      </div>
+      <div class="blist" id="blist"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== REVIEWS ===== -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="rev_eyebrow">تقييمات العملاء</span>
+    <h2 class="sec-h" data-i18n="rev_title">آراء حقيقية من ناس طلبت</h2>
+  </div>
+  <div class="wrap">
+    <div class="rev-track" id="revTrack"></div>
+    <div class="rev-nav" id="revNav"></div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="ct_eyebrow">تواصل وحجز</span>
+      <h2 class="sec-h" data-i18n="ct_title">احجز طاولة أو ابعتلنا</h2>
+      <div class="tabs" style="margin-top:20px">
+        <button class="on" data-tab="res" data-i18n="ct_tab1">حجز طاولة</button>
+        <button data-tab="msg" data-i18n="ct_tab2">رسالة</button>
+      </div>
+      <div class="form-card">
+        <form id="formRes">
+          <div class="fgrid">
+            <div class="fld"><label data-i18n="f_name">الاسم</label><input required name="name" data-i18n-ph="f_name_ph" placeholder="اسمك الكامل"></div>
+            <div class="fld"><label data-i18n="f_phone">رقم التليفون</label><input required name="phone" inputmode="tel" data-i18n-ph="f_phone_ph" placeholder="01xxxxxxxxx"></div>
+            <div class="fld"><label data-i18n="f_guests">عدد الأفراد</label>
+              <select name="guests"><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8</option></select></div>
+            <div class="fld"><label data-i18n="f_date">التاريخ</label><input required type="date" name="date"></div>
+            <div class="fld"><label data-i18n="f_time">الوقت</label><input required type="time" name="time" value="20:00"></div>
+            <div class="fld"><label data-i18n="f_branch">الفرع</label><select name="branch" id="resBranch"></select></div>
+            <div class="fld full"><label data-i18n="f_notes">ملاحظات</label><textarea name="notes" data-i18n-ph="f_notes_ph" placeholder="أي طلبات خاصة..."></textarea></div>
+          </div>
+          <button class="btn" type="submit" style="margin-top:18px"><span data-i18n="f_send1">أرسل الحجز</span></button>
+          <div class="msg" id="msgRes"></div>
+        </form>
+        <form id="formMsg" style="display:none">
+          <div class="fgrid">
+            <div class="fld"><label data-i18n="f_name">الاسم</label><input required name="name" data-i18n-ph="f_name_ph" placeholder="اسمك الكامل"></div>
+            <div class="fld"><label data-i18n="f_phone">رقم التليفون</label><input required name="phone" inputmode="tel" data-i18n-ph="f_phone_ph" placeholder="01xxxxxxxxx"></div>
+            <div class="fld full"><label data-i18n="f_subject">الموضوع</label><input required name="subject" data-i18n-ph="f_subject_ph" placeholder="شكوى / اقتراح / استفسار"></div>
+            <div class="fld full"><label data-i18n="f_body">رسالتك</label><textarea required name="body" data-i18n-ph="f_body_ph" placeholder="اكتب رسالتك هنا..."></textarea></div>
+          </div>
+          <button class="btn btn--dark" type="submit" style="margin-top:18px"><span data-i18n="f_send2">أرسل الرسالة</span></button>
+          <div class="msg" id="msgMsg"></div>
+        </form>
+      </div>
+    </div>
+    <div class="contact-side">
+      <div class="cbox">
+        <h3 data-i18n="ct_info">بيانات التواصل</h3>
+        <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v4a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1z"/></svg><span><small data-i18n="ct_hotline">الخط الساخن</small><b class="lat" style="font-family:'Barlow',sans-serif">19283</b></span></div>
+        <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg><span><small data-i18n="ct_mail">الإيميل</small><b class="lat" style="font-family:'Barlow',sans-serif">hello@mak-food.com</b></span></div>
+        <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span><small data-i18n="ct_hours">مواعيد العمل</small><b data-i18n="ct_hours_v">يومياً 10:00 ص — 2:00 ص</b></span></div>
+        <div class="cline"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span><small data-i18n="ct_addr">العنوان الرئيسي</small><b data-i18n="ct_addr_v">المعادي — شارع 9، القاهرة</b></span></div>
+      </div>
+      <div class="card" style="padding:22px">
+        <h3 style="font-size:1.05rem;margin-bottom:8px" data-i18n="ct_note_t">ملاحظة مهمة</h3>
+        <p style="font-size:.86rem;color:var(--mut)" data-i18n="ct_note_p">الحجز بيتم تأكيده من الفرع عبر التليفون خلال ١٥ دقيقة. لو الحجز لـ ٦ أفراد أو أكتر بنحجز طاولة أكبر أوتوماتيك.</p>
+      </div>
+      <div class="card" style="padding:22px;display:flex;gap:14px;align-items:center;background:var(--yellow);border:0">
+        <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="var(--ink)" stroke-width="2"><path d="M12 2l2.6 6.3L21 9l-4.6 4.2L17.6 20 12 16.7 6.4 20l1.2-6.8L3 9l6.4-.7L12 2z"/></svg>
+        <p style="font-size:.88rem;font-weight:800" data-i18n="ct_loyal">برنامج نقاط: كل 100 ج.م = 5 نقاط، وكل 500 نقطة = وجبة مجانية.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MY ORDERS ===== -->
+<section class="myorders" id="myorders">
+  <div class="wrap">
+    <div class="orders-box">
+      <span class="eyebrow" data-i18n="my_eyebrow">طلباتي</span>
+      <h2 class="sec-h" style="font-size:clamp(1.6rem,3vw,2.3rem)" data-i18n="my_title">تابع طلبك برقم التليفون</h2>
+      <p class="sec-p" data-i18n="my_p">اكتب رقم التليفون اللي طلبت بيه وهنعرضلك كل طلباتك وحالة كل واحد فيهم.</p>
+      <div class="search-row">
+        <input id="myPhone" inputmode="tel" data-i18n-ph="my_ph" placeholder="01xxxxxxxxx">
+        <button class="btn btn--dark" id="myBtn"><span data-i18n="my_btn">اعرض طلباتي</span></button>
+      </div>
+      <div class="msg" id="myMsg"></div>
+      <div id="myList"></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid2">
+      <div>
+        <div class="brand" style="margin-bottom:16px">
+          <span class="mark">م</span>
+          <span class="brand-txt"><strong style="color:#fff">ماك</strong><small style="color:#8f8371" data-i18n="brand_tag">وجبات سريعة</small></span>
+        </div>
+        <p class="fnote" data-i18n="ft_about">مطعم وجبات سريعة ببيّتفرم فيه اللحم طازة كل يوم. ٤ فروع في القاهرة، توصيل لحد ٦ كيلو، ومطبخ مفتوح تقدر تشوفه.</p>
+        <div class="fpay"><span>Visa</span><span>Mastercard</span><span data-i18n="ft_cash">كاش</span><span data-i18n="ft_wallet">محفظة إلكترونية</span></div>
+      </div>
+      <div>
+        <h4 data-i18n="ft_links">روابط سريعة</h4>
+        <ul>
+          <li><a href="#menu" data-i18n="nav_menu">المنيو</a></li>
+          <li><a href="#offers" data-i18n="nav_offers">العروض</a></li>
+          <li><a href="#branches" data-i18n="nav_branches">الفروع</a></li>
+          <li><a href="#myorders" data-i18n="nav_orders">طلباتي</a></li>
+          <li><a href="#contact" data-i18n="ct_tab1">حجز طاولة</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft_cats">التصنيفات</h4>
+        <ul id="ftCats"></ul>
+      </div>
+      <div>
+        <h4 data-i18n="ft_contact">تواصل</h4>
+        <ul>
+          <li><b class="lat" style="font-family:'Barlow',sans-serif" data-i18n="ct_hotline">الخط الساخن</b>: 19283</li>
+          <li data-i18n="ct_hours_v">يومياً 10:00 ص — 2:00 ص</li>
+          <li>hello@mak-food.com</li>
+          <li data-i18n="ft_deliv">التوصيل: ٦ كيلو من كل فرع</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span data-i18n="ft_rights">© 2026 ماك. جميع الحقوق محفوظة.</span>
+      <span style="display:flex;gap:16px;align-items:center">
+        <span data-i18n="ft_terms">الشروط والأحكام</span>
+        <button class="fadmin" id="ftAdmin" data-i18n="admin_link">دخول الإدارة</button>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== CART DRAWER ===== -->
+<div class="dim" id="dim"></div>
+<aside class="drawer" id="drawer">
+  <div class="dhead">
+    <h3 data-i18n="cart_title">سلة المشتريات</h3>
+    <span class="count" id="drawerCount" style="position:static;display:grid">0</span>
+    <button id="closeCart"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+  <div class="ditems" id="ditems"></div>
+  <div class="dfoot">
+    <div class="sumline"><span data-i18n="sum_sub">المجموع الفرعي</span><b class="lat" id="sumSub" style="font-family:'Barlow',sans-serif">0</b></div>
+    <div class="sumline"><span data-i18n="sum_del">التوصيل</span><b class="lat" id="sumDel" style="font-family:'Barlow',sans-serif">0</b></div>
+    <div class="sumline tot"><span data-i18n="sum_tot">الإجمالي</span><b class="num" id="sumTot">0</b></div>
+    <div id="freeNote"></div>
+    <button class="btn" id="toCheckout"><span data-i18n="checkout_btn">إتمام الطلب</span></button>
+  </div>
+</aside>
+
+<!-- ===== CHECKOUT MODAL ===== -->
+<div class="modal" id="modal">
+  <div class="mbox">
+    <div class="mhead">
+      <h3 id="modalTitle" data-i18n="checkout_title">بيانات الطلب</h3>
+      <button id="closeModal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+    </div>
+    <div class="mbody" id="modalBody">
+      <form id="formOrder">
+        <div class="fgrid" style="margin-top:0">
+          <div class="fld"><label data-i18n="f_name">الاسم</label><input required name="name" data-i18n-ph="f_name_ph" placeholder="اسمك الكامل"></div>
+          <div class="fld"><label data-i18n="f_phone">رقم التليفون</label><input required name="phone" inputmode="tel" data-i18n-ph="f_phone_ph" placeholder="01xxxxxxxxx"></div>
+          <div class="fld full"><label data-i18n="f_notes">ملاحظات</label><textarea name="notes" data-i18n-ph="checkout_notes_ph" placeholder="العنوان بالتفصيل أو أي طلبات خاصة"></textarea></div>
+        </div>
+        <button class="btn" type="submit"><span data-i18n="checkout_confirm">تأكيد الطلب</span></button>
+        <div class="msg" id="msgOrder"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ADMIN ===== -->
+<div class="admin" id="adminPanel" data-theme="light">
+  <div class="login-wrap" id="adminLoginWrap" style="display:grid">
+    <form class="login-card" id="formLogin">
+      <span class="mark">م</span>
+      <h2 data-i18n="a_login_title">لوحة تحكم ماك</h2>
+      <p class="sub" data-i18n="a_login_sub">سجّل دخولك لإدارة الأسعار والأصناف والطلبات.</p>
+      <div class="fld"><label data-i18n="a_email">البريد الإلكتروني</label><input type="email" required name="email" placeholder="admin@mak.com"></div>
+      <div class="fld" style="margin-top:12px"><label data-i18n="a_pass">كلمة المرور</label><input type="password" required name="password" placeholder="••••••"></div>
+      <button class="btn" type="submit"><span data-i18n="a_login">تسجيل الدخول</span></button>
+      <div class="msg" id="msgLogin"></div>
+      <div style="margin-top:16px;text-align:center"><button type="button" class="fadmin" id="backSite" data-i18n="a_back">← رجوع للموقع</button></div>
+    </form>
+  </div>
+  <div class="admin-shell" id="adminShell" hidden>
+    <aside class="admin-side">
+      <div class="admin-brand"><span class="mark">م</span><span><b>ماك</b><small data-i18n="a_brand">لوحة التحكم</small></span></div>
+      <button class="atab on" data-atab="biz"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="3"/><path d="M8 8h8M8 12h8M8 16h4"/></svg><span data-i18n="a_tab_biz">بيانات النشاط</span></button>
+      <button class="atab" data-atab="products"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8l8-4 8 4v8l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg><span data-i18n="a_tab_products">الأصناف والأسعار</span></button>
+      <button class="atab" data-atab="media"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="2"/><path d="M4 18l5-5 4 4 3-2 4 3"/></svg><span data-i18n="a_tab_media">الوسائط</span></button>
+      <button class="atab" data-atab="orders"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16v14H4z"/><path d="M4 10h16M9 14h6"/></svg><span data-i18n="a_tab_orders">الطلبات</span></button>
+      <button class="atab" data-atab="admins" id="tabAdmins" style="display:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c1.5-3.5 4-5 7-5s5.5 1.5 7 5"/></svg><span data-i18n="a_tab_admins">الأدمنات</span></button>
+      <div style="margin-top:auto;padding-top:14px;border-top:1px solid var(--aline);display:flex;flex-direction:column;gap:8px">
+        <button class="atab" id="themeBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 13A9 9 0 1111 3a7 7 0 0010 10z"/></svg><span data-i18n="a_theme">الوضع الليلي</span></button>
+        <button class="atab" id="langAdminBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 3 2.5 15 0 18M12 3c-2.5 3-2.5 15 0 18"/></svg><span id="langAdminLabel">English</span></button>
+        <button class="atab" id="logoutBtn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 20H6a2 2 0 01-2-2V6a2 2 0 012-2h4"/><path d="M16 17l5-5-5-5M21 12H10"/></svg><span data-i18n="a_logout">تسجيل الخروج</span></button>
+        <button class="atab" id="exitAdmin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg><span data-i18n="a_back">← رجوع للموقع</span></button>
+      </div>
+    </aside>
+    <main class="admin-main">
+      <div class="admin-top">
+        <h2 id="aTitle" data-i18n="a_tab_biz">بيانات النشاط</h2>
+        <span class="whoami" id="aWho"></span>
+      </div>
+      <div class="admin-body">
+        <div class="apanel on" data-panel="biz">
+          <div class="stat-grid" id="aStats"></div>
+          <div class="panel">
+            <h3 data-i18n="a_biz_t">بيانات المطعم</h3>
+            <p class="hint" data-i18n="a_biz_h">عدّل القيم واحفظ. الحقول الجديدة بتتضاف من تحت.</p>
+            <div id="aFields"></div>
+            <div style="display:grid;grid-template-columns:220px 1fr auto;gap:10px;margin-top:16px" class="arow" id="aNewFieldRow">
+              <input id="nfKey" data-i18n-ph="a_new_key" placeholder="اسم الحقل (إنجليزي)">
+              <input id="nfVal" data-i18n-ph="a_new_val" placeholder="القيمة">
+              <button class="mini" id="addFieldBtn" type="button" data-i18n="a_add_field">إضافة</button>
+            </div>
+            <div class="tools"><button class="mini" id="saveBiz" type="button" data-i18n="a_save">حفظ التغييرات</button>
+            <button class="mini grey" id="reloadBiz" type="button" data-i18n="a_reload">إعادة تحميل</button></div>
+            <div class="msg" id="msgBiz"></div>
+          </div>
+        </div>
+
+        <div class="apanel" data-panel="products">
+          <div class="panel">
+            <h3 data-i18n="a_prod_t">الأصناف والأسعار</h3>
+            <p class="hint" data-i18n="a_prod_h">عدّل الأسعار والأسماء، وامسح أصناف أو ضيف صنف جديد للمنيو.</p>
+            <div style="overflow-x:auto">
+              <table class="atable" id="aProdTable"></table>
+            </div>
+            <div class="tools">
+              <button class="mini" id="saveProd" type="button" data-i18n="a_save">حفظ التغييرات</button>
+              <button class="mini grey" id="addProd" type="button" data-i18n="a_add_prod">+ إضافة صنف جديد</button>
+              <button class="mini grey" id="resetProd" type="button" data-i18n="a_reset">استرجاع المنيو الأصلي</button>
+            </div>
+            <div class="msg" id="msgProd"></div>
+          </div>
+        </div>
+
+        <div class="apanel" data-panel="media">
+          <div class="panel">
+            <h3 data-i18n="a_med_t">رفع الصور والفيديو</h3>
+            <p class="hint" data-i18n="a_med_h">ارفع صور أو فيديوهات للمنتجات والعروض، وهي هتظهر جوه الموقع.</p>
+            <div class="arow"><label data-i18n="a_med_file">الملف</label><input type="file" id="medFile" accept="image/*,video/*"></div>
+            <div class="arow"><label data-i18n="a_med_cap">وصف الملف</label><input id="medCap" data-i18n-ph="a_med_cap_ph" placeholder="مثلاً: صورة عرض العائلة"></div>
+            <div class="tools"><button class="mini" id="uploadBtn" type="button" data-i18n="a_upload">رفع الملف</button>
+            <button class="mini grey" id="reloadMedia" type="button" data-i18n="a_reload">إعادة تحميل</button></div>
+            <div class="msg" id="msgMedia"></div>
+            <div class="media-grid" id="mediaGrid"></div>
+          </div>
+        </div>
+
+        <div class="apanel" data-panel="orders">
+          <div class="panel">
+            <h3 data-i18n="a_ord_t">الطلبات الواردة</h3>
+            <p class="hint" data-i18n="a_ord_h">تابع الطلبات وغيّر حالة كل طلب.</p>
+            <div class="tools" style="margin:0 0 16px"><button class="mini" id="reloadOrders" type="button" data-i18n="a_reload">إعادة تحميل</button></div>
+            <div class="msg" id="msgOrders"></div>
+            <div id="aOrders"></div>
+          </div>
+        </div>
+
+        <div class="apanel" data-panel="admins">
+          <div class="panel">
+            <h3 data-i18n="a_adm_t">إضافة أدمن</h3>
+            <p class="hint" data-i18n="a_adm_h">الباسورد لازم ٦ حروف على الأقل. الصلاحية دي للمالك بس.</p>
+            <div class="arow"><label data-i18n="a_email">البريد الإلكتروني</label><input id="newAdminEmail" type="email" placeholder="user@mak.com"></div>
+            <div class="arow"><label data-i18n="a_pass">كلمة المرور</label><input id="newAdminPass" type="password" placeholder="••••••"></div>
+            <div class="tools"><button class="mini" id="addAdminBtn" type="button" data-i18n="a_add_admin">إضافة أدمن</button></div>
+            <div class="msg" id="msgAdmin"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   ماك — Front-end
+   ============================================================ */
+const ORDER_ID = "ORD-20260308124719";
+const API = "https://realmaro.app.n8n.cloud/webhook";
+const ORDER_URL = API + "/site-order";
+const DASH_URL = API + "/dashboard-api";
+const CURR = {ar:"ج.م", en:"EGP"};
+
+/* ---------- i18n ---------- */
+const I18N = {
+ar:{
+  brand_tag:"وجبات سريعة", admin_link:"دخول الإدارة",
+  nav_home:"الرئيسية", nav_menu:"المنيو", nav_offers:"العروض", nav_branches:"الفروع",
+  nav_about:"عن المطعم", nav_contact:"اتصل بنا", nav_orders:"طلباتي",
+  hero_eyebrow:"مطعم وجبات سريعة · القاهرة",
+  hero_title:'الطعم اللي <span class="hl">بيرجعلك</span> تاني',
+  hero_p:"لحم بقري بيتفرم طازة في مطبخنا كل يوم، برجر بيتشوى على الفحم، دجاج مقرمش، وبطاطس بتتقلي على الطلب. اطلب في أقل من دقيقة واستلم سخن على بابك.",
+  hero_cta1:"اطلب الآن", hero_cta2:"تصفح العروض", hero_tag_sub:"متوسط زمن التوصيل", hero_sticker:"خصم العائلة",
+  stat1:"تقييم العملاء", stat2:"فروع بالقاهرة", stat3:"متوسط التوصيل", stat4:"صنف على المنيو",
+  menu_eyebrow:"المنيو", menu_title:"اختار وجبتك",
+  menu_p:"٢٦ صنف مقسّمين على ٥ تصنيفات — كل حاجة بتتحضّر بعد ما تطلبها، ومفيش أي تجميد.",
+  menu_delivery:"توصيل مجاني فوق 250 ج.م",
+  cat_all:"الكل", cat_beef:"برجر لحم", cat_chicken:"برجر دجاج", cat_meals:"وجبات التوفير", cat_sides:"مقبلات وبطاطس", cat_drinks:"مشروبات وحلويات",
+  badge_best:"الأكثر مبيعاً", badge_new:"جديد", badge_off:"خصم {n}%",
+  add:"أضف للسلة", added:"تمت الإضافة", kcal:"كالوري",
+  deal_eyebrow:"عرض اليوم", deal_title:"خصم على كل وجبات العائلة",
+  deal_p:"الأربع برجر + بطاطس كبير + ٤ مشروبات، بسعر أقل من المعتاد. العرض متاح لحد ما اليوم يخلص أو لحد ما الكمية تخلص.",
+  cd_h:"ساعة", cd_m:"دقيقة", cd_s:"ثانية", deal_cta:"اطلب عرض العائلة", deal_cta2:"شوف المنيو كامل",
+  offers_eyebrow:"العروض والخصومات", offers_title:"وفّر أكتر مع عروضنا", offers_p:"عروض بتتغير كل أسبوع على الوجبات، الفروع، والتوصيل.",
+  about_eyebrow:"عن المطعم", about_title:"مطبخ مفتوح، مكونات بتتشوفها بعينك",
+  about_p:"بدأنا من فرع واحد صغير، والنهاردة عندنا ٤ فروع في القاهرة. كل حاجة بنعملها من الأول: العجين، الصوصات، وحتى مخلل البرجر. شغلنا كله ماشي على معيار واحد مهما كان الفرع.",
+  br_eyebrow:"الفروع", br_title:"أقرب فرع ليك", br_p:"دوس على الفرع على الخريطة أو من القايمة، وهتعرف العنوان ومواعيد العمل ورقم الفرع.",
+  br_hours:"المواعيد", br_open:"مفتوح الآن", br_call:"اتصل بالفرع", br_dir:"الاتجاهات",
+  rev_eyebrow:"تقييمات العملاء", rev_title:"آراء حقيقية من ناس طلبت",
+  ct_eyebrow:"تواصل وحجز", ct_title:"احجز طاولة أو ابعتلنا", ct_tab1:"حجز طاولة", ct_tab2:"رسالة",
+  f_name:"الاسم", f_name_ph:"اسمك الكامل", f_phone:"رقم التليفون", f_phone_ph:"01xxxxxxxxx",
+  f_guests:"عدد الأفراد", f_date:"التاريخ", f_time:"الوقت", f_branch:"الفرع", f_notes:"ملاحظات",
+  f_notes_ph:"أي طلبات خاصة...", f_subject:"الموضوع", f_subject_ph:"شكوى / اقتراح / استفسار",
+  f_body:"رسالتك", f_body_ph:"اكتب رسالتك هنا...", f_send1:"أرسل الحجز", f_send2:"أرسل الرسالة",
+  res_ok:"تم استلام حجزك! هنكلمك لتأكيده خلال ١٥ دقيقة.",
+  msg_ok:"وصلتنا رسالتك، هنرد عليك في أقرب وقت.",
+  ct_info:"بيانات التواصل", ct_hotline:"الخط الساخن", ct_mail:"الإيميل", ct_hours:"مواعيد العمل",
+  ct_hours_v:"يومياً 10:00 ص — 2:00 ص", ct_addr:"العنوان الرئيسي", ct_addr_v:"المعادي — شارع 9، القاهرة",
+  ct_note_t:"ملاحظة مهمة", ct_note_p:"الحجز بيتم تأكيده من الفرع عبر التليفون خلال ١٥ دقيقة. لو الحجز لـ ٦ أفراد أو أكتر بنحجز طاولة أكبر أوتوماتيك.",
+  ct_loyal:"برنامج نقاط: كل 100 ج.م = 5 نقاط، وكل 500 نقطة = وجبة مجانية.",
+  my_eyebrow:"طلباتي", my_title:"تابع طلبك برقم التليفون",
+  my_p:"اكتب رقم التليفون اللي طلبت بيه وهنعرضلك كل طلباتك وحالة كل واحد فيهم.",
+  my_ph:"01xxxxxxxxx", my_btn:"اعرض طلباتي",
+  my_empty:"مفيش طلبات مسجّلة بالرقم ده.",
+  my_ph_required:"من فضلك اكتب رقم التليفون.",
+  my_count:"عدد الطلبات",
+  st_new:"جديد", st_processing:"قيد التجهيز", st_shipped:"تم التوصيل", st_completed:"مكتمل", st_cancelled:"ملغي",
+  cart_title:"سلة المشتريات", cart_empty:"سلتك فاضية — ضيف حاجة من المنيو.",
+  sum_sub:"المجموع الفرعي", sum_del:"التوصيل", sum_tot:"الإجمالي", del_free:"مجاني",
+  free_note:"ضيف {n} ج.م كمان وتحصل على توصيل مجاني.",
+  checkout_btn:"إتمام الطلب", checkout_title:"بيانات الطلب",
+  checkout_notes_ph:"العنوان بالتفصيل أو أي طلبات خاصة", checkout_confirm:"تأكيد الطلب",
+  ok_title:"تم إرسال طلبك!", ok_body:"هنكلمك على الرقم اللي كتبته لتأكيد العنوان ووقت التوصيل.",
+  err_generic:"حصلت مشكلة، جرّب تاني بعد لحظة.",
+  err_empty:"السلة فاضية، ضيف حاجة الأول.",
+  err_fields:"من فضلك اكتب الاسم ورقم التليفون.",
+  close:"إغلاق", ok_btn:"تم",
+  ft_about:"مطعم وجبات سريعة ببيّتفرم فيه اللحم طازة كل يوم. ٤ فروع في القاهرة، توصيل لحد ٦ كيلو، ومطبخ مفتوح تقدر تشوفه.",
+  ft_links:"روابط سريعة", ft_cats:"التصنيفات", ft_contact:"تواصل", ft_rights:"© 2026 ماك. جميع الحقوق محفوظة.",
+  ft_terms:"الشروط والأحكام", ft_cash:"كاش", ft_wallet:"محفظة إلكترونية", ft_deliv:"التوصيل: ٦ كيلو من كل فرع",
+  ticker:["توصيل مجاني فوق 250 ج.م","لحم طازة بيتفرم كل يوم","خصم 25% على وجبات العائلة كل ثلاثاء","متوسط التوصيل 20 دقيقة","بطاطس بتتقلي على الطلب","٤ فروع في القاهرة"],
+  reasons:[
+    {t:"لحم طازة يومياً",d:"بيتفرم في المطبخ كل صباح، ومفيش لحم بيقعد أكتر من 24 ساعة."},
+    {t:"شوى على الفحم",d:"كل برجر بيتشوى على الفحم مباشرة بعد الطلب، وبيوصل سخن."},
+    {t:"توصيل 20 دقيقة",d:"أسطول توصيل خاص بكل فرع، وتغليف بيحافظ على السخونة."},
+    {t:"أسعار واضحة",d:"مفيش رسوم مخفية، والتوصيل مجاني فوق 250 ج.م."}
+  ],
+  offers:[
+    {tag:"عرض الغداء", t:"وجبة غداء بـ 129 ج.م", d:"أي برجر + بطاطس وسط + مشروب غازي، من 12 لـ 4 العصر.", ico:1, big:1},
+    {tag:"لاثنين", t:"2 برجر بـ 199 ج.م", d:"اتنين برجر لحم كلاسيك + بطاطس كبير.", ico:2, style:"t-yellow"},
+    {tag:"الثلاثاء", t:"خصم 25% عائلي", d:"على كل وجبات العائلة طول يوم الثلاثاء.", ico:3, style:"t-dark"},
+    {tag:"أول طلب", t:"توصيل مجاني", d:"لأول طلب من أي فرع، بدون حد أدنى.", ico:4},
+    {tag:"نقاط", t:"اكسب نقاط", d:"كل 100 ج.م = 5 نقاط قابلة للاستبدال.", ico:5}
+  ],
+  branches:[
+    {name:"المعادي", addr:"شارع 9، المعادي", hours:"10ص — 2ص", phone:"01001234567", x:24, y:62, open:true},
+    {name:"مدينة نصر", addr:"عباس العقاد، مدينة نصر", hours:"10ص — 1ص", phone:"01001234568", x:74, y:34, open:true},
+    {name:"المهندسين", addr:"شارع جامعة الدول، المهندسين", hours:"11ص — 2ص", phone:"01001234569", x:46, y:22, open:true},
+    {name:"التجمع الخامس", addr:"القطامية، التجمع الخامس", hours:"12ظ — 2ص", phone:"01001234570", x:84, y:72, open:false}
+  ],
+  reviews:[
+    {n:"أحمد س.",r:"عميل دائم",t:"البرجر عندهم فعلاً طازة وطعمه مش زي أي مكان تاني. بطلب منهم كل أسبوع والجودة ثابتة."},
+    {n:"منى ع.",r:"طلب عائلي",t:"طلبت وجبة العائلة والكمية كانت أكتر من المتوقع. التوصيل وصل في 18 دقيقة والبطاطس لسه سخنة."},
+    {n:"كريم خ.",r:"عميل جديد",t:"أول مرة أطلب وكان العرض الأول توصيل مجاني. الخدمة سريعة والتعامل محترم جداً."},
+    {n:"سارة م.",r:"طالبة",t:"أسعارهم معقولة جداً بالنسبة للتجربة، ووجبة الأطفال فيها لعبة بجد حاجة لطيفة."},
+    {n:"محمود ه.",r:"عميل",t:"تجربة فرع المعادي مختلفة — المطبخ مفتوح وتقدر تشوف كل حاجة بيتعملة قدامك."}
+  ]
+},
+en:{
+  brand_tag:"Fast Food", admin_link:"Admin login",
+  nav_home:"Home", nav_menu:"Menu", nav_offers:"Offers", nav_branches:"Branches",
+  nav_about:"About", nav_contact:"Contact", nav_orders:"My Orders",
+  hero_eyebrow:"Fast food restaurant · Cairo",
+  hero_title:'The taste that <span class="hl">brings you back</span>',
+  hero_p:"Beef ground fresh in our kitchen every day, burgers grilled over charcoal, crispy chicken, and fries fried to order. Order in under a minute and get it hot at your door.",
+  hero_cta1:"Order now", hero_cta2:"Browse offers", hero_tag_sub:"Average delivery time", hero_sticker:"Family deal",
+  stat1:"Customer rating", stat2:"Cairo branches", stat3:"Avg. delivery", stat4:"Items on menu",
+  menu_eyebrow:"Menu", menu_title:"Pick your meal",
+  menu_p:"26 items across 5 categories — everything is made after you order, nothing frozen.",
+  menu_delivery:"Free delivery over 250 EGP",
+  cat_all:"All", cat_beef:"Beef Burgers", cat_chicken:"Chicken Burgers", cat_meals:"Value Meals", cat_sides:"Sides & Fries", cat_drinks:"Drinks & Desserts",
+  badge_best:"Best seller", badge_new:"New", badge_off:"{n}% off",
+  add:"Add to cart", added:"Added", kcal:"kcal",
+  deal_eyebrow:"Deal of the day", deal_title:"off every family meal",
+  deal_p:"Four burgers + large fries + 4 drinks, below the usual price. Available until the day ends or stock runs out.",
+  cd_h:"Hours", cd_m:"Minutes", cd_s:"Seconds", deal_cta:"Order family deal", deal_cta2:"See full menu",
+  offers_eyebrow:"Offers & discounts", offers_title:"Save more with our offers", offers_p:"New offers every week on meals, branches and delivery.",
+  about_eyebrow:"About us", about_title:"An open kitchen, ingredients you can see",
+  about_p:"We started with one small branch, today we run 4 across Cairo. Everything is made from scratch: dough, sauces, even the burger pickles. Same standard in every branch.",
+  br_eyebrow:"Branches", br_title:"Your nearest branch", br_p:"Tap a branch on the map or from the list to see its address, opening hours and phone number.",
+  br_hours:"Hours", br_open:"Open now", br_call:"Call branch", br_dir:"Directions",
+  rev_eyebrow:"Customer reviews", rev_title:"Real words from real orders",
+  ct_eyebrow:"Contact & booking", ct_title:"Book a table or message us", ct_tab1:"Book a table", ct_tab2:"Message",
+  f_name:"Name", f_name_ph:"Your full name", f_phone:"Phone number", f_phone_ph:"01xxxxxxxxx",
+  f_guests:"Guests", f_date:"Date", f_time:"Time", f_branch:"Branch", f_notes:"Notes",
+  f_notes_ph:"Any special requests...", f_subject:"Subject", f_subject_ph:"Complaint / Suggestion / Question",
+  f_body:"Your message", f_body_ph:"Write your message here...", f_send1:"Send booking", f_send2:"Send message",
+  res_ok:"Booking received! We will call you within 15 minutes to confirm.",
+  msg_ok:"We got your message, we will reply very soon.",
+  ct_info:"Contact details", ct_hotline:"Hotline", ct_mail:"Email", ct_hours:"Opening hours",
+  ct_hours_v:"Daily 10:00 AM — 2:00 AM", ct_addr:"Main address", ct_addr_v:"Maadi — Street 9, Cairo",
+  ct_note_t:"Good to know", ct_note_p:"Branches confirm reservations by phone within 15 minutes. For 6 guests or more we automatically book a bigger table.",
+  ct_loyal:"Loyalty: every 100 EGP = 5 points, and 500 points = a free meal.",
+  my_eyebrow:"My Orders", my_title:"Track your order by phone",
+  my_p:"Enter the phone number you ordered with and we will show you all your orders and their status.",
+  my_ph:"01xxxxxxxxx", my_btn:"Show my orders",
+  my_empty:"No orders found for this number.",
+  my_ph_required:"Please enter your phone number.",
+  my_count:"Orders",
+  st_new:"New", st_processing:"Processing", st_shipped:"Delivered", st_completed:"Completed", st_cancelled:"Cancelled",
+  cart_title:"Your cart", cart_empty:"Your cart is empty — add something from the menu.",
+  sum_sub:"Subtotal", sum_del:"Delivery", sum_tot:"Total", del_free:"Free",
+  free_note:"Add {n} EGP more to get free delivery.",
+  checkout_btn:"Checkout", checkout_title:"Order details",
+  checkout_notes_ph:"Full address or special requests", checkout_confirm:"Confirm order",
+  ok_title:"Order sent!", ok_body:"We will call the number you entered to confirm the address and delivery time.",
+  err_generic:"Something went wrong, please try again.",
+  err_empty:"Your cart is empty, add something first.",
+  err_fields:"Please enter your name and phone number.",
+  close:"Close", ok_btn:"Done",
+  ft_about:"A fast food restaurant where beef is ground fresh daily. 4 branches in Cairo, delivery up to 6 km, and an open kitchen you can watch.",
+  ft_links:"Quick links", ft_cats:"Categories", ft_contact:"Contact", ft_rights:"© 2026 Mak. All rights reserved.",
+  ft_terms:"Terms & conditions", ft_cash:"Cash", ft_wallet:"E-wallet", ft_deliv:"Delivery: 6 km from each branch",
+  ticker:["Free delivery over 250 EGP","Fresh ground beef daily","25% off family meals every Tuesday","Average delivery 20 minutes","Fries fried to order","4 branches in Cairo"],
+  reasons:[
+    {t:"Fresh beef daily",d:"Ground in our kitchen every morning, never older than 24 hours."},
+    {t:"Charcoal grilled",d:"Every burger hits the charcoal right after you order, and arrives hot."},
+    {t:"20-minute delivery",d:"A dedicated delivery fleet per branch with heat-keeping packaging."},
+    {t:"Clear pricing",d:"No hidden fees, and delivery is free above 250 EGP."}
+  ],
+  offers:[
+    {tag:"Lunch deal", t:"Lunch meal for 129 EGP", d:"Any burger + regular fries + soft drink, 12 PM to 4 PM.", ico:1, big:1},
+    {tag:"For two", t:"2 burgers for 199 EGP", d:"Two classic beef burgers + large fries.", ico:2, style:"t-yellow"},
+    {tag:"Tuesday", t:"25% family discount", d:"On all family meals, all day Tuesday.", ico:3, style:"t-dark"},
+    {tag:"First order", t:"Free delivery", d:"On your first order from any branch, no minimum.", ico:4},
+    {tag:"Points", t:"Earn points", d:"Every 100 EGP = 5 points you can redeem.", ico:5}
+  ],
+  branches:[
+    {name:"Maadi", addr:"Street 9, Maadi", hours:"10 AM — 2 AM", phone:"01001234567", x:24, y:62, open:true},
+    {name:"Nasr City", addr:"Abbas El Akkad, Nasr City", hours:"10 AM — 1 AM", phone:"01001234568", x:74, y:34, open:true},
+    {name:"Mohandessin", addr:"Gameat El Dowal St., Mohandessin", hours:"11 AM — 2 AM", phone:"01001234569", x:46, y:22, open:true},
+    {name:"Fifth Settlement", addr:"Al Qattameya, Fifth Settlement", hours:"12 PM — 2 AM", phone:"01001234570", x:84, y:72, open:false}
+  ],
+  reviews:[
+    {n:"Ahmed S.",r:"Regular",t:"The burgers here are genuinely fresh and taste like nowhere else. I order weekly and quality never drops."},
+    {n:"Mona A.",r:"Family order",t:"Ordered the family meal and the portions were bigger than expected. Delivered in 18 minutes, fries still hot."},
+    {n:"Karim K.",r:"New customer",t:"First order and the first-order free delivery offer was a nice touch. Fast service, polite staff."},
+    {n:"Sara M.",r:"Student",t:"Prices are very reasonable for what you get, and the kids meal actually includes a toy."},
+    {n:"Mahmoud H.",r:"Customer",t:"The Maadi branch is a different experience — open kitchen, you can watch everything being made."}
+  ]
+}
+};
+
+/* ---------- Products (default catalog) ---------- */
+const U = (id,w)=> "https://images.unsplash.com/photo-"+id+"?auto=format&fit=crop&w="+(w||700)+"&q=70";
+const DEFAULT_PRODUCTS = [
+  {id:"b1",cat:"beef",ar:"برجر لحم كلاسيك",en:"Classic Beef Burger",dar:"قطعة لحم بقري ١٢٠ جم مشوية على الفحم، جبنة شيدر، خس، طماطم وصوص المطعم.",den:"120g charcoal-grilled beef patty, cheddar, lettuce, tomato and house sauce.",price:95,old:115,badge:"best",kcal:520,img:U("1568901346375-23c9450c58cd")},
+  {id:"b2",cat:"beef",ar:"دوبل تشيز برجر",en:"Double Cheese Burger",dar:"قطعتين لحم + طبقتين جبنة شيدر سايحة، مخلل وبصل مقرمش.",den:"Two beef patties with double melted cheddar, pickles and crispy onion.",price:135,old:0,badge:"",kcal:820,img:U("1550547660-d9450f859349")},
+  {id:"b3",cat:"beef",ar:"برجر فحم بالجبنة المدخنة",en:"Smoky Cheese Burger",dar:"لحم مشوي على الفحم مع جبنة مدخنة وصوص باربكيو حار.",den:"Charcoal grilled patty with smoked cheese and spicy BBQ sauce.",price:145,old:0,badge:"new",kcal:760,img:U("1571091718767-18b5b1457add")},
+  {id:"b4",cat:"beef",ar:"برجر بالجبنة الأزرق",en:"Blue Cheese Burger",dar:"لحم بقري مع جبنة أزرق، جرجير، وجبنة كريمي على خبز البريوش.",den:"Beef patty, blue cheese, arugula and cream cheese on brioche.",price:155,old:0,badge:"",kcal:810,img:U("1594212699903-ec8a3eca50f5")},
+  {id:"k1",cat:"chicken",ar:"برجر دجاج مقرمش",en:"Crispy Chicken Burger",dar:"فيليه دجاج مقرمش بطبقة البانيه وصوص المايونيز بالأعشاب.",den:"Crumb-fried chicken fillet with herby mayo.",price:100,old:0,badge:"best",kcal:610,img:U("1606755962773-d324e0a13086")},
+  {id:"k2",cat:"chicken",ar:"برجر دجاج حار",en:"Spicy Chicken Burger",dar:"فيليه مقرمش بصوص حار وسلاو مع مخلل وصوص الرانش.",den:"Crispy fillet with hot sauce, slaw, pickles and ranch.",price:105,old:0,badge:"",kcal:640,img:U("1626082927389-6cd097cee6a6")},
+  {id:"k3",cat:"chicken",ar:"برجر دجاج مشوي",en:"Grilled Chicken Burger",dar:"صدور دجاج مشوية بدون عظم مع صوص الليمون والزعتر.",den:"Boneless grilled chicken breast with lemon-thyme sauce.",price:115,old:0,badge:"new",kcal:470,img:U("1562967914-608f82629710")},
+  {id:"k4",cat:"chicken",ar:"ستريبس دجاج ٥ قطع",en:"Chicken Strips (5 pcs)",dar:"٥ قطع دجاج مقرمش مع صوصين للاختيار.",den:"Five crispy chicken strips with two dipping sauces.",price:110,old:0,badge:"",kcal:590,img:U("1606755962773-d324e0a13086")},
+  {id:"m1",cat:"meals",ar:"وجبة كلاسيك ديلوكس",en:"Classic Deluxe Meal",dar:"برجر لحم كلاسيك + بطاطس وسط + مشروب غازي.",den:"Classic beef burger + regular fries + soft drink.",price:150,old:175,badge:"off20",off:20,kcal:1100,img:U("1571091718767-18b5b1457add")},
+  {id:"m2",cat:"meals",ar:"وجبة دوبل برجر",en:"Double Burger Meal",dar:"دوبل تشيز برجر + بطاطس بالجبنة + مشروب.",den:"Double cheese burger + cheese fries + drink.",price:195,old:0,badge:"best",kcal:1520,img:U("1550547660-d9450f859349")},
+  {id:"m3",cat:"meals",ar:"وجبة العائلة (٤ أفراد)",en:"Family Meal (4)",dar:"٤ برجر + بطاطس كبير + ٤ مشروبات + ٢ صوص.",den:"4 burgers + large fries + 4 drinks + 2 sauces.",price:480,old:620,badge:"off25",off:25,kcal:3400,img:U("1550547660-d9450f859349")},
+  {id:"m4",cat:"meals",ar:"وجبة أطفال",en:"Kids Meal",dar:"برجر صغير أو ٣ قطع ناجتس + بطاطس صغير + عصير + لعبة.",den:"Mini burger or 3 nuggets + small fries + juice + toy.",price:95,old:0,badge:"",kcal:560,img:U("1568901346375-23c9450c58cd")},
+  {id:"s1",cat:"sides",ar:"بطاطس مقلية وسط",en:"Regular Fries",dar:"بطاطس مقطعة بالمقاس وبتتقلي على الطلب مع ملح وبهارات المطعم.",den:"Cut-to-size fries fried to order with our house seasoning.",price:38,old:0,badge:"",kcal:340,img:U("1573080496219-bb080dd4f877")},
+  {id:"s2",cat:"sides",ar:"بطاطس بالجبنة",en:"Cheese Fries",dar:"بطاطس مع صوص الجبنة الشيدر السايحة ورشة فلفل.",den:"Fries under melted cheddar sauce with cracked pepper.",price:58,old:0,badge:"best",kcal:560,img:U("1630384060421-cb20d0e0649d")},
+  {id:"s3",cat:"sides",ar:"حلقات البصل",en:"Onion Rings",dar:"٨ حلقات بصل بطبقة مقرمشة مع صوص الباربكيو.",den:"Eight crispy onion rings with BBQ dip.",price:52,old:0,badge:"",kcal:420,img:U("1548340748-6d2b7d7da280")},
+  {id:"s4",cat:"sides",ar:"أصابع موزاريلا ٤ قطع",en:"Mozzarella Sticks (4)",dar:"٤ أصابع موزاريلا مقرمشة مع صوص المارينارا.",den:"Four crispy mozzarella sticks with marinara dip.",price:62,old:0,badge:"new",kcal:480,img:U("1531749668029-0d1a9f4d5a1e")},
+  {id:"d1",cat:"drinks",ar:"مشروب غازي وسط",en:"Soft Drink (Regular)",dar:"كولاي أو ليمون أو برتقال — وسط مع ثلج.",den:"Cola, lemon or orange — regular with ice.",price:28,old:0,badge:"",kcal:180,img:U("1622483767028-3f66f32aef97")},
+  {id:"d2",cat:"drinks",ar:"ميلك شيك شوكولاتة",en:"Chocolate Milkshake",dar:"آيس كريم فانيليا مع شوكولاتة بلجيكي وكريمة.",den:"Vanilla ice cream, Belgian chocolate and whipped cream.",price:75,old:0,badge:"",kcal:520,img:U("1572490122747-3968b75cc699")},
+  {id:"d3",cat:"drinks",ar:"سوفليه آيس كريم",en:"Ice Cream Sundae",dar:"آيس كريم فانيليا مع صوص كراميل ومكسرات مكرملة.",den:"Vanilla ice cream with caramel sauce and caramelised nuts.",price:48,old:0,badge:"",kcal:390,img:U("1563805042-7684c019e1cb")},
+  {id:"d4",cat:"drinks",ar:"مولتن كيك شوكولاتة",en:"Molten Chocolate Cake",dar:"كيك ساخن بقلب شوكولاتة سايح مع آيس كريم جانبه.",den:"Warm cake with a molten chocolate centre and a side of ice cream.",price:68,old:0,badge:"best",kcal:610,img:U("1551024506-0bccd828d307")}
+];
+
+/* ---------- State ---------- */
+const state = {
+  lang: localStorage.getItem("mak_lang") || "ar",
+  cart: JSON.parse(localStorage.getItem("mak_cart") || "[]"),
+  products: null,
+  cat: "all",
+  branch: 0,
+  delivery: 25,
+  freeOver: 250,
+  token: localStorage.getItem("mak_token") || "",
+  role: localStorage.getItem("mak_role") || "",
+  email: localStorage.getItem("mak_email") || "",
+  biz: {},
+  media: [],
+  aTab: "biz",
+  aProducts: null,
+  catalogDirty:false
+};
+function loadCatalog(){
+  try{
+    const saved = JSON.parse(localStorage.getItem("mak_products") || "null");
+    state.products = (saved && saved.length) ? saved : JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+  }catch(e){ state.products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS)); }
+}
+loadCatalog();
+
+const $ = (s,r)=> (r||document).querySelector(s);
+const $$ = (s,r)=> Array.prototype.slice.call((r||document).querySelectorAll(s));
+const t = k => (I18N[state.lang][k] !== undefined ? I18N[state.lang][k] : k);
+const money = n => Math.round(n).toLocaleString("en-US") + " " + CURR[state.lang];
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+/* ---------- Icons ---------- */
+const ICON = {
+  1:'<path d="M4 12h16a8 8 0 00-16 0zM4 16h16M6 19h12"/>',
+  2:'<circle cx="9" cy="8" r="3"/><circle cx="15" cy="8" r="3"/><path d="M4 20c0-3 2.2-5 5-5s5 2 5 5M13 20c0-3 2.2-5 5-5s5 2 5 5" transform="translate(-3,0)"/>',
+  3:'<path d="M12 2v20M4 8l8-6 8 6"/>',
+  4:'<rect x="2" y="6" width="14" height="10" rx="2"/><path d="M16 9h3l3 3v4h-6z"/><circle cx="6" cy="18.5" r="1.6"/><circle cx="17" cy="18.5" r="1.6"/>',
+  5:'<path d="M12 2l2.6 6.3L21 9l-4.6 4.2L17.6 20 12 16.7 6.4 20l1.2-6.8L3 9l6.4-.7L12 2z"/>'
+};
+const star = '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.3L21 9l-4.6 4.2L17.6 20 12 16.7 6.4 20l1.2-6.8L3 9l6.4-.7L12 2z"/></svg>';
+const cartIco = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 4h2l2.4 11.2a2 2 0 002 1.6h7.8a2 2 0 002-1.6L21 8H6"/><path d="M9 12h6"/></svg>';
+const bolt = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L4 14h6l-1 8 9-12h-6l1-8z"/></svg>';
+
+/* ---------- Language ---------- */
+function applyI18n(){
+  $$("[data-i18n]").forEach(el=>{ const v=t(el.dataset.i18n); if(typeof v === "string") el.textContent = v; });
+  $$("[data-i18n-html]").forEach(el=>{ const v=t(el.dataset.i18nHtml); if(typeof v === "string") el.innerHTML = v; });
+  $$("[data-i18n-ph]").forEach(el=>{ const v=t(el.dataset.i18nPh); if(typeof v === "string") el.placeholder = v; });
+}
+function setLang(l){
+  state.lang = l;
+  localStorage.setItem("mak_lang", l);
+  document.documentElement.lang = l;
+  document.documentElement.dir = l === "ar" ? "rtl" : "ltr";
+  $("#btnAr").classList.toggle("on", l==="ar");
+  $("#btnEn").classList.toggle("on", l==="en");
+  const al = $("#langAdminLabel"); if(al) al.textContent = l==="ar" ? "English" : "العربية";
+  applyI18n();
+  renderAll();
+}
+$("#btnAr").onclick = ()=> setLang("ar");
+$("#btnEn").onclick = ()=> setLang("en");
+
+/* ---------- Renderers ---------- */
+function renderTicker(){
+  const items = t("ticker");
+  const seq = items.map(x=>'<span class="tk-item">'+bolt+'<span>'+esc(x)+'</span></span>').join("");
+  $("#tkTrack").innerHTML = seq + seq;
+}
+function renderChips(){
+  const cats = ["all","beef","chicken","meals","sides","drinks"];
+  $("#chips").innerHTML = cats.map(c=>
+    '<button class="chip'+(state.cat===c?" on":"")+'" data-cat="'+c+'">'+esc(t("cat_"+c))+'</button>'
+  ).join("");
+}
+function badgeHTML(p){
+  if(p.badge === "best") return '<span class="badge b-best">'+esc(t("badge_best"))+'</span>';
+  if(p.badge === "new") return '<span class="badge b-new">'+esc(t("badge_new"))+'</span>';
+  if(p.off) return '<span class="badge">'+esc(t("badge_off").replace("{n}", p.off))+'</span>';
+  return "";
+}
+function renderProducts(){
+  const list = state.products.filter(p=> state.cat==="all" || p.cat===state.cat);
+  $("#pgrid").innerHTML = list.map(p=>{
+    const wide = p.cat === "meals" ? " wide" : "";
+    const nm = state.lang==="ar" ? p.ar : p.en;
+    const ds = state.lang==="ar" ? p.dar : (p.den || p.dar);
+    return '<article class="pcard'+wide+'" data-cat="'+p.cat+'">'
+      +'<div class="pthumb"><span class="thumb-fb">'+esc(nm.slice(0,1))+'</span>'
+      +'<img src="'+p.img+'" alt="'+esc(nm)+'" loading="lazy" onerror="this.classList.add(\'dead\')">'
+      + badgeHTML(p) +'</div>'
+      +'<div class="pbody">'
+      +'<div class="ptop"><h3>'+esc(nm)+'</h3><span class="kcal">'+p.kcal+' '+esc(t("kcal"))+'</span></div>'
+      +'<p class="pdesc">'+esc(ds)+'</p>'
+      +'<div class="pfoot"><div class="prices"><span class="new">'+money(p.price)+'</span>'
+      + (p.old && p.old>p.price ? '<span class="old">'+money(p.old)+'</span>' : '')
+      +'</div><button class="add" data-add="'+p.id+'">'+cartIco+'<span>'+esc(t("add"))+'</span></button></div>'
+      +'</div></article>';
+  }).join("");
+}
+function renderReasons(){
+  $("#reasons").innerHTML = t("reasons").map((r,i)=>
+    '<div class="reason"><span class="rnum">0'+(i+1)+'</span><div><h3>'+esc(r.t)+'</h3><p>'+esc(r.d)+'</p></div></div>'
+  ).join("");
+}
+function renderBento(){
+  $("#bento").innerHTML = t("offers").map(o=>
+    '<div class="tile '+(o.big?"t-big ":"")+(o.style||"")+'">'
+    + (o.big?'<span class="big-num">%</span>':'')
+    + '<span class="t-ico">'+'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">'+ICON[o.ico]+'</svg></span>'
+    + '<span class="t-tag">'+esc(o.tag)+'</span>'
+    + '<h3>'+esc(o.t)+'</h3><p>'+esc(o.d)+'</p></div>'
+  ).join("");
+}
+function renderBranches(){
+  const list = t("branches");
+  $("#pins").innerHTML = list.map((b,i)=>
+    '<button class="pin'+(state.branch===i?" on":"")+'" style="left:'+b.x+'%;top:'+b.y+'%" data-br="'+i+'"><em>'+esc(b.name)+'</em><b><span>'+(i+1)+'</span></b></button>'
+  ).join("");
+  $("#blist").innerHTML = list.map((b,i)=>
+    '<div class="bcard'+(state.branch===i?" on":"")+'" data-br="'+i+'">'
+    +'<h3><i>'+(i+1)+'</i>'+esc(b.name)+ (b.open?'<span class="open-now">'+esc(t("br_open"))+'</span>':'') +'</h3>'
+    +'<div class="bmeta">'
+    +'<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M12 21s7-5.6 7-11a7 7 0 10-14 0c0 5.4 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>'+esc(b.addr)+'</span>'
+    +'<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'+esc(t("br_hours"))+': '+esc(b.hours)+'</span>'
+    +'<span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:14px;height:14px"><path d="M4 4h4l2 5-2.5 1.5a11 11 0 005 5L14 13l5 2v4a1 1 0 01-1 1A16 16 0 013 5a1 1 0 011-1z"/></svg><b class="lat" style="font-family:Barlow">'+esc(b.phone)+'</b></span>'
+    +'</div></div>'
+  ).join("");
+  const sel = $("#resBranch");
+  if(sel) sel.innerHTML = list.map((b,i)=>'<option value="'+i+'">'+esc(b.name)+'</option>').join("");
+}
+function renderReviews(){
+  const list = t("reviews");
+  $("#revTrack").innerHTML = list.map(r=>
+    '<div class="rev"><div class="stars">'+star+star+star+star+star+'</div><p>'+esc(r.t)+'</p>'
+    +'<div class="rev-by"><span class="av">'+esc(r.n.slice(0,1))+'</span><span><b>'+esc(r.n)+'</b><small>'+esc(r.r)+'</small></span></div></div>'
+  ).join("");
+  $("#revNav").innerHTML = list.map((_,i)=>'<button class="dot'+(i===0?" on":"")+'" data-rev="'+i+'"></button>').join("");
+}
+function renderFooterCats(){
+  $("#ftCats").innerHTML = ["beef","chicken","meals","sides","drinks"].map(c=>
+    '<li><a href="#menu" data-catlink="'+c+'">'+esc(t("cat_"+c))+'</a></li>').join("");
+}
+function renderAll(){
+  renderTicker(); renderChips(); renderProducts(); renderReasons(); renderBento();
+  renderBranches(); renderReviews(); renderFooterCats(); renderCart();
+}
+
+/* ---------- Cart ---------- */
+function saveCart(){ localStorage.setItem("mak_cart", JSON.stringify(state.cart)); updateCount(); }
+function findP(id){ return state.products.filter(p=>p.id===id)[0]; }
+function updateCount(){
+  const n = state.cart.reduce((s,i)=> s + i.qty, 0);
+  const c = $("#cartCount"); c.textContent = n; c.classList.toggle("zero", n===0);
+  $("#drawerCount").textContent = n;
+}
+function addToCart(id){
+  const p = findP(id); if(!p) return;
+  const line = state.cart.filter(i=>i.id===id)[0];
+  if(line) line.qty++; else state.cart.push({id:id, qty:1});
+  saveCart(); renderCart();
+  const btn = $('[data-add="'+id+'"]');
+  if(btn){
+    const old = btn.innerHTML;
+    btn.classList.add("done");
+    btn.innerHTML = '<span>'+esc(t("added"))+'</span>';
+    setTimeout(()=>{ btn.classList.remove("done"); btn.innerHTML = old; }, 1100);
+  }
+}
+function cartTotal(){
+  return state.cart.reduce((s,i)=>{ const p = findP(i.id); return s + (p ? p.price*i.qty : 0); }, 0);
+}
+function deliveryFee(sub){ return (sub === 0 || sub >= state.freeOver) ? 0 : state.delivery; }
+function renderCart(){
+  const box = $("#ditems");
+  if(!state.cart.length){
+    box.innerHTML = '<div class="dempty">'+esc(t("cart_empty"))+'</div>';
+  } else {
+    box.innerHTML = state.cart.map(i=>{
+      const p = findP(i.id); if(!p) return "";
+      const nm = state.lang==="ar" ? p.ar : p.en;
+      return '<div class="citem"><div class="cth"><span class="thumb-fb" style="font-size:1.3rem">'+esc(nm.slice(0,1))+'</span>'
+        +'<img src="'+p.img+'" alt="" onerror="this.classList.add(\'dead\')"></div>'
+        +'<div><h4>'+esc(nm)+'</h4><div class="cprice">'+money(p.price*i.qty)+'</div>'
+        +'<button class="crm" data-rm="'+i.id+'">'+ (state.lang==="ar"?"إزالة":"Remove") +'</button></div>'
+        +'<div class="qty"><button data-dec="'+i.id+'">−</button><b class="lat">'+i.qty+'</b><button data-inc="'+i.id+'">+</button></div></div>';
+    }).join("");
+  }
+  const sub = cartTotal(), del = deliveryFee(sub);
+  $("#sumSub").textContent = money(sub);
+  $("#sumDel").textContent = del ? money(del) : t("del_free");
+  $("#sumTot").textContent = money(sub + del);
+  $("#freeNote").innerHTML = (sub > 0 && sub < state.freeOver)
+    ? '<div class="free-note">'+esc(t("free_note").replace("{n}", Math.ceil(state.freeOver - sub)))+'</div>' : '';
+}
+
+document.addEventListener("click", function(e){
+  const add = e.target.closest("[data-add]"); if(add){ addToCart(add.dataset.add); return; }
+  const inc = e.target.closest("[data-inc]"); if(inc){ state.cart.filter(i=>i.id===inc.dataset.inc).forEach(i=>i.qty++); saveCart(); renderCart(); return; }
+  const dec = e.target.closest("[data-dec]"); if(dec){
+    const it = state.cart.filter(i=>i.id===dec.dataset.dec)[0];
+    if(it){ it.qty--; if(it.qty<=0) state.cart = state.cart.filter(x=>x!==it); }
+    saveCart(); renderCart(); return;
+  }
+  const rm = e.target.closest("[data-rm]"); if(rm){ state.cart = state.cart.filter(i=>i.id!==rm.dataset.rm); saveCart(); renderCart(); return; }
+  const chip = e.target.closest("[data-cat]"); if(chip){ state.cat = chip.dataset.cat; renderChips(); renderProducts();
+    if(!e.target.closest("#chips")) $("#menu").scrollIntoView({behavior:"smooth"}); return; }
+  const pin = e.target.closest("[data-br]"); if(pin){ state.branch = parseInt(pin.dataset.br,10); renderBranches(); return; }
+  const rev = e.target.closest("[data-rev]"); if(rev){
+    const i = parseInt(rev.dataset.rev,10);
+    const tr = $("#revTrack"); tr.scrollTo({left: i * (tr.firstElementChild.offsetWidth + 20), behavior:"smooth"});
+    $$("#revNav .dot").forEach((d,ix)=> d.classList.toggle("on", ix===i)); return;
+  }
+});
+
+/* ---------- Drawer / modal ---------- */
+function openCart(){ $("#drawer").classList.add("on"); $("#dim").classList.add("on"); }
+function closeCart(){ $("#drawer").classList.remove("on"); $("#dim").classList.remove("on"); }
+$("#cartBtn").onclick = openCart;
+$("#closeCart").onclick = closeCart;
+$("#dim").onclick = ()=>{ closeCart(); closeModal(); };
+function openModal(){ $("#modal").classList.add("on"); }
+function closeModal(){ $("#modal").classList.remove("on"); }
+$("#closeModal").onclick = closeModal;
+
+/* ---------- Checkout ---------- */
+function showModalConfirm(){
+  $("#modalTitle").textContent = t("ok_title");
+  $("#modalBody").innerHTML = '<div class="confirm"><div class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M4 12.5l5 5L20 6"/></svg></div>'
+    + '<h3>'+esc(t("ok_title"))+'</h3><p>'+esc(t("ok_body"))+'</p>'
+    + '<button class="btn" style="margin-top:22px" onclick="closeModal();location.reload()"><span>'+esc(t("ok_btn"))+'</span></button></div>';
+}
+$("#toCheckout").onclick = function(){
+  if(!state.cart.length){ renderCart(); return; }
+  closeCart(); openModal();
+};
+$("#formOrder").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const msg = $("#msgOrder");
+  msg.className = "msg";
+  if(!state.cart.length){ msg.className = "msg err"; msg.textContent = t("err_empty"); return; }
+  const fd = new FormData(this);
+  const name = (fd.get("name")||"").toString().trim();
+  const phone = (fd.get("phone")||"").toString().trim();
+  if(!name || !phone){ msg.className = "msg err"; msg.textContent = t("err_fields"); return; }
+  const items = state.cart.map(i=>{
+    const p = findP(i.id) || {price:0};
+    return {name: (state.lang==="ar"? p.ar : p.en) || "item", qty: i.qty, price: String(p.price)};
+  });
+  const sub = cartTotal(); const del = deliveryFee(sub);
+  const payload = {
+    order_id: ORDER_ID,
+    customer_name: name,
+    phone: phone,
+    items: items,
+    total: String(sub + del),
+    notes: ((fd.get("notes")||"") + (del? " | "+ (state.lang==="ar"?"التوصيل: ":"Delivery: ") + del : "")).trim()
+  };
+  const btn = this.querySelector("button[type=submit]"); const old = btn.innerHTML;
+  btn.disabled = true; btn.innerHTML = '<span>...</span>';
+  try{
+    const res = await fetch(ORDER_URL, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(payload)});
+    const data = await res.json().catch(()=>({}));
+    if(data && data.success){
+      state.cart = []; saveCart(); renderCart();
+      showModalConfirm();
+    } else {
+      msg.className = "msg err"; msg.textContent = (data && data.message) ? data.message : t("err_generic");
+    }
+  } catch(err){
+    msg.className = "msg err"; msg.textContent = t("err_generic");
+  }
+  btn.disabled = false; btn.innerHTML = old;
+});
+
+/* ---------- My orders ---------- */
+$("#myBtn").onclick = async function(){
+  const msg = $("#myMsg"), list = $("#myList");
+  const phone = $("#myPhone").value.trim();
+  msg.className = "msg";
+  if(!phone){ msg.className = "msg err"; msg.textContent = t("my_ph_required"); return; }
+  this.disabled = true;
+  try{
+    const res = await fetch(DASH_URL, {method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({action:"get_customer_orders", business_id: ORDER_ID, phone: phone})});
+    const data = await res.json().catch(()=>({}));
+    const orders = (data && data.orders) ? data.orders : [];
+    if(!orders.length){ list.innerHTML = ""; msg.className = "msg err"; msg.textContent = t("my_empty"); }
+    else { msg.className = "msg ok"; msg.textContent = t("my_count") + ": " + orders.length; list.innerHTML = orders.map(renderOrderRow).join(""); }
+  } catch(err){
+    msg.className = "msg err"; msg.textContent = t("err_generic");
+  }
+  this.disabled = false;
+};
+function stLabel(s){
+  const map = {new:"st_new", processing:"st_processing", shipped:"st_shipped", completed:"st_completed", cancelled:"st_cancelled"};
+  return t(map[s] || "st_new");
+}
+function renderOrderRow(o){
+  const items = Array.isArray(o.items) ? o.items : [];
+  const d = o.created_at ? new Date(o.created_at) : null;
+  const dateStr = d && !isNaN(d) ? d.toLocaleDateString("en-GB") + " · " + d.toLocaleTimeString("en-GB",{hour:"2-digit",minute:"2-digit"}) : "";
+  return '<div class="order-row">'
+    +'<div><div class="oid">#'+esc(o.site_order_id || "")+'</div><div class="odate">'+esc(dateStr)+'</div></div>'
+    +'<div class="total-line"><span class="pill p-'+esc(o.status||"new")+'">'+esc(stLabel(o.status))+'</span><b>'+esc(o.total ? o.total + " " + CURR[state.lang] : "")+'</b></div>'
+    +'<ul>'+ items.map(i=>'<li><span>'+esc(i.name||"")+' ×' + (i.qty||1) +'</span><b>'+esc(i.price? (i.price+" "+CURR[state.lang]) : "")+'</b></li>').join("") +'</ul>'
+    +'</div>';
+}
+
+/* ---------- Forms (reservation / message) ---------- */
+$$(".tabs [data-tab]").forEach(b=> b.onclick = function(){
+  $$(".tabs [data-tab]").forEach(x=> x.classList.remove("on")); this.classList.add("on");
+  const res = this.dataset.tab === "res";
+  $("#formRes").style.display = res ? "" : "none";
+  $("#formMsg").style.display = res ? "none" : "";
+});
+$("#formRes").addEventListener("submit", function(e){
+  e.preventDefault();
+  const m = $("#msgRes"); m.className = "msg ok"; m.textContent = t("res_ok");
+  this.reset(); setToday();
+});
+$("#formMsg").addEventListener("submit", function(e){
+  e.preventDefault();
+  const m = $("#msgMsg"); m.className = "msg ok"; m.textContent = t("msg_ok");
+  this.reset();
+});
+function setToday(){
+  const inp = $('#formRes input[name="date"]'); if(!inp) return;
+  const d = new Date(); d.setDate(d.getDate()+1);
+  inp.value = d.toISOString().slice(0,10); inp.min = new Date().toISOString().slice(0,10);
+}
+
+/* ---------- Countdown ---------- */
+function tickClock(){
+  const now = new Date(), end = new Date(now); end.setHours(23,59,59,999);
+  let s = Math.max(0, Math.floor((end - now)/1000));
+  const h = Math.floor(s/3600); s -= h*3600;
+  const m = Math.floor(s/60); const sec = s - m*60;
+  const p = n => String(n).padStart(2,"0");
+  $("#cdH").textContent = p(h); $("#cdM").textContent = p(m); $("#cdS").textContent = p(sec);
+}
+setInterval(tickClock, 1000);
+
+/* ---------- Nav / misc ---------- */
+$("#navBurger").onclick = ()=> $("#navLinks").classList.toggle("show");
+$$("#navLinks a").forEach(a=> a.onclick = ()=> $("#navLinks").classList.remove("show"));
+$("#dealBtn").onclick = ()=>{ const m = state.products.filter(p=>p.id==="m3")[0]; if(m) addToCart("m3"); state.cat="meals"; renderChips(); renderProducts(); openCart(); };
+
+/* auto reviews advance */
+let revTimer = setInterval(()=>{
+  const tr = $("#revTrack"); if(!tr || !tr.firstElementChild) return;
+  const w = tr.firstElementChild.offsetWidth + 20;
+  const idx = Math.round(tr.scrollLeft / w);
+  const next = (idx + 1) % t("reviews").length;
+  tr.scrollTo({left: next*w, behavior:"smooth"});
+  $$("#revNav .dot").forEach((d,ix)=> d.classList.toggle("on", ix===next));
+}, 5200);
+
+/* ============================================================
+   ADMIN
+   ============================================================ */
+const A = {
+  tab: "biz",
+  theme: localStorage.getItem("mak_a_theme") || "light",
+  fieldKeys: []
+};
+function isAdminHash(){ return location.hash === "#admin" || location.hash === "#admin/"; }
+function openAdmin(){
+  $("#adminPanel").classList.add("on");
+  document.body.style.overflow = "hidden";
+  $("#dim").classList.remove("on");
+  $("#drawer").classList.remove("on");
+  if(state.token && state.email){ showShell(); loadBiz(); } else { showLogin(); }
+}
+function closeAdmin(){
+  $("#adminPanel").classList.remove("on");
+  document.body.style.overflow = "";
+  if(isAdminHash()) history.replaceState(null,"", location.pathname + location.search);
+}
+function showLogin(){ $("#adminLoginWrap").style.display = "grid"; $("#adminShell").hidden = true; }
+function showShell(){
+  $("#adminLoginWrap").style.display = "none";
+  $("#adminShell").hidden = false;
+  $("#aWho").textContent = state.email + " · " + (state.role || "admin");
+  $("#tabAdmins").style.display = (state.role === "owner") ? "" : "none";
+  setAdminTheme(A.theme);
+  setTab(A.tab);
+}
+window.addEventListener("hashchange", function(){
+  if(isAdminHash()) openAdmin();
+  else { $("#adminPanel").classList.remove("on"); document.body.style.overflow = ""; }
+});
+function goAdmin(e){ if(e) e.preventDefault(); location.hash = "#admin"; }
+$("#navAdmin").onclick = goAdmin;
+$("#topAdmin").onclick = goAdmin;
+$("#ftAdmin").onclick = goAdmin;
+$("#exitAdmin").onclick = closeAdmin;
+$("#backSite").onclick = closeAdmin;
+
+function setAdminTheme(th){
+  A.theme = th; localStorage.setItem("mak_a_theme", th);
+  $("#adminPanel").setAttribute("data-theme", th);
+}
+$("#themeBtn").onclick = ()=> setAdminTheme(A.theme === "dark" ? "light" : "dark");
+$("#langAdminBtn").onclick = ()=> setLang(state.lang === "ar" ? "en" : "ar");
+
+function aMsg(id, ok, text){
+  const el = $(id); if(!el) return;
+  el.className = "msg " + (ok ? "ok" : "err"); el.textContent = text;
+  setTimeout(()=>{ el.className = "msg"; }, 4500);
+}
+async function dash(payload, withToken){
+  const body = Object.assign({business_id: ORDER_ID}, payload);
+  if(withToken !== false && state.token) body.token = state.token;
+  const res = await fetch(DASH_URL, {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)});
+  let data = {};
+  try{ data = await res.json(); }catch(e){ data = {}; }
+  if(data && data.code === "unauthorized"){ logoutAdmin(); throw new Error("unauthorized"); }
+  return data;
+}
+function logoutAdmin(){
+  state.token = ""; state.role = ""; state.email = "";
+  localStorage.removeItem("mak_token"); localStorage.removeItem("mak_role"); localStorage.removeItem("mak_email");
+  showLogin();
+}
+$("#logoutBtn").onclick = logoutAdmin;
+
+/* login */
+$("#formLogin").addEventListener("submit", async function(e){
+  e.preventDefault();
+  const fd = new FormData(this);
+  const btn = this.querySelector("button[type=submit]"); const old = btn.innerHTML;
+  btn.disabled = true; btn.innerHTML = "<span>...</span>";
+  try{
+    const data = await dash({action:"login", email:(fd.get("email")||"").trim(), password:(fd.get("password")||"")}, false);
+    if(data && data.success){
+      state.token = data.token || ""; state.role = data.role || "admin"; state.email = data.email || (fd.get("email")||"");
+      localStorage.setItem("mak_token", state.token);
+      localStorage.setItem("mak_role", state.role);
+      localStorage.setItem("mak_email", state.email);
+      $("#msgLogin").className = "msg";
+      showShell(); loadBiz();
+    } else {
+      aMsg("#msgLogin", false, (data && data.message) ? data.message : t("err_generic"));
+    }
+  } catch(err){ aMsg("#msgLogin", false, t("err_generic")); }
+  btn.disabled = false; btn.innerHTML = old;
+});
+
+/* tabs */
+$$("[data-atab]").forEach(b=> b.onclick = function(){ setTab(this.dataset.atab); });
+function setTab(tab){
+  A.tab = tab;
+  $$("[data-atab]").forEach(x=> x.classList.toggle("on", x.dataset.atab === tab));
+  $$(".apanel").forEach(p=> p.classList.toggle("on", p.dataset.panel === tab));
+  const key = {biz:"a_tab_biz", products:"a_tab_products", media:"a_tab_media", orders:"a_tab_orders", admins:"a_tab_admins"}[tab];
+  $("#aTitle").textContent = t(key);
+  if(tab === "orders") loadOrders();
+  if(tab === "media") loadBiz(true);
+  if(tab === "products") renderAdminProducts();
+}
+
+/* business data */
+const FIELD_LABELS = {
+  restaurant_name:{ar:"اسم المطعم",en:"Restaurant name"},
+  hotline:{ar:"الخط الساخن",en:"Hotline"},
+  whatsapp:{ar:"واتساب",en:"WhatsApp"},
+  address:{ar:"العنوان",en:"Address"},
+  hours:{ar:"مواعيد العمل",en:"Opening hours"},
+  delivery_fee:{ar:"سعر التوصيل",en:"Delivery fee"},
+  free_over:{ar:"توصيل مجاني بعد",en:"Free delivery over"},
+  announcement:{ar:"شريط إعلان",en:"Announcement bar"},
+  about:{ar:"نبذة",en:"About"},
+  instagram:{ar:"إنستجرام",en:"Instagram"},
+  facebook:{ar:"فيسبوك",en:"Facebook"},
+  products_json:{ar:"الأصناف (JSON)",en:"Catalog (JSON)"}
+};
+function fieldLabel(k){ const f = FIELD_LABELS[k]; return f ? (state.lang==="ar"? f.ar : f.en) : k; }
+async function loadBiz(silent){
+  try{
+    const data = await dash({action:"get_business_data"});
+    if(data && data.success){
+      state.biz = data.data || {};
+      state.media = data.media || [];
+      try{ localStorage.setItem("mak_biz", JSON.stringify(state.biz)); }catch(e){}
+      if(state.biz.products_json){
+        try{
+          const pr = typeof state.biz.products_json === "string" ? JSON.parse(state.biz.products_json) : state.biz.products_json;
+          if(Array.isArray(pr) && pr.length){ state.products = pr; localStorage.setItem("mak_products", JSON.stringify(pr)); renderAll(); }
+        }catch(e){}
+      }
+      if(!state.aProducts) state.aProducts = JSON.parse(JSON.stringify(state.products));
+      renderBizFields(); renderMedia(); renderStats();
+    } else if(!silent){
+      aMsg("#msgBiz", false, (data && data.message) ? data.message : t("err_generic"));
+    }
+  } catch(err){ if(err.message !== "unauthorized" && !silent) aMsg("#msgBiz", false, t("err_generic")); }
+}
+function renderStats(){
+  const n = state.products.length;
+  const b = state.biz || {};
+  $("#aStats").innerHTML = '<div class="stat"><small>'+esc(t("a_tab_products"))+'</small><b class="num">'+n+'</b></div>'
+    + '<div class="stat"><small>'+esc(t("a_tab_media"))+'</small><b class="num">'+(state.media.length||0)+'</b></div>'
+    + '<div class="stat"><small>'+esc(fieldLabel("delivery_fee"))+'</small><b class="num">'+esc(b.delivery_fee || state.delivery)+'</b></div>'
+    + '<div class="stat"><small>'+esc(fieldLabel("hotline"))+'</small><b class="num">'+esc(b.hotline || "19283")+'</b></div>';
+}
+function renderBizFields(){
+  const keys = Object.keys(state.biz).filter(k=> k !== "products_json");
+  const known = Object.keys(FIELD_LABELS).filter(k=> k!=="products_json" && keys.indexOf(k) === -1);
+  A.fieldKeys = keys.slice();
+  let html = keys.map(k=>{
+    const v = typeof state.biz[k] === "object" ? JSON.stringify(state.biz[k]) : state.biz[k];
+    return '<div class="arow"><label title="'+esc(k)+'">'+esc(fieldLabel(k))+'</label><input data-bkey="'+esc(k)+'" value="'+esc(v)+'"></div>';
+  }).join("");
+  html += known.map(k=>'<div class="arow"><label title="'+esc(k)+'">'+esc(fieldLabel(k))+'</label><input data-bkey="'+esc(k)+'" value=""></div>').join("");
+  $("#aFields").innerHTML = html || '<p class="hint">'+esc(state.lang==="ar"?"لا توجد بيانات محفوظة بعد — ضيف حقل من تحت.":"No data saved yet — add a field below.")+'</p>';
+}
+$("#addFieldBtn").onclick = function(){
+  const k = $("#nfKey").value.trim(), v = $("#nfVal").value.trim();
+  if(!k) return;
+  state.biz[k] = v; renderBizFields(); $("#nfKey").value = ""; $("#nfVal").value = "";
+};
+$("#saveBiz").onclick = async function(){
+  const data = {};
+  $$("#aFields [data-bkey]").forEach(i=>{
+    const k = i.dataset.bkey, v = i.value;
+    if(k === "products_json"){ data[k] = v; return; }
+    data[k] = v;
+  });
+  this.disabled = true;
+  try{
+    const res = await dash({action:"update_business_data", data: data});
+    if(res && res.success){
+      state.biz = Object.assign({}, state.biz, data);
+      localStorage.setItem("mak_biz", JSON.stringify(state.biz));
+      applyBizToSite();
+      aMsg("#msgBiz", true, t("a_saved"));
+    } else aMsg("#msgBiz", false, (res && res.message) ? res.message : t("err_generic"));
+  } catch(err){ if(err.message !== "unauthorized") aMsg("#msgBiz", false, t("err_generic")); }
+  this.disabled = false;
+};
+$("#reloadBiz").onclick = ()=> loadBiz();
+function applyBizToSite(){
+  const b = state.biz || {};
+  if(b.hotline){ const el = $("#topPhone"); if(el) el.textContent = b.hotline; }
+  if(b.hours){ const el = $("#topHours"); if(el) el.textContent = b.hours; }
+  if(b.delivery_fee && !isNaN(parseFloat(b.delivery_fee))) state.delivery = parseFloat(b.delivery_fee);
+  if(b.free_over && !isNaN(parseFloat(b.free_over))) state.freeOver = parseFloat(b.free_over);
+  renderCart();
+}
+
+/* products admin */
+$("#saveProd").onclick = async function(){
+  const rows = $$("#aProdTable tbody tr");
+  const list = rows.map((tr,i)=>{
+    const g = k => { const el = tr.querySelector('[data-f="'+k+'"]'); return el ? el.value : ""; };
+    return {
+      id: g("id") || ("p"+Date.now()+i),
+      cat: g("cat") || "beef",
+      ar: g("ar"), en: g("en"),
+      dar: g("dar") || g("ar"), den: g("den") || g("en"),
+      price: parseFloat(g("price")) || 0,
+      old: parseFloat(g("old")) || 0,
+      off: parseInt(g("old"),10) && parseFloat(g("old")) > parseFloat(g("price"))
+            ? Math.round((1 - parseFloat(g("price"))/parseFloat(g("old")))*100) : 0,
+      badge: g("badge") || "",
+      kcal: parseInt(g("kcal"),10) || 0,
+      img: g("img") || U("1568901346375-23c9450c58cd")
+    };
+  });
+  if(list[0]){
+    if(list[0].off) list[0].off = 0;
+  }
+  this.disabled = true;
+  try{
+    const res = await dash({action:"update_business_data", data:{products_json: JSON.stringify(list)}});
+    if(res && res.success){
+      state.products = list;
+      localStorage.setItem("mak_products", JSON.stringify(list));
+      state.biz.products_json = JSON.stringify(list);
+      renderAll(); aMsg("#msgProd", true, t("a_saved"));
+    } else aMsg("#msgProd", false, (res && res.message) ? res.message : t("err_generic"));
+  } catch(err){ if(err.message !== "unauthorized") aMsg("#msgProd", false, t("err_generic")); }
+  this.disabled = false;
+};
+$("#resetProd").onclick = function(){
+  state.products = JSON.parse(JSON.stringify(DEFAULT_PRODUCTS));
+  localStorage.setItem("mak_products", JSON.stringify(state.products));
+  renderAdminProducts(); renderAll();
+  aMsg("#msgProd", true, t("a_saved"));
+};
+$("#addProd").onclick = function(){
+  const list = readProdTable();
+  list.unshift({id:"n"+Date.now(), cat:"beef", ar:"", en:"", dar:"", den:"", price:0, old:0, off:0, badge:"", kcal:0, img:""});
+  drawProdTable(list);
+};
+function readProdTable(){
+  const rows = $$("#aProdTable tbody tr");
+  if(!rows.length) return JSON.parse(JSON.stringify(state.products));
+  return rows.map((tr,i)=>{
+    const g = k => { const el = tr.querySelector('[data-f="'+k+'"]'); return el ? el.value : ""; };
+    return {id:g("id"), cat:g("cat"), ar:g("ar"), en:g("en"), dar:g("dar"), den:g("den"),
+      price:parseFloat(g("price"))||0, old:parseFloat(g("old"))||0, badge:g("badge"), kcal:parseInt(g("kcal"),10)||0, img:g("img"),
+      off: (parseFloat(g("old")) > parseFloat(g("price"))) ? Math.round((1-parseFloat(g("price"))/parseFloat(g("old")))*100) : 0};
+  });
+}
+function renderAdminProducts(){ drawProdTable(JSON.parse(JSON.stringify(state.products))); }
+function drawProdTable(list){
+  const cats = ["beef","chicken","meals","sides","drinks"];
+  let h = '<thead><tr><th>'+esc(t("a_th_name"))+' (AR)</th><th>'+esc(t("a_th_name"))+' (EN)</th><th>'+esc(t("a_th_cat"))+'</th><th>'+esc(t("a_th_price"))+'</th><th>'+esc(t("a_th_old"))+'</th><th>'+esc(t("a_th_badge"))+'</th><th>'+esc(t("a_th_kcal"))+'</th><th>'+esc(t("a_th_img"))+'</th><th></th></tr></thead><tbody>';
+  h += list.map(p=>
+    '<tr>'
+    +'<td><input data-f="ar" value="'+esc(p.ar)+'"><input type="hidden" data-f="id" value="'+esc(p.id)+'"><input type="hidden" data-f="dar" value="'+esc(p.dar||p.ar)+'"><input type="hidden" data-f="den" value="'+esc(p.den||p.en)+'"></td>'
+    +'<td><input data-f="en" value="'+esc(p.en)+'"></td>'
+    +'<td><select data-f="cat">'+cats.map(c=>'<option value="'+c+'"'+(p.cat===c?" selected":"")+'>'+esc(t("cat_"+c))+'</option>').join("")+'</select></td>'
+    +'<td><input data-f="price" type="number" step="1" value="'+esc(p.price)+'"></td>'
+    +'<td><input data-f="old" type="number" step="1" value="'+esc(p.old||0)+'"></td>'
+    +'<td><input data-f="badge" style="width:90px" value="'+esc(p.badge||"")+'" placeholder="best/new"></td>'
+    +'<td><input data-f="kcal" type="number" step="1" style="width:80px" value="'+esc(p.kcal||0)+'"></td>'
+    +'<td><input data-f="img" value="'+esc(p.img||"")+'" style="min-width:180px"></td>'
+    +'<td><button class="mini grey" data-del="1">✕</button></td>'
+    +'</tr>').join("");
+  h += "</tbody>";
+  $("#aProdTable").innerHTML = h;
+  $$("#aProdTable [data-del]").forEach(b=> b.onclick = function(){
+    this.closest("tr").remove();
+  });
+}
+
+/* media */
+$("#uploadBtn").onclick = async function(){
+  const f = $("#medFile").files[0];
+  if(!f){ aMsg("#msgMedia", false, t("err_generic")); return; }
+  this.disabled = true;
+  try{
+    const b64 = await new Promise((res, rej)=>{
+      const r = new FileReader();
+      r.onload = ()=> res(String(r.result).split(",")[1]);
+      r.onerror = rej;
+      r.readAsDataURL(f);
+    });
+    const payload = {
+      action:"upload_media",
+      media_type: f.type.indexOf("video") === 0 ? "video" : "image",
+      file_base64: b64,
+      mime_type: f.type,
+      file_name: f.name,
+      caption: $("#medCap").value
+    };
+    const data = await dash(payload);
+    if(data && data.success){
+      aMsg("#msgMedia", true, t("a_saved"));
+      $("#medFile").value = ""; $("#medCap").value = "";
+      loadBiz(true);
+    } else aMsg("#msgMedia", false, (data && data.message) ? data.message : t("err_generic"));
+  } catch(err){ if(err.message !== "unauthorized") aMsg("#msgMedia", false, t("err_generic")); }
+  this.disabled = false;
+};
+$("#reloadMedia").onclick = ()=> loadBiz();
+function renderMedia(){
+  const m = state.media || [];
+  $("#mediaGrid").innerHTML = m.length ? m.map(x=>
+    '<div class="mcell">' + (x.media_type === "video"
+      ? '<video src="'+esc(x.url)+'" muted></video>'
+      : '<img src="'+esc(x.url)+'" alt="" onerror="this.style.opacity=.3">')
+    + '<div class="cap">'+esc(x.caption || x.media_type || "")+'</div></div>'
+  ).join("") : '<p class="hint">'+esc(state.lang==="ar"?"لا يوجد وسائط مرفوعة بعد.":"No media uploaded yet.")+'</p>';
+}
+
+/* orders admin */
+$("#reloadOrders").onclick = loadOrders;
+async function loadOrders(){
+  const box = $("#aOrders");
+  box.innerHTML = '<p class="hint">...</p>';
+  try{
+    const data = await dash({action:"get_orders"});
+    if(!data || !data.success){
+      box.innerHTML = '<p class="hint">'+esc((data && data.message) ? data.message : t("err_generic"))+'</p>'; return;
+    }
+    const orders = data.orders || [];
+    if(!orders.length){ box.innerHTML = '<p class="hint">'+esc(t("a_no_orders"))+'</p>'; return; }
+    box.innerHTML = orders.map(o=>{
+      const items = Array.isArray(o.items) ? o.items : [];
+      const d = o.created_at ? new Date(o.created_at) : null;
+      const dateStr = d && !isNaN(d) ? d.toLocaleString("en-GB") : "";
+      const opts = ["new","processing","shipped","completed","cancelled"];
+      return '<div class="aorder"><div class="ah"><b>#'+esc(o.site_order_id||"")+'</b>'
+        +'<span class="pill p-'+esc(o.status||"new")+'">'+esc(stLabel(o.status))+'</span>'
+        +'<b style="margin-inline-start:auto">'+esc((o.total||"")+" "+CURR[state.lang])+'</b></div>'
+        +'<div class="am"><span>'+esc(t("a_customer"))+': <b>'+esc(o.customer_name||"")+'</b></span>'
+        +'<span>'+esc(t("f_phone"))+': <b>'+esc(o.customer_phone||"")+'</b></span>'
+        +'<span>'+esc(t("a_date"))+': <b>'+esc(dateStr)+'</b></span>'
+        +'<span>'+esc(t("f_notes"))+': <b>'+esc(o.notes||"—")+'</b></span></div>'
+        +'<ul>'+items.map(i=>'<li><span>'+esc(i.name||"")+' ×'+(i.qty||1)+'</span><b>'+esc(i.price? (i.price+" "+CURR[state.lang]):"")+'</b></li>').join("")+'</ul>'
+        +'<div class="tools"><select data-status-for="'+esc(o.site_order_id)+'" style="max-width:190px">'
+        + opts.map(s=>'<option value="'+s+'"'+((o.status||"new")===s?" selected":"")+'>'+esc(stLabel(s))+'</option>').join("")
+        + '</select><button class="mini" data-update="'+esc(o.site_order_id)+'">'+esc(t("a_update"))+'</button></div></div>';
+    }).join("");
+    $$("#aOrders [data-update]").forEach(b=> b.onclick = async function(){
+      const id = this.dataset.update;
+      const sel = document.querySelector('[data-status-for="'+id+'"]');
+      this.disabled = true;
+      try{
+        const res = await dash({action:"update_order_status", site_order_id:id, status: sel.value});
+        if(res && res.success){ aMsg("#msgOrders", true, t("a_saved")); loadOrders(); }
+        else aMsg("#msgOrders", false, (res && res.message) ? res.message : t("err_generic"));
+      } catch(err){ if(err.message !== "unauthorized") aMsg("#msgOrders", false, t("err_generic")); }
+      this.disabled = false;
+    });
+  } catch(err){ if(err.message !== "unauthorized") box.innerHTML = '<p class="hint">'+esc(t("err_generic"))+'</p>'; }
+}
+
+/* admins */
+$("#addAdminBtn").onclick = async function(){
+  const email = $("#newAdminEmail").value.trim(), pass = $("#newAdminPass").value;
+  if(!email || pass.length < 6){ aMsg("#msgAdmin", false, state.lang==="ar" ? "الباسورد لازم ٦ حروف على الأقل." : "Password must be at least 6 characters."); return; }
+  this.disabled = true;
+  try{
+    const res = await dash({action:"add_admin", new_email:email, new_password:pass});
+    if(res && res.success){ aMsg("#msgAdmin", true, t("a_saved")); $("#newAdminEmail").value=""; $("#newAdminPass").value=""; }
+    else aMsg("#msgAdmin", false, (res && res.message) ? res.message : t("err_generic"));
+  } catch(err){ if(err.message !== "unauthorized") aMsg("#msgAdmin", false, t("err_generic")); }
+  this.disabled = false;
+};
+
+/* admin extra labels */
+I18N.ar.a_saved = "تم الحفظ بنجاح"; I18N.en.a_saved = "Saved successfully";
+I18N.ar.a_biz_t = "بيانات المطعم"; I18N.en.a_biz_t = "Restaurant data";
+I18N.ar.a_biz_h = "عدّل القيم واحفظ. الحقول الجديدة بتتضاف من تحت."; I18N.en.a_biz_h = "Edit values and save. Add new fields below.";
+I18N.ar.a_prod_t = "الأصناف والأسعار"; I18N.en.a_prod_t = "Items & prices";
+I18N.ar.a_prod_h = "عدّل الأسعار والأسماء، وامسح أصناف أو ضيف صنف جديد للمنيو."; I18N.en.a_prod_h = "Edit prices and names, delete items or add a new menu item.";
+I18N.ar.a_med_t = "رفع الصور والفيديو"; I18N.en.a_med_t = "Upload images & video";
+I18N.ar.a_med_h = "ارفع صور أو فيديوهات للمنتجات والعروض، وهي هتظهر جوه الموقع."; I18N.en.a_med_h = "Upload product and offer images or videos, they appear inside the site.";
+I18N.ar.a_ord_t = "الطلبات الواردة"; I18N.en.a_ord_t = "Incoming orders";
+I18N.ar.a_ord_h = "تابع الطلبات وغيّر حالة كل طلب."; I18N.en.a_ord_h = "Track orders and update the status of each one.";
+I18N.ar.a_adm_t = "إضافة أدمن"; I18N.en.a_adm_t = "Add admin";
+I18N.ar.a_adm_h = "الباسورد لازم ٦ حروف على الأقل. الصلاحية دي للمالك بس."; I18N.en.a_adm_h = "Password must be at least 6 characters. Owner access only.";
+I18N.ar.a_reload = "إعادة تحميل"; I18N.en.a_reload = "Reload";
+I18N.ar.a_add_field = "إضافة"; I18N.en.a_add_field = "Add";
+I18N.ar.a_add_prod = "+ إضافة صنف جديد"; I18N.en.a_add_prod = "+ Add new item";
+I18N.ar.a_reset = "استرجاع المنيو الأصلي"; I18N.en.a_reset = "Reset to default menu";
+I18N.ar.a_med_file = "الملف"; I18N.en.a_med_file = "File";
+I18N.ar.a_med_cap = "وصف الملف"; I18N.en.a_med_cap = "Caption";
+I18N.ar.a_med_cap_ph = "مثلاً: صورة عرض العائلة"; I18N.en.a_med_cap_ph = "e.g. family offer photo";
+I18N.ar.a_new_key = "اسم الحقل (إنجليزي)"; I18N.en.a_new_key = "Field key (english)";
+I18N.ar.a_new_val = "القيمة"; I18N.en.a_new_val = "Value";
+I18N.ar.a_customer = "العميل"; I18N.en.a_customer = "Customer";
+I18N.ar.a_date = "التاريخ"; I18N.en.a_date = "Date";
+I18N.ar.a_update = "تحديث الحالة"; I18N.en.a_update = "Update status";
+I18N.ar.a_no_orders = "لا توجد طلبات حتى الآن."; I18N.en.a_no_orders = "No orders yet.";
+I18N.ar.a_th_name = "الاسم"; I18N.en.a_th_name = "Name";
+I18N.ar.a_th_cat = "التصنيف"; I18N.en.a_th_cat = "Category";
+I18N.ar.a_th_price = "السعر"; I18N.en.a_th_price = "Price";
+I18N.ar.a_th_old = "السعر قبل الخصم"; I18N.en.a_th_old = "Old price";
+I18N.ar.a_th_badge = "الشارة"; I18N.en.a_th_badge = "Badge";
+I18N.ar.a_th_kcal = "كالوري"; I18N.en.a_th_kcal = "Kcal";
+I18N.ar.a_th_img = "رابط الصورة"; I18N.en.a_th_img = "Image URL";
+I18N.ar.a_login_title = "لوحة تحكم ماك"; I18N.en.a_login_title = "Mak Dashboard";
+I18N.ar.a_login_sub = "سجّل دخولك لإدارة الأسعار والأصناف والطلبات."; I18N.en.a_login_sub = "Sign in to manage prices, items and orders.";
+
+/* ---------- Boot ---------- */
+(function init(){
+  try{
+    const bz = JSON.parse(localStorage.getItem("mak_biz") || "{}");
+    if(bz && typeof bz === "object") state.biz = bz;
+  }catch(e){}
+  setToday();
+  setLang(state.lang);
+  applyBizToSite();
+  tickClock();
+  updateCount();
+  if(isAdminHash()) openAdmin();
+})();
+</script>
+</body>
+</html>
